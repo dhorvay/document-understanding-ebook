@@ -161,3 +161,6 @@ cython_debug/
 
 # Jupyter Book
 */_build
+
+# Personal research folder
+research/
