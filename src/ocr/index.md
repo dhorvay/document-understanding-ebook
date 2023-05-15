@@ -1,1 +1,3 @@
 # Optical Character Recognition
+
+Optical Character Recognition (OCR) technology has a broad range of applications, particularly in text recognition and extraction, where it is used to identify various characters and numerals in multiple languages. OCR has become increasingly important in various industries such as banking, postal services, forensics, historical document analysis, among others. These applications require the recognition of characters in different types of documents, including historical manuscripts and printed scripts.

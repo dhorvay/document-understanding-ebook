@@ -7,10 +7,8 @@ parts:
     sections:
     - file: ocr/index
       sections:
-      - file: ocr/overview/index
-        sections:
-          - file: ocr/overview/history
-          - file: ocr/overview/howitworks
+      - file: ocr/overview/history
+      - file: ocr/overview/howitworks
       - file: ocr/software/index
         sections:
           - file: ocr/software/engines
