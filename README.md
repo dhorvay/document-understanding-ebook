@@ -3,6 +3,8 @@
 > **Note**
 > This book is in beta - it is consistently being updated with content for a v1.0.0 release! 🤗
 
+![logo](./src/logo.png)
+
 This repository contains the source code for the Document Understanding eBook built with <a href="https://jupyterbook.org"> Jupyter Book.</a>
 
 All of the material in this book is publicly available under the <a href="https://github.com/dhorvay/document-understanding-ebook/blob/main/LICENSE">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)</a> license.
