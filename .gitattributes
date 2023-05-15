@@ -1,0 +1,11 @@
+# Set the default behavior, in case people don't have core.autocrlf set.
+* text=auto
+
+# Include Markdown in the GitHub language breakdown statistics
+*.md linguist-detectable
+
+# Denote all files that are truly binary and should not be modified.
+*.gif   binary
+*.ico   binary
+*.jpg   binary
+*.png   binary

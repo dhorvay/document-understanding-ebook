@@ -1,0 +1,15 @@
+title: Document Understanding eBook
+author: Devin Horvay
+copyright: "2023"
+logo: logo.png
+execute:
+  execute_notebooks: force
+repository:
+  url: https://github.com/dhorvay/document-understanding-ebook
+html:
+  announcement: "Please note: this book is in beta - it is consistently being updated with content for a v1.0.0 release! 🤗"
+  favicon : favicon.ico
+  use_issues_button: true
+  use_repository_button: true
+  extra_footer: |
+    All of the material in this book is publicly available under the <a href="https://github.com/dhorvay/document-understanding-ebook/blob/main/LICENSE">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)</a> license.
