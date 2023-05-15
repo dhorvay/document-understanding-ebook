@@ -201,4 +201,4 @@ parts:
     - file: summarization/resources/index
   - file: cloudproducts/index
   - file: related/index
-  
+  - file: bibliography/index

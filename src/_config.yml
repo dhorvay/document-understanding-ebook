@@ -13,3 +13,8 @@ html:
   use_repository_button: true
   extra_footer: |
     All of the material in this book is publicly available under the <a href="https://github.com/dhorvay/document-understanding-ebook/blob/main/LICENSE">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)</a> license.
+bibtex_bibfiles:
+  - references.bib
+sphinx:
+  config:
+    bibtex_reference_style: author_year
