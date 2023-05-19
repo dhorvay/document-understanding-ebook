@@ -2,7 +2,7 @@
 
 At a high-level, a traditional OCR process can be broken down into the following steps:
 
-[![Tradition OCR Processing Pipeline](../../../assets/img//ocr/traditional-ocr.png)](https://horvay.dev/document-understanding-ebook/_downloads/8fbf7c1576889780e64c4c5ccc6515c5/traditional-ocr.png)
+[![Tradition OCR Processing Pipeline](../../../assets/img//ocr/traditional-ocr.png)](https://horvay.dev/document-understanding-ebook/_images/traditional-ocr.png)
 
 1.) <span style="color:#579aca"><b>Image acquisition:</b></span> Capture the image containing the text - usually via scanner, camera, or other image-capturing device.
 
