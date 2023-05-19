@@ -52,27 +52,22 @@ parts:
       sections:
       - file: bcr/overview/index
         sections:
-          - file: bcr/overview/history
           - file: bcr/overview/howitworks
       - file: bcr/software/index
         sections:
-          - file: bcr/software/engines
           - file: bcr/software/packages
           - file: bcr/software/gui
       - file: bcr/notebooks/index
       - file: bcr/datasets/index
       - file: bcr/papers/index
-      - file: bcr/benchmarks/index
       - file: bcr/resources/index
     - file: sigr/index
       sections:
       - file: sigr/overview/index
         sections:
-          - file: sigr/overview/history
           - file: sigr/overview/howitworks
       - file: sigr/software/index
         sections:
-          - file: sigr/software/engines
           - file: sigr/software/packages
           - file: sigr/software/gui
       - file: sigr/notebooks/index
@@ -192,6 +187,5 @@ parts:
     - file: summarization/papers/index
     - file: summarization/benchmarks/index
     - file: summarization/resources/index
-  - file: cloudproducts/index
   - file: related/index
   - file: bibliography/index
