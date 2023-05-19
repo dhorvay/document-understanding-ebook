@@ -39,17 +39,12 @@ parts:
       sections:
       - file: pdfparsers/overview/index
         sections:
-          - file: pdfparsers/overview/history
           - file: pdfparsers/overview/howitworks
       - file: pdfparsers/software/index
         sections:
-          - file: pdfparsers/software/engines
           - file: pdfparsers/software/packages
           - file: pdfparsers/software/gui
       - file: pdfparsers/notebooks/index
-      - file: pdfparsers/datasets/index
-      - file: pdfparsers/papers/index
-      - file: pdfparsers/benchmarks/index
       - file: pdfparsers/resources/index
   - file: docobjects/index
     sections:
