@@ -1,5 +1,9 @@
 # Document Structures
 
+Document structures are also important to consider when building a document understanding system. The structure of a document can be defined as the way in which the information is organized and presented.
+
+Depending on document structured and complexity, different approaches and techniques may be required to extract information from documents.
+
 In our context, there are three main types of document structures:
 
 <a href="https://horvay.dev/document-understanding-ebook/img/documentstructures/document-structures.png" target="_blank"><img alt="Document Structures" src="https://horvay.dev/document-understanding-ebook/img/documentstructures/document-structures.png"></img></a>
