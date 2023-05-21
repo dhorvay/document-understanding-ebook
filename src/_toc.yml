@@ -5,8 +5,8 @@ parts:
   chapters:
   - file: understandingdocuments/index
     sections:
-    - file: documentstructures/index
     - file: filetypes/index
+    - file: documentstructures/index
   - file: textextraction/index
     sections:
     - file: ocr/index
