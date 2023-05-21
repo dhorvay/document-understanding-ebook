@@ -6,47 +6,47 @@ parts:
   - file: documentunderstanding/index
   - file: textextraction/index
     sections:
-    - file: textextraction/ocr/index
+    - file: ocr/index
       sections:
-      - file: textextraction/ocr/overview/history
-      - file: textextraction/ocr/overview/howitworks
-      - file: textextraction/ocr/software/index
+      - file: ocr/overview/history
+      - file: ocr/overview/howitworks
+      - file: ocr/software/index
         sections:
-          - file: textextraction/ocr/software/engines
-          - file: textextraction/ocr/software/packages
-          - file: textextraction/ocr/software/gui
-      - file: textextraction/ocr/notebooks/index
-      - file: textextraction/ocr/datasets/index
-      - file: textextraction/ocr/papers/index
-      - file: textextraction/ocr/benchmarks/index
-      - file: textextraction/ocr/resources/index
-    - file: textextraction/hwtr/index
+          - file: ocr/software/engines
+          - file: ocr/software/packages
+          - file: ocr/software/gui
+      - file: ocr/notebooks/index
+      - file: ocr/datasets/index
+      - file: ocr/papers/index
+      - file: ocr/benchmarks/index
+      - file: ocr/resources/index
+    - file: hwtr/index
       sections:
-      - file: textextraction/hwtr/overview/index
+      - file: hwtr/overview/index
         sections:
-          - file: textextraction/hwtr/overview/history
-          - file: textextraction/hwtr/overview/howitworks
-      - file: textextraction/hwtr/software/index
+          - file: hwtr/overview/history
+          - file: hwtr/overview/howitworks
+      - file: hwtr/software/index
         sections:
-          - file: textextraction/hwtr/software/engines
-          - file: textextraction/hwtr/software/packages
-          - file: textextraction/hwtr/software/gui
-      - file: textextraction/hwtr/notebooks/index
-      - file: textextraction/hwtr/datasets/index
-      - file: textextraction/hwtr/papers/index
-      - file: textextraction/hwtr/benchmarks/index
-      - file: textextraction/hwtr/resources/index
-    - file: textextraction/pdfparsers/index
+          - file: hwtr/software/engines
+          - file: hwtr/software/packages
+          - file: hwtr/software/gui
+      - file: hwtr/notebooks/index
+      - file: hwtr/datasets/index
+      - file: hwtr/papers/index
+      - file: hwtr/benchmarks/index
+      - file: hwtr/resources/index
+    - file: pdfparsers/index
       sections:
-      - file: textextraction/pdfparsers/overview/index
+      - file: pdfparsers/overview/index
         sections:
-          - file: textextraction/pdfparsers/overview/howitworks
-      - file: textextraction/pdfparsers/software/index
+          - file: pdfparsers/overview/howitworks
+      - file: pdfparsers/software/index
         sections:
-          - file: textextraction/pdfparsers/software/packages
-          - file: textextraction/pdfparsers/software/gui
-      - file: textextraction/pdfparsers/notebooks/index
-      - file: textextraction/pdfparsers/resources/index
+          - file: pdfparsers/software/packages
+          - file: pdfparsers/software/gui
+      - file: pdfparsers/notebooks/index
+      - file: pdfparsers/resources/index
   - file: docobjects/index
     sections:
     - file: bcr/index
