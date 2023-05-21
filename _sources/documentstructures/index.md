@@ -2,7 +2,7 @@
 
 In our context, there are three main types of document structures:
 
-<a href="https://horvay.dev/document-understanding-ebook/img/documentstructures/documentstructures.png" target="_blank"><img alt="Document Structures" src="https://horvay.dev/document-understanding-ebook/img/documentstructures/documentstructures.png"></img></a>
+<a href="https://horvay.dev/document-understanding-ebook/img/documentstructures/document-structures.png" target="_blank"><img alt="Document Structures" src="https://horvay.dev/document-understanding-ebook/img/documentstructures/document-structures.png"></img></a>
 
 ## Structured
 Key characteristics:
