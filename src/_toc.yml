@@ -4,8 +4,9 @@ parts:
 - caption: Topic Guides
   chapters:
   - file: documentunderstanding/index
-  - file: documentstructures/index
-  - file: filetypes/index
+    sections:
+    - file: documentstructures/index
+    - file: filetypes/index
   - file: textextraction/index
     sections:
     - file: ocr/index
