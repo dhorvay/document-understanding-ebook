@@ -3,7 +3,7 @@ root: intro
 parts:
 - caption: Topic Guides
   chapters:
-  - file: documentunderstanding/index
+  - file: understandingdocuments/index
     sections:
     - file: documentstructures/index
     - file: filetypes/index

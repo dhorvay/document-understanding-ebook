@@ -4,7 +4,7 @@ In our context, there are three main types of document structures:
 
 <a href="https://horvay.dev/document-understanding-ebook/img/documentstructures/document-structures.png" target="_blank"><img alt="Document Structures" src="https://horvay.dev/document-understanding-ebook/img/documentstructures/document-structures.png"></img></a>
 
-## Structured
+## <span style="color:#579aca"><b>Structured</b></span> 
 Key characteristics:
 * Fixed page format
 * Indentifies where and what to enter
@@ -16,7 +16,7 @@ Examples:
 * Identification cards
 * Application forms
 
-## Semi-structured
+## <span style="color:#579aca"><b>Semi-structured</b></span>
 Key characteristics:
 * No fixed page format
 * Information is usually grouped in a logical manner
@@ -26,7 +26,7 @@ Examples:
 * Receipts
 * Purchase orders
 
-## Unstructured
+## <span style="color:#579aca"><b>Unstructured</b></span>
 Key characteristics:
 * Little to no organization
 * Continous, verbose, text-heavy content
