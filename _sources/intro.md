@@ -2,7 +2,7 @@
 
 Welcome to the ✨<span style="color:#579aca"><b>Document Understanding eBook</b></span>.🧙✨ - a comprehensive resource for understanding the world of software used in the Document Understanding field. If you've ever wondered how machines can understand and analyze complex documents, then I hope this will be a good resource for you.
 
-This book is not meant to be read front to back. There are a variety of topic guides, which can be read in any order. There is also a handy search button 🔍 at the top of the page, which can be used to find the keyword or topic you want to know more about.
+This book is not meant to be read front to back like a textbook. There are a variety of topic guides, which can be read in any order. There is also a handy search button 🔍 at the top of the page, which can be used to find the keyword or topic you want to know more about.
 
 Each topic guide is generally organized as follows:
 
