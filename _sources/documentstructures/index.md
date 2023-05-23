@@ -9,35 +9,54 @@ In our context, there are three main types of document structures:
 <a href="https://horvay.dev/document-understanding-ebook/img/documentstructures/document-structures.png" target="_blank"><img alt="Document Structures" src="https://horvay.dev/document-understanding-ebook/img/documentstructures/document-structures.png"></img></a>
 
 ## Structured
-**Key characteristics:**
+
+::::{grid}
+:gutter: 3
+
+:::{grid-item-card} <span style="color:#579aca"><b>Key characteristics</b></span>
 * Fixed page format
 * Identifies where and what to enter
 * Areas for data entry are clearly defined and labeled (e.g. textbox, checkbox, etc.)
 * Fields have one-to-one mapping with values (e.g. Account Number)
+:::
 
-**Examples:**
+:::{grid-item-card} <span style="color:#579aca"><b>Examples</b></span>
 * Tax forms
 * Identification cards
 * Application forms
+:::
+::::
 
 ## Semi-structured
-**Key characteristics:**
+::::{grid}
+:gutter: 3
+
+:::{grid-item-card} <span style="color:#579aca"><b>Key characteristics</b></span>
 * No fixed page format
 * Information is usually grouped in a logical manner
+:::
 
-**Examples:**
+:::{grid-item-card} <span style="color:#579aca"><b>Examples</b></span>
 * Invoices
 * Receipts
 * Purchase orders
+:::
+::::
 
 ## Unstructured
-**Key characteristics:**
+::::{grid}
+:gutter: 3
+
+:::{grid-item-card} <span style="color:#579aca"><b>Key characteristics</b></span>
 * Little to no organization
 * Continous, verbose, text-heavy content
 * Information is can be communicated in sentence or paragraph
 * Complex for non-subject matter experts to read and understand
+:::
 
-**Examples:**
+:::{grid-item-card} <span style="color:#579aca"><b>Examples</b></span>
 * Contracts
 * Legal documents
 * Medical records
+:::
+::::
