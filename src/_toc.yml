@@ -1,12 +1,14 @@
 format: jb-book
 root: intro
 parts:
-- caption: Topic Guides
+- caption: Prerequisites
   chapters:
   - file: understandingdocuments/index
     sections:
     - file: filetypes/index
     - file: documentstructures/index
+- caption: Topic Guides
+  chapters:
   - file: textextraction/index
     sections:
     - file: ocr/index
