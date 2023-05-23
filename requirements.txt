@@ -2,3 +2,4 @@ jupyter-book
 ghp-import
 docutils==0.17.1
 sphinxcontrib-bibtex==2.2.0
+sphinx-design
