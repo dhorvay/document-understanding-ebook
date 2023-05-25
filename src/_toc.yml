@@ -25,173 +25,173 @@ parts:
       - file: ocr/papers/index
       - file: ocr/benchmarks/index
       - file: ocr/resources/index
-    - file: hwtr/index
-      sections:
-      - file: hwtr/overview/index
-        sections:
-          - file: hwtr/overview/history
-          - file: hwtr/overview/howitworks
-      - file: hwtr/software/index
-        sections:
-          - file: hwtr/software/engines
-          - file: hwtr/software/packages
-          - file: hwtr/software/gui
-      - file: hwtr/notebooks/index
-      - file: hwtr/datasets/index
-      - file: hwtr/papers/index
-      - file: hwtr/benchmarks/index
-      - file: hwtr/resources/index
-    - file: pdfparsers/index
-      sections:
-      - file: pdfparsers/overview/index
-        sections:
-          - file: pdfparsers/overview/howitworks
-      - file: pdfparsers/software/index
-        sections:
-          - file: pdfparsers/software/packages
-          - file: pdfparsers/software/gui
-      - file: pdfparsers/notebooks/index
-      - file: pdfparsers/resources/index
-  - file: docobjects/index
-    sections:
-    - file: bcr/index
-      sections:
-      - file: bcr/overview/index
-        sections:
-          - file: bcr/overview/howitworks
-      - file: bcr/software/index
-        sections:
-          - file: bcr/software/packages
-          - file: bcr/software/gui
-      - file: bcr/notebooks/index
-      - file: bcr/datasets/index
-      - file: bcr/papers/index
-      - file: bcr/resources/index
-    - file: sigr/index
-      sections:
-      - file: sigr/overview/index
-        sections:
-          - file: sigr/overview/howitworks
-      - file: sigr/software/index
-        sections:
-          - file: sigr/software/packages
-          - file: sigr/software/gui
-      - file: sigr/notebooks/index
-      - file: sigr/datasets/index
-      - file: sigr/papers/index
-      - file: sigr/benchmarks/index
-      - file: sigr/resources/index
-    - file: tblr/index
-      sections:
-      - file: tblr/overview/index
-        sections:
-          - file: tblr/overview/history
-          - file: tblr/overview/howitworks
-      - file: tblr/software/index
-        sections:
-          - file: tblr/software/engines
-          - file: tblr/software/packages
-          - file: tblr/software/gui
-      - file: tblr/notebooks/index
-      - file: tblr/datasets/index
-      - file: tblr/papers/index
-      - file: tblr/benchmarks/index
-      - file: tblr/resources/index
-  - file: classification/index
-    sections:
-    - file: classification/overview/index
-      sections:
-        - file: classification/overview/history
-        - file: classification/overview/howitworks
-    - file: classification/software/index
-      sections:
-        - file: classification/software/engines
-        - file: classification/software/packages
-        - file: classification/software/gui
-    - file: classification/notebooks/index
-    - file: classification/datasets/index
-    - file: classification/papers/index
-    - file: classification/benchmarks/index
-    - file: classification/resources/index
-  - file: nlp/index
-    sections:
-    - file: nlp/overview/index
-      sections:
-        - file: nlp/overview/history
-        - file: nlp/overview/howitworks
-    - file: nlp/software/index
-      sections:
-        - file: nlp/software/engines
-        - file: nlp/software/packages
-        - file: nlp/software/gui
-    - file: nlp/notebooks/index
-    - file: nlp/datasets/index
-    - file: nlp/papers/index
-    - file: nlp/benchmarks/index
-    - file: nlp/resources/index
-  - file: dla/index
-    sections:
-    - file: dla/overview/index
-      sections:
-        - file: dla/overview/history
-        - file: dla/overview/howitworks
-    - file: dla/software/index
-      sections:
-        - file: dla/software/engines
-        - file: dla/software/packages
-        - file: dla/software/gui
-    - file: dla/notebooks/index
-    - file: dla/datasets/index
-    - file: dla/papers/index
-    - file: dla/benchmarks/index
-    - file: dla/resources/index
-  - file: dqa/index
-    sections:
-    - file: dqa/overview/index
-      sections:
-        - file: dqa/overview/history
-        - file: dqa/overview/howitworks
-    - file: dqa/software/index
-      sections:
-        - file: dqa/software/engines
-        - file: dqa/software/packages
-        - file: dqa/software/gui
-    - file: dqa/notebooks/index
-    - file: dqa/datasets/index
-    - file: dqa/papers/index
-    - file: dqa/benchmarks/index
-    - file: dqa/resources/index
-  - file: kie/index
-    sections:
-    - file: kie/overview/index
-      sections:
-        - file: kie/overview/history
-        - file: kie/overview/howitworks
-    - file: kie/software/index
-      sections:
-        - file: kie/software/engines
-        - file: kie/software/packages
-        - file: kie/software/gui
-    - file: kie/notebooks/index
-    - file: kie/datasets/index
-    - file: kie/papers/index
-    - file: kie/benchmarks/index
-    - file: kie/resources/index
-  - file: summarization/index
-    sections:
-    - file: summarization/overview/index
-      sections:
-        - file: summarization/overview/history
-        - file: summarization/overview/howitworks
-    - file: summarization/software/index
-      sections:
-        - file: summarization/software/engines
-        - file: summarization/software/packages
-        - file: summarization/software/gui
-    - file: summarization/notebooks/index
-    - file: summarization/datasets/index
-    - file: summarization/papers/index
-    - file: summarization/benchmarks/index
-    - file: summarization/resources/index
-  - file: related/index
+  #   - file: hwtr/index
+  #     sections:
+  #     - file: hwtr/overview/index
+  #       sections:
+  #         - file: hwtr/overview/history
+  #         - file: hwtr/overview/howitworks
+  #     - file: hwtr/software/index
+  #       sections:
+  #         - file: hwtr/software/engines
+  #         - file: hwtr/software/packages
+  #         - file: hwtr/software/gui
+  #     - file: hwtr/notebooks/index
+  #     - file: hwtr/datasets/index
+  #     - file: hwtr/papers/index
+  #     - file: hwtr/benchmarks/index
+  #     - file: hwtr/resources/index
+  #   - file: pdfparsers/index
+  #     sections:
+  #     - file: pdfparsers/overview/index
+  #       sections:
+  #         - file: pdfparsers/overview/howitworks
+  #     - file: pdfparsers/software/index
+  #       sections:
+  #         - file: pdfparsers/software/packages
+  #         - file: pdfparsers/software/gui
+  #     - file: pdfparsers/notebooks/index
+  #     - file: pdfparsers/resources/index
+  # - file: docobjects/index
+  #   sections:
+  #   - file: bcr/index
+  #     sections:
+  #     - file: bcr/overview/index
+  #       sections:
+  #         - file: bcr/overview/howitworks
+  #     - file: bcr/software/index
+  #       sections:
+  #         - file: bcr/software/packages
+  #         - file: bcr/software/gui
+  #     - file: bcr/notebooks/index
+  #     - file: bcr/datasets/index
+  #     - file: bcr/papers/index
+  #     - file: bcr/resources/index
+  #   - file: sigr/index
+  #     sections:
+  #     - file: sigr/overview/index
+  #       sections:
+  #         - file: sigr/overview/howitworks
+  #     - file: sigr/software/index
+  #       sections:
+  #         - file: sigr/software/packages
+  #         - file: sigr/software/gui
+  #     - file: sigr/notebooks/index
+  #     - file: sigr/datasets/index
+  #     - file: sigr/papers/index
+  #     - file: sigr/benchmarks/index
+  #     - file: sigr/resources/index
+  #   - file: tblr/index
+  #     sections:
+  #     - file: tblr/overview/index
+  #       sections:
+  #         - file: tblr/overview/history
+  #         - file: tblr/overview/howitworks
+  #     - file: tblr/software/index
+  #       sections:
+  #         - file: tblr/software/engines
+  #         - file: tblr/software/packages
+  #         - file: tblr/software/gui
+  #     - file: tblr/notebooks/index
+  #     - file: tblr/datasets/index
+  #     - file: tblr/papers/index
+  #     - file: tblr/benchmarks/index
+  #     - file: tblr/resources/index
+  # - file: classification/index
+  #   sections:
+  #   - file: classification/overview/index
+  #     sections:
+  #       - file: classification/overview/history
+  #       - file: classification/overview/howitworks
+  #   - file: classification/software/index
+  #     sections:
+  #       - file: classification/software/engines
+  #       - file: classification/software/packages
+  #       - file: classification/software/gui
+  #   - file: classification/notebooks/index
+  #   - file: classification/datasets/index
+  #   - file: classification/papers/index
+  #   - file: classification/benchmarks/index
+  #   - file: classification/resources/index
+  # - file: nlp/index
+  #   sections:
+  #   - file: nlp/overview/index
+  #     sections:
+  #       - file: nlp/overview/history
+  #       - file: nlp/overview/howitworks
+  #   - file: nlp/software/index
+  #     sections:
+  #       - file: nlp/software/engines
+  #       - file: nlp/software/packages
+  #       - file: nlp/software/gui
+  #   - file: nlp/notebooks/index
+  #   - file: nlp/datasets/index
+  #   - file: nlp/papers/index
+  #   - file: nlp/benchmarks/index
+  #   - file: nlp/resources/index
+  # - file: dla/index
+  #   sections:
+  #   - file: dla/overview/index
+  #     sections:
+  #       - file: dla/overview/history
+  #       - file: dla/overview/howitworks
+  #   - file: dla/software/index
+  #     sections:
+  #       - file: dla/software/engines
+  #       - file: dla/software/packages
+  #       - file: dla/software/gui
+  #   - file: dla/notebooks/index
+  #   - file: dla/datasets/index
+  #   - file: dla/papers/index
+  #   - file: dla/benchmarks/index
+  #   - file: dla/resources/index
+  # - file: dqa/index
+  #   sections:
+  #   - file: dqa/overview/index
+  #     sections:
+  #       - file: dqa/overview/history
+  #       - file: dqa/overview/howitworks
+  #   - file: dqa/software/index
+  #     sections:
+  #       - file: dqa/software/engines
+  #       - file: dqa/software/packages
+  #       - file: dqa/software/gui
+  #   - file: dqa/notebooks/index
+  #   - file: dqa/datasets/index
+  #   - file: dqa/papers/index
+  #   - file: dqa/benchmarks/index
+  #   - file: dqa/resources/index
+  # - file: kie/index
+  #   sections:
+  #   - file: kie/overview/index
+  #     sections:
+  #       - file: kie/overview/history
+  #       - file: kie/overview/howitworks
+  #   - file: kie/software/index
+  #     sections:
+  #       - file: kie/software/engines
+  #       - file: kie/software/packages
+  #       - file: kie/software/gui
+  #   - file: kie/notebooks/index
+  #   - file: kie/datasets/index
+  #   - file: kie/papers/index
+  #   - file: kie/benchmarks/index
+  #   - file: kie/resources/index
+  # - file: summarization/index
+  #   sections:
+  #   - file: summarization/overview/index
+  #     sections:
+  #       - file: summarization/overview/history
+  #       - file: summarization/overview/howitworks
+  #   - file: summarization/software/index
+  #     sections:
+  #       - file: summarization/software/engines
+  #       - file: summarization/software/packages
+  #       - file: summarization/software/gui
+  #   - file: summarization/notebooks/index
+  #   - file: summarization/datasets/index
+  #   - file: summarization/papers/index
+  #   - file: summarization/benchmarks/index
+  #   - file: summarization/resources/index
+  # - file: related/index
   - file: bibliography/index
