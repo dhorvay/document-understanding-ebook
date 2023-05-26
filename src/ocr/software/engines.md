@@ -17,6 +17,18 @@ Documentation: [https://ocropus.github.io/](https://ocropus.github.io/)
 
 OCRopus is an open source engine developed by Google. It offers a comprehensive set of tools and algorithms for recognizing and extracting text from scanned documents and images. With its modular architecture and support for multiple languages and fonts, OCRopus enables developers to create customizable OCR solutions. It includes components for layout analysis, character recognition, and post-processing, allowing for accurate and efficient text extraction. OCRopus is widely used in research and development projects, offering a flexible and accessible platform for OCR tasks and serving as the foundation for various OCR applications and services.
 
+### Kraken
+
+Documentation: [https://kraken.re/main/index.html](https://kraken.re/main/index.html)
+
+Kraken is an open source OCR engine developed by the University of Innsbruck. It is a fork of OCRopus. It is written in Python and supports over 40 languages. It is designed to be modular and extensible, allowing developers to easily integrate it into their applications. Kraken offers a wide range of features, including layout analysis, text recognition, and post-processing. It also provides tools for training custom models and evaluating their performance. Kraken is widely used in research and development projects, offering a flexible and accessible platform for OCR tasks and serving as the foundation for various OCR applications and services.
+
+### Cuneiform
+
+Documentation: [https://launchpad.net/cuneiform-linux](https://launchpad.net/cuneiform-linux)
+
+Cuneiform is an open source OCR engine developed by Cognitive Technologies. It is written in C++ and supports over 30 languages.In addition to text recognition it also does  layout analysis and text format recognition. It is available under the Apache License 2.0. Cuneiform is widely used in research and development projects, offering a flexible and accessible platform for OCR tasks and serving as the foundation for various OCR applications and services.
+
 ### EasyOCR
 
 Documentation: [https://github.com/JaidedAI/EasyOCR](https://github.com/JaidedAI/EasyOCR)
