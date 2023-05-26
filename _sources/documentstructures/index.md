@@ -1,4 +1,4 @@
-# 🔷 Document Structures
+# 🧱 Document Structures
 
 Document structures are also important to consider when building a document understanding system. The structure of a document can be defined as the way in which the information is organized and presented.
 

@@ -167,7 +167,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../understandingdocuments/index.html">Understanding Documents</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../filetypes/index.html">📂 File Types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../documentstructures/index.html">🔷 Document Structures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../documentstructures/index.html">🧱 Document Structures</a></li>
 </ul>
 </li>
 </ul>
@@ -363,7 +363,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -379,6 +381,25 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python">Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tesserocr">tesserocr</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pytesseract">pytesseract</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyocr">pyocr</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#easyocr">EasyOCR</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ocrmypdf">OCRmyPDF</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ocropy">ocropy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paddleocr">PaddleOCR</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calamari">Calamari</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attention-ocr">attention-ocr</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -390,6 +411,68 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="packages">
 <h1>📦 Packages<a class="headerlink" href="#packages" title="Permalink to this heading">#</a></h1>
+<section id="python">
+<h2>Python<a class="headerlink" href="#python" title="Permalink to this heading">#</a></h2>
+<section id="tesserocr">
+<h3>tesserocr<a class="headerlink" href="#tesserocr" title="Permalink to this heading">#</a></h3>
+<p>License: <a class="reference external" href="https://opensource.org/licenses/MIT"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" /></a></p>
+<p>Source: <a class="github reference external" href="https://github.com/sirfz/tesserocr">sirfz/tesserocr</a></p>
+<p>Package: <a class="reference external" href="https://pypi.org/project/tesserocr">https://pypi.org/project/tesserocr</a></p>
+</section>
+<section id="pytesseract">
+<h3>pytesseract<a class="headerlink" href="#pytesseract" title="Permalink to this heading">#</a></h3>
+<p>License: <a class="reference external" href="https://opensource.org/licenses/Apache-2.0"><img alt="License" src="https://img.shields.io/badge/License-Apache_2.0-blue.svg" /></a></p>
+<p>Source: <a class="github reference external" href="https://github.com/madmaze/pytesseract">madmaze/pytesseract</a></p>
+<p>Package: <a class="reference external" href="https://pypi.org/project/pytesseract">https://pypi.org/project/pytesseract</a></p>
+</section>
+<section id="pyocr">
+<h3>pyocr<a class="headerlink" href="#pyocr" title="Permalink to this heading">#</a></h3>
+<p>License: <a class="reference external" href="https://gitlab.gnome.org/World/OpenPaperwork/pyocr/-/blob/master/COPYING"><img alt="License: GPL v3" src="https://img.shields.io/badge/License-GPLv3-blue.svg" /></a></p>
+<p>Homepage: <a class="reference external" href="https://openpaper.work/en/projects/">https://openpaper.work/en/projects/</a></p>
+<p>Source: <a class="reference external" href="https://gitlab.gnome.org/World/OpenPaperwork/pyocr">https://gitlab.gnome.org/World/OpenPaperwork/pyocr</a></p>
+<p>Package: <a class="reference external" href="https://pypi.org/project/pyocr">https://pypi.org/project/pyocr</a></p>
+</section>
+<section id="easyocr">
+<h3>EasyOCR<a class="headerlink" href="#easyocr" title="Permalink to this heading">#</a></h3>
+<p>License: <a class="reference external" href="https://opensource.org/licenses/Apache-2.0"><img alt="License" src="https://img.shields.io/badge/License-Apache_2.0-blue.svg" /></a></p>
+<p>Homepage: <a class="reference external" href="https://www.jaided.ai/easyocr">https://www.jaided.ai/easyocr/</a></p>
+<p>Source: <a class="github reference external" href="https://github.com/JaidedAI/EasyOCR">JaidedAI/EasyOCR</a></p>
+<p>Package: <a class="reference external" href="https://pypi.org/project/easyocr/">https://pypi.org/project/easyocr/</a></p>
+</section>
+<section id="ocrmypdf">
+<h3>OCRmyPDF<a class="headerlink" href="#ocrmypdf" title="Permalink to this heading">#</a></h3>
+<p>License: <a class="reference external" href="https://opensource.org/licenses/MPL-2.0"><img alt="License: MPL 2.0" src="https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg" /></a></p>
+<p>Homepage: <a class="reference external" href="https://ocrmypdf.readthedocs.io/en/latest/">https://ocrmypdf.readthedocs.io/en/latest/</a></p>
+<p>Source: <a class="github reference external" href="https://github.com/ocrmypdf/OCRmyPDF">ocrmypdf/OCRmyPDF</a></p>
+<p>Package: <a class="reference external" href="https://pypi.org/project/ocrmypdf/">https://pypi.org/project/ocrmypdf/</a></p>
+</section>
+<section id="ocropy">
+<h3>ocropy<a class="headerlink" href="#ocropy" title="Permalink to this heading">#</a></h3>
+<p>License: <a class="reference external" href="https://opensource.org/licenses/Apache-2.0"><img alt="License: Apache 2.0" src="https://img.shields.io/badge/License-Apache_2.0-blue.svg" /></a></p>
+<p>Homepage: <a class="reference external" href="https://ocropus.github.io/">https://ocropus.github.io/</a></p>
+<p>Source: <a class="github reference external" href="https://github.com/ocropus/ocropy">ocropus/ocropy</a></p>
+<p>Package: <a class="reference external" href="https://pypi.org/project/ocropy/">https://pypi.org/project/ocropy/</a></p>
+</section>
+<section id="paddleocr">
+<h3>PaddleOCR<a class="headerlink" href="#paddleocr" title="Permalink to this heading">#</a></h3>
+<p>License: <a class="reference external" href="https://opensource.org/licenses/Apache-2.0"><img alt="License" src="https://img.shields.io/badge/License-Apache_2.0-blue.svg" /></a></p>
+<p>Source: <a class="github reference external" href="https://github.com/PaddlePaddle/PaddleOCR">PaddlePaddle/PaddleOCR</a></p>
+<p>Package: <a class="reference external" href="https://pypi.org/project/paddleocr/">https://pypi.org/project/paddleocr/</a></p>
+</section>
+<section id="calamari">
+<h3>Calamari<a class="headerlink" href="#calamari" title="Permalink to this heading">#</a></h3>
+<p>License: <a class="reference external" href="https://opensource.org/licenses/Apache-2.0"><img alt="License" src="https://img.shields.io/badge/License-Apache_2.0-blue.svg" /></a></p>
+<p>Homepage: <a class="reference external" href="https://calamari-ocr.readthedocs.io/en/latest/">https://calamari-ocr.readthedocs.io/en/latest/</a></p>
+<p>Source: <a class="github reference external" href="https://github.com/Calamari-OCR/calamari">Calamari-OCR/calamari</a></p>
+<p>Package: <a class="reference external" href="https://pypi.org/project/calamari-ocr/">https://pypi.org/project/calamari-ocr/</a></p>
+</section>
+<section id="attention-ocr">
+<h3>attention-ocr<a class="headerlink" href="#attention-ocr" title="Permalink to this heading">#</a></h3>
+<p>License: <a class="reference external" href="https://opensource.org/licenses/MIT"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" /></a></p>
+<p>Source: <a class="github reference external" href="https://github.com/emedvedev/attention-ocr">emedvedev/attention-ocr</a></p>
+<p>Package: <a class="reference external" href="https://pypi.org/project/aocr/">https://pypi.org/project/aocr/</a></p>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -450,6 +533,31 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python">Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tesserocr">tesserocr</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pytesseract">pytesseract</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyocr">pyocr</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#easyocr">EasyOCR</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ocrmypdf">OCRmyPDF</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ocropy">ocropy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paddleocr">PaddleOCR</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calamari">Calamari</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attention-ocr">attention-ocr</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
