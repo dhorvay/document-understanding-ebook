@@ -5,7 +5,7 @@ parts:
   chapters:
   - file: understandingdocuments/index
     sections:
-    - file: filetypes/index
+    - file: documentfileformats/index
     - file: documentstructures/index
 - caption: Topic Guides
   chapters:
