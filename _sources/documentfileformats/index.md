@@ -1,4 +1,4 @@
-# 📂 File Types
+# 📂 Document File Formats
 
 Documents can come in a multitude of electronic file formats. The following is a list of the most common file types for document understanding systems:
 
