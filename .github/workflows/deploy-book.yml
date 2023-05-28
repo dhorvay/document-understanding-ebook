@@ -22,6 +22,12 @@ jobs:
       with:
         submodules: recursive
 
+    - name: Install apt packages
+    - uses: awalsh128/cache-apt-pkgs-action@v1
+        with:
+          packages: tesseract-ocr libtesseract-dev
+          version: 1.0
+
     # Install dependencies
     - name: Set up Python 3.10
       uses: actions/setup-python@v4
