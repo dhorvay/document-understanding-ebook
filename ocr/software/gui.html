@@ -53,6 +53,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/mybinder_postfix.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -185,8 +186,8 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../notebooks/index.html">📔 Notebooks</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../binder/ocr/tesseract/pytesseract_basic_example.html">Python Tesseract (pytesseract) Basic Example</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../binder/ocr/tesseract/pytesseract_languages_example.html">Python Tesseract (pytesseract) Languages Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../binder/document-understanding-ebook/ocr/tesseract/pytesseract_basic_example.html">Python Tesseract (pytesseract) Basic Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../binder/document-understanding-ebook/ocr/tesseract/pytesseract_languages_example.html">Python Tesseract (pytesseract) Languages Example</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../datasets/index.html">🗄️ Datasets</a></li>
@@ -391,7 +392,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ocrfeeder">OCRFeeder</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open-source-ocr-guis">Open-source OCR GUIs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ocrfeeder">OCRFeeder</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -405,11 +409,14 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="graphical-user-interfaces">
 <h1>💻 Graphical User Interfaces<a class="headerlink" href="#graphical-user-interfaces" title="Permalink to this heading">#</a></h1>
+<section id="open-source-ocr-guis">
+<h2>Open-source OCR GUIs<a class="headerlink" href="#open-source-ocr-guis" title="Permalink to this heading">#</a></h2>
 <section id="ocrfeeder">
-<h2>OCRFeeder<a class="headerlink" href="#ocrfeeder" title="Permalink to this heading">#</a></h2>
+<h3>OCRFeeder<a class="headerlink" href="#ocrfeeder" title="Permalink to this heading">#</a></h3>
 <p>Homepage: <a class="reference external" href="https://wiki.gnome.org/Apps/OCRFeeder">https://wiki.gnome.org/Apps/OCRFeeder</a></p>
 <p>Source: <a class="reference external" href="https://gitlab.gnome.org/GNOME/ocrfeeder">https://gitlab.gnome.org/GNOME/ocrfeeder</a></p>
 <p>OCRFeeder is a document layout analysis and optical character recognition system. Given the images it will automatically outline its contents, distinguish between what’s graphics and text and perform OCR over the latter. It generates multiple formats being its main one ODT. OCRFeeder has a GTK+ graphical user interface that allows the users to control the application and, for example, edit and correct the automatic recognition. It can also be used from the command line for automation.</p>
+</section>
 </section>
 </section>
 
@@ -417,7 +424,7 @@ document.write(`
     {
         requestKernel: true,
         binderOptions: {
-            repo: "dhorvay/document-understanding-ebook",
+            repo: "binder-examples/jupyter-stacks-datascience",
             ref: "master",
         },
         codeMirrorConfig: {
@@ -480,7 +487,10 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ocrfeeder">OCRFeeder</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open-source-ocr-guis">Open-source OCR GUIs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ocrfeeder">OCRFeeder</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
