@@ -510,6 +510,11 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>~/.local/share/tesseract-ocr/4.00/tessdata_fast
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="list-supported-languages">
@@ -523,7 +528,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;eng&#39;, &#39;osd&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
 </pre></div>
 </div>
 </div>
@@ -554,39 +559,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello World!
-
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="spanish">
-<h3>Spanish<a class="headerlink" href="#spanish" title="Permalink to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spa_path</span> <span class="o">=</span> <span class="s1">&#39;../../data/hello_world_spanish.png&#39;</span>
-<span class="n">spa_im</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">spa_path</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">spa_im</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../../_images/d1de28dc69ecf2b859a36e5f9dddfd9f9516caeecfc24b9dd5c244a886eda469.png" src="../../../_images/d1de28dc69ecf2b859a36e5f9dddfd9f9516caeecfc24b9dd5c244a886eda469.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">output</span> <span class="o">=</span> <span class="n">pytesseract</span><span class="o">.</span><span class="n">image_to_string</span><span class="p">(</span><span class="n">spa_im</span><span class="p">,</span><span class="n">lang</span><span class="o">=</span><span class="s1">&#39;spa&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TesseractError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">output</span> <span class="o">=</span> <span class="n">pytesseract</span><span class="o">.</span><span class="n">image_to_string</span><span class="p">(</span><span class="n">spa_im</span><span class="p">,</span><span class="n">lang</span><span class="o">=</span><span class="s1">&#39;spa&#39;</span><span class="p">)</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">output</span> <span class="o">=</span> <span class="n">pytesseract</span><span class="o">.</span><span class="n">image_to_string</span><span class="p">(</span><span class="n">eng_im</span><span class="p">,</span><span class="n">lang</span><span class="o">=</span><span class="s1">&#39;eng&#39;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
 
 <span class="nn">File /opt/hostedtoolcache/Python/3.10.11/x64/lib/python3.10/site-packages/pytesseract/pytesseract.py:423,</span> in <span class="ni">image_to_string</span><span class="nt">(image, lang, config, nice, output_type, timeout)</span>
@@ -628,7 +604,36 @@ document.write(`
 <span class="g g-Whitespace">    </span><span class="mi">263</span>     <span class="k">if</span> <span class="n">proc</span><span class="o">.</span><span class="n">returncode</span><span class="p">:</span>
 <span class="ne">--&gt; </span><span class="mi">264</span>         <span class="k">raise</span> <span class="n">TesseractError</span><span class="p">(</span><span class="n">proc</span><span class="o">.</span><span class="n">returncode</span><span class="p">,</span> <span class="n">get_errors</span><span class="p">(</span><span class="n">error_string</span><span class="p">))</span>
 
-<span class="ne">TesseractError</span>: (1, &#39;Error opening data file /usr/share/tesseract-ocr/4.00/tessdata/spa.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your &quot;tessdata&quot; directory. Failed loading language \&#39;spa\&#39; Tesseract couldn\&#39;t load any languages! Could not initialize tesseract.&#39;)
+<span class="ne">TesseractError</span>: (1, &#39;Error opening data file ~/.local/share/tesseract-ocr/4.00/tessdata_fast/eng.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your &quot;tessdata&quot; directory. Failed loading language \&#39;eng\&#39; Tesseract couldn\&#39;t load any languages! Could not initialize tesseract.&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="spanish">
+<h3>Spanish<a class="headerlink" href="#spanish" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spa_path</span> <span class="o">=</span> <span class="s1">&#39;../../data/hello_world_spanish.png&#39;</span>
+<span class="n">spa_im</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">spa_path</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">spa_im</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/d1de28dc69ecf2b859a36e5f9dddfd9f9516caeecfc24b9dd5c244a886eda469.png" src="../../../_images/d1de28dc69ecf2b859a36e5f9dddfd9f9516caeecfc24b9dd5c244a886eda469.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">output</span> <span class="o">=</span> <span class="n">pytesseract</span><span class="o">.</span><span class="n">image_to_string</span><span class="p">(</span><span class="n">spa_im</span><span class="p">,</span><span class="n">lang</span><span class="o">=</span><span class="s1">&#39;spa&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>¡Hola Mundo!
+
 </pre></div>
 </div>
 </div>
