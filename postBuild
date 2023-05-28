@@ -1,0 +1,5 @@
+#!/bin/bash
+
+set -ex
+git clone https://github.com/tesseract-ocr/tessdata_fast.git ~/.local/share/tesseract-ocr/4.00/tessdata_fast
+git clone https://github.com/tesseract-ocr/tessdata_best.git ~/.local/share/tesseract-ocr/4.00/tessdata_best
