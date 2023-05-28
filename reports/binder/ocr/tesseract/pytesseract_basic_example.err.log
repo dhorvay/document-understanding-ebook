@@ -65,5 +65,5 @@ File [0;32m/opt/hostedtoolcache/Python/3.10.11/x64/lib/python3.10/site-packages
 [1;32m    263[0m     [38;5;28;01mif[39;00m proc[38;5;241m.[39mreturncode:
 [0;32m--> 264[0m         [38;5;28;01mraise[39;00m TesseractError(proc[38;5;241m.[39mreturncode, get_errors(error_string))
 
-[0;31mTesseractError[0m: (1, 'Error opening data file ~/.local/share/tesseract-ocr/4.00/tessdata_fast/eng.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'eng\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
+[0;31mTesseractError[0m: (1, 'Error opening data file ./tessdata_fast/eng.traineddata Please make sure the TESSDATA_PREFIX environment variable is set to your "tessdata" directory. Failed loading language \'eng\' Tesseract couldn\'t load any languages! Could not initialize tesseract.')
 
