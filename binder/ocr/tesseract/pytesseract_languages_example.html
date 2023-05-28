@@ -487,17 +487,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pytesseract</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;PIL&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <section id="ensure-tessdata-is-installed">
 <h2>Ensure tessdata is installed<a class="headerlink" href="#ensure-tessdata-is-installed" title="Permalink to this heading">#</a></h2>
@@ -521,11 +510,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/devin/.local/share/tesseract-ocr/4.00/tessdata_fast
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="list-supported-languages">
@@ -539,7 +523,69 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;afr&#39;, &#39;amh&#39;, &#39;ara&#39;, &#39;asm&#39;, &#39;aze&#39;, &#39;aze_cyrl&#39;, &#39;bel&#39;, &#39;ben&#39;, &#39;bod&#39;, &#39;bos&#39;, &#39;bre&#39;, &#39;bul&#39;, &#39;cat&#39;, &#39;ceb&#39;, &#39;ces&#39;, &#39;chi_sim&#39;, &#39;chi_sim_vert&#39;, &#39;chi_tra&#39;, &#39;chi_tra_vert&#39;, &#39;chr&#39;, &#39;cos&#39;, &#39;cym&#39;, &#39;dan&#39;, &#39;deu&#39;, &#39;div&#39;, &#39;dzo&#39;, &#39;ell&#39;, &#39;eng&#39;, &#39;enm&#39;, &#39;epo&#39;, &#39;equ&#39;, &#39;est&#39;, &#39;eus&#39;, &#39;fao&#39;, &#39;fas&#39;, &#39;fil&#39;, &#39;fin&#39;, &#39;fra&#39;, &#39;frk&#39;, &#39;frm&#39;, &#39;fry&#39;, &#39;gla&#39;, &#39;gle&#39;, &#39;glg&#39;, &#39;grc&#39;, &#39;guj&#39;, &#39;hat&#39;, &#39;heb&#39;, &#39;hin&#39;, &#39;hrv&#39;, &#39;hun&#39;, &#39;hye&#39;, &#39;iku&#39;, &#39;ind&#39;, &#39;isl&#39;, &#39;ita&#39;, &#39;ita_old&#39;, &#39;jav&#39;, &#39;jpn&#39;, &#39;jpn_vert&#39;, &#39;kan&#39;, &#39;kat&#39;, &#39;kat_old&#39;, &#39;kaz&#39;, &#39;khm&#39;, &#39;kir&#39;, &#39;kmr&#39;, &#39;kor&#39;, &#39;kor_vert&#39;, &#39;lao&#39;, &#39;lat&#39;, &#39;lav&#39;, &#39;lit&#39;, &#39;ltz&#39;, &#39;mal&#39;, &#39;mar&#39;, &#39;mkd&#39;, &#39;mlt&#39;, &#39;mon&#39;, &#39;mri&#39;, &#39;msa&#39;, &#39;mya&#39;, &#39;nep&#39;, &#39;nld&#39;, &#39;nor&#39;, &#39;oci&#39;, &#39;ori&#39;, &#39;osd&#39;, &#39;pan&#39;, &#39;pol&#39;, &#39;por&#39;, &#39;pus&#39;, &#39;que&#39;, &#39;ron&#39;, &#39;rus&#39;, &#39;san&#39;, &#39;sin&#39;, &#39;slk&#39;, &#39;slv&#39;, &#39;snd&#39;, &#39;spa&#39;, &#39;spa_old&#39;, &#39;sqi&#39;, &#39;srp&#39;, &#39;srp_latn&#39;, &#39;sun&#39;, &#39;swa&#39;, &#39;swe&#39;, &#39;syr&#39;, &#39;tam&#39;, &#39;tat&#39;, &#39;tel&#39;, &#39;tgk&#39;, &#39;tha&#39;, &#39;tir&#39;, &#39;ton&#39;, &#39;tur&#39;, &#39;uig&#39;, &#39;ukr&#39;, &#39;urd&#39;, &#39;uzb&#39;, &#39;uzb_cyrl&#39;, &#39;vie&#39;, &#39;yid&#39;, &#39;yor&#39;]
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">File /opt/hostedtoolcache/Python/3.10.11/x64/lib/python3.10/site-packages/pytesseract/pytesseract.py:360,</span> in <span class="ni">get_languages</span><span class="nt">(config)</span>
+<span class="g g-Whitespace">    </span><span class="mi">359</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">360</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">361</span>         <span class="n">cmd_args</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">362</span>         <span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">363</span>         <span class="n">stderr</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">STDOUT</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">364</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">365</span> <span class="k">except</span> <span class="ne">OSError</span><span class="p">:</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.10.11/x64/lib/python3.10/subprocess.py:503,</span> in <span class="ni">run</span><span class="nt">(input, capture_output, timeout, check, *popenargs, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">501</span>     <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;stderr&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">PIPE</span>
+<span class="ne">--&gt; </span><span class="mi">503</span> <span class="k">with</span> <span class="n">Popen</span><span class="p">(</span><span class="o">*</span><span class="n">popenargs</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="k">as</span> <span class="n">process</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">504</span>     <span class="k">try</span><span class="p">:</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.10.11/x64/lib/python3.10/subprocess.py:971,</span> in <span class="ni">Popen.__init__</span><span class="nt">(self, args, bufsize, executable, stdin, stdout, stderr, preexec_fn, close_fds, shell, cwd, env, universal_newlines, startupinfo, creationflags, restore_signals, start_new_session, pass_fds, user, group, extra_groups, encoding, errors, text, umask, pipesize)</span>
+<span class="g g-Whitespace">    </span><span class="mi">968</span>             <span class="bp">self</span><span class="o">.</span><span class="n">stderr</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">TextIOWrapper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">stderr</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">969</span>                     <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">971</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_execute_child</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">executable</span><span class="p">,</span> <span class="n">preexec_fn</span><span class="p">,</span> <span class="n">close_fds</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">972</span>                         <span class="n">pass_fds</span><span class="p">,</span> <span class="n">cwd</span><span class="p">,</span> <span class="n">env</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">973</span>                         <span class="n">startupinfo</span><span class="p">,</span> <span class="n">creationflags</span><span class="p">,</span> <span class="n">shell</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">974</span>                         <span class="n">p2cread</span><span class="p">,</span> <span class="n">p2cwrite</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">975</span>                         <span class="n">c2pread</span><span class="p">,</span> <span class="n">c2pwrite</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">976</span>                         <span class="n">errread</span><span class="p">,</span> <span class="n">errwrite</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">977</span>                         <span class="n">restore_signals</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">978</span>                         <span class="n">gid</span><span class="p">,</span> <span class="n">gids</span><span class="p">,</span> <span class="n">uid</span><span class="p">,</span> <span class="n">umask</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">979</span>                         <span class="n">start_new_session</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">980</span> <span class="k">except</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">981</span>     <span class="c1"># Cleanup if the child failed starting.</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.10.11/x64/lib/python3.10/subprocess.py:1863,</span> in <span class="ni">Popen._execute_child</span><span class="nt">(self, args, executable, preexec_fn, close_fds, pass_fds, cwd, env, startupinfo, creationflags, shell, p2cread, p2cwrite, c2pread, c2pwrite, errread, errwrite, restore_signals, gid, gids, uid, umask, start_new_session)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1862</span>         <span class="n">err_msg</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">strerror</span><span class="p">(</span><span class="n">errno_num</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1863</span>     <span class="k">raise</span> <span class="n">child_exception_type</span><span class="p">(</span><span class="n">errno_num</span><span class="p">,</span> <span class="n">err_msg</span><span class="p">,</span> <span class="n">err_filename</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1864</span> <span class="k">raise</span> <span class="n">child_exception_type</span><span class="p">(</span><span class="n">err_msg</span><span class="p">)</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;tesseract&#39;
+
+<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+
+<span class="ne">TesseractNotFoundError</span><span class="g g-Whitespace">                    </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="n">pytesseract</span><span class="o">.</span><span class="n">get_languages</span><span class="p">(</span><span class="n">config</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">))</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.10.11/x64/lib/python3.10/site-packages/pytesseract/pytesseract.py:146,</span> in <span class="ni">run_once.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">143</span> <span class="nd">@wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">144</span> <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">145</span>     <span class="k">if</span> <span class="n">wrapper</span><span class="o">.</span><span class="n">_result</span> <span class="ow">is</span> <span class="n">wrapper</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">146</span>         <span class="n">wrapper</span><span class="o">.</span><span class="n">_result</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">147</span>     <span class="k">return</span> <span class="n">wrapper</span><span class="o">.</span><span class="n">_result</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.10.11/x64/lib/python3.10/site-packages/pytesseract/pytesseract.py:366,</span> in <span class="ni">get_languages</span><span class="nt">(config)</span>
+<span class="g g-Whitespace">    </span><span class="mi">360</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">361</span>         <span class="n">cmd_args</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">362</span>         <span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">363</span>         <span class="n">stderr</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">STDOUT</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">364</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">365</span> <span class="k">except</span> <span class="ne">OSError</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">366</span>     <span class="k">raise</span> <span class="n">TesseractNotFoundError</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">368</span> <span class="c1"># tesseract 3.x</span>
+<span class="g g-Whitespace">    </span><span class="mi">369</span> <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">returncode</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+
+<span class="ne">TesseractNotFoundError</span>: tesseract is not installed or it&#39;s not in your PATH. See README file for more information.
 </pre></div>
 </div>
 </div>

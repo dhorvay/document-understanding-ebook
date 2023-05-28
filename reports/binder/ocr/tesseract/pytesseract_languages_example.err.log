@@ -15,16 +15,71 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-from PIL import Image
-import pytesseract
+print(pytesseract.get_languages(config='.'))
 ------------------
 
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-Cell [0;32mIn[1], line 1[0m
-[0;32m----> 1[0m [38;5;28;01mfrom[39;00m [38;5;21;01mPIL[39;00m [38;5;28;01mimport[39;00m Image
-[1;32m      2[0m [38;5;28;01mimport[39;00m [38;5;21;01mpytesseract[39;00m
+[0;31mFileNotFoundError[0m                         Traceback (most recent call last)
+File [0;32m/opt/hostedtoolcache/Python/3.10.11/x64/lib/python3.10/site-packages/pytesseract/pytesseract.py:360[0m, in [0;36mget_languages[0;34m(config)[0m
+[1;32m    359[0m [38;5;28;01mtry[39;00m:
+[0;32m--> 360[0m     result [38;5;241m=[39m [43msubprocess[49m[38;5;241;43m.[39;49m[43mrun[49m[43m([49m
+[1;32m    361[0m [43m        [49m[43mcmd_args[49m[43m,[49m
+[1;32m    362[0m [43m        [49m[43mstdout[49m[38;5;241;43m=[39;49m[43msubprocess[49m[38;5;241;43m.[39;49m[43mPIPE[49m[43m,[49m
+[1;32m    363[0m [43m        [49m[43mstderr[49m[38;5;241;43m=[39;49m[43msubprocess[49m[38;5;241;43m.[39;49m[43mSTDOUT[49m[43m,[49m
+[1;32m    364[0m [43m    [49m[43m)[49m
+[1;32m    365[0m [38;5;28;01mexcept[39;00m [38;5;167;01mOSError[39;00m:
 
-[0;31mModuleNotFoundError[0m: No module named 'PIL'
+File [0;32m/opt/hostedtoolcache/Python/3.10.11/x64/lib/python3.10/subprocess.py:503[0m, in [0;36mrun[0;34m(input, capture_output, timeout, check, *popenargs, **kwargs)[0m
+[1;32m    501[0m     kwargs[[38;5;124m'[39m[38;5;124mstderr[39m[38;5;124m'[39m] [38;5;241m=[39m PIPE
+[0;32m--> 503[0m [38;5;28;01mwith[39;00m [43mPopen[49m[43m([49m[38;5;241;43m*[39;49m[43mpopenargs[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m [38;5;28;01mas[39;00m process:
+[1;32m    504[0m     [38;5;28;01mtry[39;00m:
+
+File [0;32m/opt/hostedtoolcache/Python/3.10.11/x64/lib/python3.10/subprocess.py:971[0m, in [0;36mPopen.__init__[0;34m(self, args, bufsize, executable, stdin, stdout, stderr, preexec_fn, close_fds, shell, cwd, env, universal_newlines, startupinfo, creationflags, restore_signals, start_new_session, pass_fds, user, group, extra_groups, encoding, errors, text, umask, pipesize)[0m
+[1;32m    968[0m             [38;5;28mself[39m[38;5;241m.[39mstderr [38;5;241m=[39m io[38;5;241m.[39mTextIOWrapper([38;5;28mself[39m[38;5;241m.[39mstderr,
+[1;32m    969[0m                     encoding[38;5;241m=[39mencoding, errors[38;5;241m=[39merrors)
+[0;32m--> 971[0m     [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_execute_child[49m[43m([49m[43margs[49m[43m,[49m[43m [49m[43mexecutable[49m[43m,[49m[43m [49m[43mpreexec_fn[49m[43m,[49m[43m [49m[43mclose_fds[49m[43m,[49m
+[1;32m    972[0m [43m                        [49m[43mpass_fds[49m[43m,[49m[43m [49m[43mcwd[49m[43m,[49m[43m [49m[43menv[49m[43m,[49m
+[1;32m    973[0m [43m                        [49m[43mstartupinfo[49m[43m,[49m[43m [49m[43mcreationflags[49m[43m,[49m[43m [49m[43mshell[49m[43m,[49m
+[1;32m    974[0m [43m                        [49m[43mp2cread[49m[43m,[49m[43m [49m[43mp2cwrite[49m[43m,[49m
+[1;32m    975[0m [43m                        [49m[43mc2pread[49m[43m,[49m[43m [49m[43mc2pwrite[49m[43m,[49m
+[1;32m    976[0m [43m                        [49m[43merrread[49m[43m,[49m[43m [49m[43merrwrite[49m[43m,[49m
+[1;32m    977[0m [43m                        [49m[43mrestore_signals[49m[43m,[49m
+[1;32m    978[0m [43m                        [49m[43mgid[49m[43m,[49m[43m [49m[43mgids[49m[43m,[49m[43m [49m[43muid[49m[43m,[49m[43m [49m[43mumask[49m[43m,[49m
+[1;32m    979[0m [43m                        [49m[43mstart_new_session[49m[43m)[49m
+[1;32m    980[0m [38;5;28;01mexcept[39;00m:
+[1;32m    981[0m     [38;5;66;03m# Cleanup if the child failed starting.[39;00m
+
+File [0;32m/opt/hostedtoolcache/Python/3.10.11/x64/lib/python3.10/subprocess.py:1863[0m, in [0;36mPopen._execute_child[0;34m(self, args, executable, preexec_fn, close_fds, pass_fds, cwd, env, startupinfo, creationflags, shell, p2cread, p2cwrite, c2pread, c2pwrite, errread, errwrite, restore_signals, gid, gids, uid, umask, start_new_session)[0m
+[1;32m   1862[0m         err_msg [38;5;241m=[39m os[38;5;241m.[39mstrerror(errno_num)
+[0;32m-> 1863[0m     [38;5;28;01mraise[39;00m child_exception_type(errno_num, err_msg, err_filename)
+[1;32m   1864[0m [38;5;28;01mraise[39;00m child_exception_type(err_msg)
+
+[0;31mFileNotFoundError[0m: [Errno 2] No such file or directory: 'tesseract'
+
+During handling of the above exception, another exception occurred:
+
+[0;31mTesseractNotFoundError[0m                    Traceback (most recent call last)
+Cell [0;32mIn[3], line 1[0m
+[0;32m----> 1[0m [38;5;28mprint[39m([43mpytesseract[49m[38;5;241;43m.[39;49m[43mget_languages[49m[43m([49m[43mconfig[49m[38;5;241;43m=[39;49m[38;5;124;43m'[39;49m[38;5;124;43m.[39;49m[38;5;124;43m'[39;49m[43m)[49m)
+
+File [0;32m/opt/hostedtoolcache/Python/3.10.11/x64/lib/python3.10/site-packages/pytesseract/pytesseract.py:146[0m, in [0;36mrun_once.<locals>.wrapper[0;34m(*args, **kwargs)[0m
+[1;32m    143[0m [38;5;129m@wraps[39m(func)
+[1;32m    144[0m [38;5;28;01mdef[39;00m [38;5;21mwrapper[39m([38;5;241m*[39margs, [38;5;241m*[39m[38;5;241m*[39mkwargs):
+[1;32m    145[0m     [38;5;28;01mif[39;00m wrapper[38;5;241m.[39m_result [38;5;129;01mis[39;00m wrapper:
+[0;32m--> 146[0m         wrapper[38;5;241m.[39m_result [38;5;241m=[39m [43mfunc[49m[43m([49m[38;5;241;43m*[39;49m[43margs[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
+[1;32m    147[0m     [38;5;28;01mreturn[39;00m wrapper[38;5;241m.[39m_result
+
+File [0;32m/opt/hostedtoolcache/Python/3.10.11/x64/lib/python3.10/site-packages/pytesseract/pytesseract.py:366[0m, in [0;36mget_languages[0;34m(config)[0m
+[1;32m    360[0m     result [38;5;241m=[39m subprocess[38;5;241m.[39mrun(
+[1;32m    361[0m         cmd_args,
+[1;32m    362[0m         stdout[38;5;241m=[39msubprocess[38;5;241m.[39mPIPE,
+[1;32m    363[0m         stderr[38;5;241m=[39msubprocess[38;5;241m.[39mSTDOUT,
+[1;32m    364[0m     )
+[1;32m    365[0m [38;5;28;01mexcept[39;00m [38;5;167;01mOSError[39;00m:
+[0;32m--> 366[0m     [38;5;28;01mraise[39;00m TesseractNotFoundError()
+[1;32m    368[0m [38;5;66;03m# tesseract 3.x[39;00m
+[1;32m    369[0m [38;5;28;01mif[39;00m result[38;5;241m.[39mreturncode [38;5;129;01mnot[39;00m [38;5;129;01min[39;00m ([38;5;241m0[39m, [38;5;241m1[39m):
+
+[0;31mTesseractNotFoundError[0m: tesseract is not installed or it's not in your PATH. See README file for more information.
 
