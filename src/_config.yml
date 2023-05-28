@@ -3,7 +3,11 @@ author: Devin Horvay
 copyright: "2023"
 logo: logo.png
 execute:
-  execute_notebooks: force
+  execute_notebooks: auto
+launch_buttons:
+  binderhub_url: "https://mybinder.org/v2/gh/dhorvay/binder/HEAD"
+  colab_url: "https://colab.research.google.com"
+  thebe: true
 repository:
   url: https://github.com/dhorvay/document-understanding-ebook
 html:
