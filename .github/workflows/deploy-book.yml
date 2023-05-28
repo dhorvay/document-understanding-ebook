@@ -7,7 +7,7 @@ on:
     - main
 
 env:
-  TESSDATA_PREFIX: /tesseract-ocr/4.00/tessdata_fast
+  TESSDATA_PREFIX: ./tessdata_fast
 
 # This job installs dependencies, builds the book, and pushes it to `gh-pages`
 jobs:
@@ -27,7 +27,7 @@ jobs:
 
     - name: Run shell commands
       run: |
-        git clone https://github.com/tesseract-ocr/tessdata_fast.git /tesseract-ocr/4.00/tessdata_fast
+        git clone https://github.com/tesseract-ocr/tessdata_fast.git
 
     # Install dependencies
     - name: Set up Python 3.10
