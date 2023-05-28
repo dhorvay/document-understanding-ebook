@@ -72,7 +72,7 @@ Source: [https://github.com/PaddlePaddle/PaddleOCR](https://github.com/PaddlePad
 Package: [https://pypi.org/project/paddleocr/](https://pypi.org/project/paddleocr/)
 
 
-### Calamari
+### Calamari OCR
 
 License: [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
@@ -90,3 +90,15 @@ License: [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](
 Source: [https://github.com/emedvedev/attention-ocr](https://github.com/emedvedev/attention-ocr)
 
 Package: [https://pypi.org/project/aocr/](https://pypi.org/project/aocr/)
+
+## C++
+
+### tesseract
+
+License: [![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+
+Homepage: [https://tesseract-ocr.github.io/](https://tesseract-ocr.github.io/)
+
+Source: [https://github.com/tesseract-ocr/tesseract](https://github.com/tesseract-ocr/tesseract)
+
+Package: [https://github.com/tesseract-ocr/tesseract/blob/main/include/tesseract/baseapi.h](https://github.com/tesseract-ocr/tesseract/blob/main/include/tesseract/baseapi.h)

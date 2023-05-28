@@ -364,7 +364,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -380,6 +382,14 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ocrfeeder">OCRFeeder</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -391,6 +401,12 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="graphical-user-interfaces">
 <h1>💻 Graphical User Interfaces<a class="headerlink" href="#graphical-user-interfaces" title="Permalink to this heading">#</a></h1>
+<section id="ocrfeeder">
+<h2>OCRFeeder<a class="headerlink" href="#ocrfeeder" title="Permalink to this heading">#</a></h2>
+<p>Homepage: <a class="reference external" href="https://wiki.gnome.org/Apps/OCRFeeder">https://wiki.gnome.org/Apps/OCRFeeder</a></p>
+<p>Source: <a class="reference external" href="https://gitlab.gnome.org/GNOME/ocrfeeder">https://gitlab.gnome.org/GNOME/ocrfeeder</a></p>
+<p>OCRFeeder is a document layout analysis and optical character recognition system. Given the images it will automatically outline its contents, distinguish between what’s graphics and text and perform OCR over the latter. It generates multiple formats being its main one ODT. OCRFeeder has a GTK+ graphical user interface that allows the users to control the application and, for example, edit and correct the automatic recognition. It can also be used from the command line for automation.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -451,6 +467,20 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ocrfeeder">OCRFeeder</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
