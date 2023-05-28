@@ -3,10 +3,11 @@ author: Devin Horvay
 copyright: "2023"
 logo: logo.png
 only_build_toc_files: true
+exclude_patterns: [_build, Thumbs.db, .DS_Store, "**.ipynb_checkpoints"]
 execute:
   execute_notebooks: auto
 launch_buttons:
-  binderhub_url: "https://mybinder.org/v2/gh/dhorvay/binder/HEAD"
+  binderhub_url: "https://mybinder.org"
   colab_url: "https://colab.research.google.com"
   thebe: true
 repository:
@@ -23,7 +24,7 @@ bibtex_bibfiles:
 sphinx:
   config:
     bibtex_reference_style: author_year
-    html_baseurl: 'https://horvay.dev/document-understanding-ebook/'
+    html_baseurl: "https://horvay.dev/document-understanding-ebook/"
     html_extra_path: ['assets']
   extra_extensions:
     - sphinx_sitemap
