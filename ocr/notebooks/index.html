@@ -184,7 +184,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l4"><a class="reference internal" href="../software/gui.html">💻 Graphical User Interfaces</a></li>
 </ul>
 </li>
-<li class="toctree-l3 current active"><a class="current reference internal" href="#">📔 Notebooks</a></li>
+<li class="toctree-l3 current active has-children"><a class="current reference internal" href="#">📔 Notebooks</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../datasets/index.html">🗄️ Datasets</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../papers/index.html">📑 Papers</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../benchmarks/index.html">📊 Benchmarks</a></li>
@@ -391,13 +393,15 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="notebooks">
 <h1>📔 Notebooks<a class="headerlink" href="#notebooks" title="Permalink to this heading">#</a></h1>
+<div class="toctree-wrapper compound">
+</div>
 </section>
 
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "dhorvay/document-understanding-ebook",
             ref: "master",
         },
         codeMirrorConfig: {

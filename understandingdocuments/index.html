@@ -184,7 +184,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l4"><a class="reference internal" href="../ocr/software/gui.html">💻 Graphical User Interfaces</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../ocr/notebooks/index.html">📔 Notebooks</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../ocr/notebooks/index.html">📔 Notebooks</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../ocr/datasets/index.html">🗄️ Datasets</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../ocr/papers/index.html">📑 Papers</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../ocr/benchmarks/index.html">📊 Benchmarks</a></li>
@@ -428,7 +430,7 @@ document.write(`
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "dhorvay/document-understanding-ebook",
             ref: "master",
         },
         codeMirrorConfig: {
