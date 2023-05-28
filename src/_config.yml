@@ -24,6 +24,6 @@ sphinx:
   config:
     bibtex_reference_style: author_year
     html_baseurl: 'https://horvay.dev/document-understanding-ebook/'
-    html_extra_path: ['assets', 'binder']
+    html_extra_path: ['assets']
   extra_extensions:
     - sphinx_sitemap
