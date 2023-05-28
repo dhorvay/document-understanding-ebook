@@ -1,7 +1,0 @@
-#!/bin/bash
-
-set -ex
-
-export TESSDATA_PREFIX=~/.local/share/tesseract-ocr/4.00/tessdata_fast
-
-exec "$@"
