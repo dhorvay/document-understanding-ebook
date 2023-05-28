@@ -1,5 +1,7 @@
 # 💻 Graphical User Interfaces
 
+## Open-source OCR GUIs
+
 ### OCRFeeder
 
 Homepage: [https://wiki.gnome.org/Apps/OCRFeeder](https://wiki.gnome.org/Apps/OCRFeeder)
