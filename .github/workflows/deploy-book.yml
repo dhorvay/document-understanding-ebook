@@ -6,9 +6,6 @@ on:
     branches:
     - main
 
-env:
-  TESSDATA_PREFIX: ./tessdata_fast
-
 # This job installs dependencies, builds the book, and pushes it to `gh-pages`
 jobs:
   deploy-book:
@@ -18,16 +15,6 @@ jobs:
       uses: actions/checkout@v3
       with:
         submodules: recursive
-
-    - name: Install apt packages
-      uses: awalsh128/cache-apt-pkgs-action@v1
-      with:
-        packages: tesseract-ocr libtesseract-dev
-        version: 1.0
-
-    - name: Run shell commands
-      run: |
-        git clone https://github.com/tesseract-ocr/tessdata_fast.git
 
     # Install dependencies
     - name: Set up Python 3.10
