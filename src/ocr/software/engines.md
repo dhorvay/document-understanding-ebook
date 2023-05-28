@@ -29,6 +29,18 @@ Documentation: [https://launchpad.net/cuneiform-linux](https://launchpad.net/cun
 
 Cuneiform is an open source OCR engine developed by Cognitive Technologies. It is written in C++ and supports over 30 languages.In addition to text recognition it also does  layout analysis and text format recognition. It is available under the Apache License 2.0. Cuneiform is widely used in research and development projects, offering a flexible and accessible platform for OCR tasks and serving as the foundation for various OCR applications and services.
 
+### GOCR
+
+Documentation: [https://jocr.sourceforge.net/](https://jocr.sourceforge.net/)
+
+GOCR is an open source OCR engine developed by JOCR. It is written in C and supports over 30 languages. It is available under the GNU General Public License. GOCR is widely used in research and development projects, offering a flexible and accessible platform for OCR tasks and serving as the foundation for various OCR applications and services.
+
+### Ocrad
+
+Documentation: [https://www.gnu.org/software/ocrad/](https://www.gnu.org/software/ocrad/)
+
+Ocrad is an open source OCR engine that is part of the GNU project. It was developed by Antonio Diaz Diaz in 2003. It is written in C++.It can be used as a stand-alone command-line application or as a back-end to other programs. 
+
 ### EasyOCR
 
 Documentation: [https://github.com/JaidedAI/EasyOCR](https://github.com/JaidedAI/EasyOCR)
