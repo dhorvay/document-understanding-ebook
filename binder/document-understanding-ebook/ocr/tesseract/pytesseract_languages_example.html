@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="🗄️ Datasets" href="../../../../ocr/datasets/index.html" />
+    <link rel="next" title="Python Tesseract (pytesseract) Batch Processing Example" href="pytesseract_batch_processing_example.html" />
     <link rel="prev" title="Python Tesseract (pytesseract) Basic Example" href="pytesseract_basic_example.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -188,6 +188,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l3 current active has-children"><a class="reference internal" href="../../../../ocr/notebooks/index.html">📔 Notebooks</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="pytesseract_basic_example.html">Python Tesseract (pytesseract) Basic Example</a></li>
 <li class="toctree-l4 current active"><a class="current reference internal" href="#">Python Tesseract (pytesseract) Languages Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytesseract_batch_processing_example.html">Python Tesseract (pytesseract) Batch Processing Example</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../ocr/datasets/index.html">🗄️ Datasets</a></li>
@@ -449,6 +450,10 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chinese">Chinese</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-languages">Multiple Languages</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#english-and-french">English and French</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -481,15 +486,22 @@ document.write(`
 <li><p><a class="reference external" href="https://github.com/tesseract-ocr/tessdata_best">tessdata_best</a> - Best (most accurate) trained LSTM models.</p></li>
 </ul>
 <p>For my purposes, I will utilize <code class="docutils literal notranslate"><span class="pre">tessdata_fast</span></code> for this notebook.</p>
-<p>Steps to install:</p>
+<p>Steps to install (local machine):</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/tesseract-ocr/tessdata_fast.git<span class="w"> </span>~/.local/share/tesseract-ocr/4.00/tessdata_fast
 <span class="nb">export</span><span class="w"> </span><span class="nv">TESSDATA_PREFIX</span><span class="o">=</span>~/.local/share/tesseract-ocr/4.00/tessdata_fast
 </pre></div>
 </div>
+<p>Steps to install (<span class="xref myst">kaggle.com</span>):</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/tesseract-ocr/tessdata_fast.git<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>/dev/null<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">(</span><span class="nb">cd</span><span class="w"> </span>tessdata_fast<span class="p">;</span><span class="w"> </span>git<span class="w"> </span>pull<span class="o">)</span>
+cp<span class="w"> </span>tessdata_fast/*.traineddata<span class="w"> </span>/usr/share/tesseract-ocr/4.00/tessdata/
+</pre></div>
+</div>
+<p>For <a class="reference external" href="http://kaggle.com">kaggle.com</a>, the default path can be used - <code class="docutils literal notranslate"><span class="pre">/usr/share/tesseract-ocr/4.00/tessdata/</span></code></p>
 <p>Once this is done, we can try to extract text from multiple languages.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>printenv<span class="w"> </span>TESSDATA_PREFIX
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># For kaggle.com this will print empty. The package pytesseract will use the default path: /usr/share/tesseract-ocr/4.00/tessdata/</span>
+<span class="o">!</span>printenv<span class="w"> </span>TESSDATA_PREFIX
 </pre></div>
 </div>
 </div>
@@ -524,7 +536,7 @@ document.write(`
 <h3>English<a class="headerlink" href="#english" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eng_path</span> <span class="o">=</span> <span class="s1">&#39;../../../data/hello_world_english.png&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eng_path</span> <span class="o">=</span> <span class="s1">&#39;../../../binder-datasets/ocr/helloworld/hello_world_english.png&#39;</span>
 <span class="n">eng_im</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">eng_path</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">eng_im</span><span class="p">)</span>
 </pre></div>
@@ -553,7 +565,7 @@ document.write(`
 <h3>Spanish<a class="headerlink" href="#spanish" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spa_path</span> <span class="o">=</span> <span class="s1">&#39;../../../data/hello_world_spanish.png&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spa_path</span> <span class="o">=</span> <span class="s1">&#39;../../../binder-datasets/ocr/helloworld/hello_world_spanish.png&#39;</span>
 <span class="n">spa_im</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">spa_path</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">spa_im</span><span class="p">)</span>
 </pre></div>
@@ -582,7 +594,7 @@ document.write(`
 <h3>Chinese<a class="headerlink" href="#chinese" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chi_sim_path</span> <span class="o">=</span> <span class="s1">&#39;../../../data/hello_world_chinese.png&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chi_sim_path</span> <span class="o">=</span> <span class="s1">&#39;../../../binder-datasets/ocr/helloworld/hello_world_chinese.png&#39;</span>
 <span class="n">chi_sim_im</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">chi_sim_path</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">chi_sim_im</span><span class="p">)</span>
 </pre></div>
@@ -601,6 +613,40 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>你好世界 !
+
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="multiple-languages">
+<h2>Multiple Languages<a class="headerlink" href="#multiple-languages" title="Permalink to this heading">#</a></h2>
+<p>Tesseract also supports multiple languages at once.</p>
+<section id="english-and-french">
+<h3>English and French<a class="headerlink" href="#english-and-french" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eng_fra_path</span> <span class="o">=</span> <span class="s1">&#39;../../../binder-datasets/ocr/helloworld/hello_world_english_french.png&#39;</span>
+<span class="n">eng_fra_im</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">eng_fra_path</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">eng_fra_im</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../_images/fc0a6c1d6e71bc43d592fa1515d7b760180a7bbd178df55dce2af7bcbf1bea7f.png" src="../../../../_images/fc0a6c1d6e71bc43d592fa1515d7b760180a7bbd178df55dce2af7bcbf1bea7f.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">output</span> <span class="o">=</span> <span class="n">pytesseract</span><span class="o">.</span><span class="n">image_to_string</span><span class="p">(</span><span class="n">eng_fra_im</span><span class="p">,</span><span class="n">lang</span><span class="o">=</span><span class="s1">&#39;eng+fra&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello World!
+Bonjour le monde!
 
 </pre></div>
 </div>
@@ -651,11 +697,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="../../../../ocr/datasets/index.html"
+       href="pytesseract_batch_processing_example.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">🗄️ Datasets</p>
+        <p class="prev-next-title">Python Tesseract (pytesseract) Batch Processing Example</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -683,6 +729,10 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#english">English</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spanish">Spanish</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chinese">Chinese</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-languages">Multiple Languages</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#english-and-french">English and French</a></li>
 </ul>
 </li>
 </ul>
