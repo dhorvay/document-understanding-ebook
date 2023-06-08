@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="🗄️ Datasets" href="../../../../ocr/datasets/index.html" />
+    <link rel="next" title="Python Tesseract (pytesseract) Outputs Example" href="pytesseract_outputs_example.html" />
     <link rel="prev" title="Python Tesseract (pytesseract) Languages Example" href="pytesseract_languages_example.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -189,6 +189,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l4"><a class="reference internal" href="pytesseract_basic_example.html">Python Tesseract (pytesseract) Basic Example</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pytesseract_languages_example.html">Python Tesseract (pytesseract) Languages Example</a></li>
 <li class="toctree-l4 current active"><a class="current reference internal" href="#">Python Tesseract (pytesseract) Batch Processing Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytesseract_outputs_example.html">Python Tesseract (pytesseract) Outputs Example</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../ocr/datasets/index.html">🗄️ Datasets</a></li>
@@ -487,7 +488,7 @@ Here, I am providing a text file with two image paths.</p>
 </section>
 <section id="timeouts">
 <h2>Timeouts<a class="headerlink" href="#timeouts" title="Permalink to this heading">#</a></h2>
-<p>While this is not required for batch processing, it may be a good idea to add handling to terminate Tesseract if processing is taking too long. Let’s try two scenarios, one where we timeout after 1 second and one where we wait 10 seconds to timeout. In this case, 1 second is not enough time to process both images.</p>
+<p>While this is not required for batch processing, it may be a good idea to add handling to terminate Tesseract if processing is taking too long. Let’s try two scenarios, one where we timeout after 1 second and one where we wait 30 seconds to timeout. In this case, 1 second is not enough time to process both images.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">timeout</span> <span class="o">=</span> <span class="mi">1</span>
@@ -507,7 +508,7 @@ Here, I am providing a text file with two image paths.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">timeout</span> <span class="o">=</span> <span class="mi">10</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">timeout</span> <span class="o">=</span> <span class="mi">30</span>
 </pre></div>
 </div>
 </div>
@@ -684,11 +685,11 @@ John Doe
       </div>
     </a>
     <a class="right-next"
-       href="../../../../ocr/datasets/index.html"
+       href="pytesseract_outputs_example.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">🗄️ Datasets</p>
+        <p class="prev-next-title">Python Tesseract (pytesseract) Outputs Example</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

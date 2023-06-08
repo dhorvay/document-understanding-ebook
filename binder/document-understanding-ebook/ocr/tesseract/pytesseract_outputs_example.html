@@ -1,0 +1,1900 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Python Tesseract (pytesseract) Outputs Example &#8212; Document Understanding eBook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/clipboard.min.js"></script>
+    <script src="../../../../_static/copybutton.js"></script>
+    <script src="../../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../../_static/togglebutton.js"></script>
+    <script src="../../../../_static/mybinder_postfix.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'binder/document-understanding-ebook/ocr/tesseract/pytesseract_outputs_example';</script>
+    <link rel="canonical" href="https://horvay.dev/document-understanding-ebook/binder/document-understanding-ebook/ocr/tesseract/pytesseract_outputs_example.html" />
+    <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="🗄️ Datasets" href="../../../../ocr/datasets/index.html" />
+    <link rel="prev" title="Python Tesseract (pytesseract) Batch Processing Example" href="pytesseract_batch_processing_example.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+
+  <div class="bd-header-announcement container-fluid bd-header-announcement">
+    <div class="bd-header-announcement__content">Please note: this book is in alpha - it is consistently being updated with content for a v1.0.0 release! 🤗</div>
+  </div>
+
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../../../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../../../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../../intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Prerequisites</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../understandingdocuments/index.html">Understanding Documents</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../documentfileformats/index.html">📂 Document File Formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../documentstructures/index.html">🧱 Document Structures</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Topic Guides</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../../../textextraction/index.html">Text Extraction</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../../../../ocr/index.html">Optical Character Recognition</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../../../ocr/overview/history.html">📜 History</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../ocr/overview/howitworks.html">🧠 How it Works</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../../ocr/software/index.html">💾 Software</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../ocr/software/engines.html">⚙️ Engines</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../ocr/software/packages.html">📦 Packages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../ocr/software/gui.html">💻 Graphical User Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current active has-children"><a class="reference internal" href="../../../../ocr/notebooks/index.html">📔 Notebooks</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="pytesseract_basic_example.html">Python Tesseract (pytesseract) Basic Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytesseract_languages_example.html">Python Tesseract (pytesseract) Languages Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytesseract_batch_processing_example.html">Python Tesseract (pytesseract) Batch Processing Example</a></li>
+<li class="toctree-l4 current active"><a class="current reference internal" href="#">Python Tesseract (pytesseract) Outputs Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../ocr/datasets/index.html">🗄️ Datasets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../ocr/papers/index.html">📑 Papers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../ocr/benchmarks/index.html">📊 Benchmarks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../ocr/resources/index.html">🗃️ Resources</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../bibliography/index.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/dhorvay/document-understanding-ebook/master?urlpath=tree/binder/document-understanding-ebook/ocr/tesseract/pytesseract_outputs_example.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/dhorvay/document-understanding-ebook/blob/master/binder/document-understanding-ebook/ocr/tesseract/pytesseract_outputs_example.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/dhorvay/document-understanding-ebook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/dhorvay/document-understanding-ebook/issues/new?title=Issue%20on%20page%20%2Fbinder/document-understanding-ebook/ocr/tesseract/pytesseract_outputs_example.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../../_sources/binder/document-understanding-ebook/ocr/tesseract/pytesseract_outputs_example.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Python Tesseract (pytesseract) Outputs Example</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-image-using-pillow">Load image using Pillow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bounding-box-estimates">Bounding box estimates</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-verbose-output">More verbose output</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hocr-generation">hOCR Generation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alto-xml">ALTO XML</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#searchable-pdf">Searchable PDF</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="python-tesseract-pytesseract-outputs-example">
+<h1>Python Tesseract (pytesseract) Outputs Example<a class="headerlink" href="#python-tesseract-pytesseract-outputs-example" title="Permalink to this heading">#</a></h1>
+<p>This notebook demonstrates some of the different outputs that pytesseract can generate.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span><span class="p">,</span> <span class="n">IFrame</span>
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">ImageDraw</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">pytesseract</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="load-image-using-pillow">
+<h2>Load image using Pillow<a class="headerlink" href="#load-image-using-pillow" title="Permalink to this heading">#</a></h2>
+<p>pytesseract has good support for <a class="reference external" href="https://pypi.org/project/Pillow/">Pillow</a>, so we will use that to load our images.
+Here we will be using a invoice-style document.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="s1">&#39;../../../binder-datasets/ocr/images/invoice.png&#39;</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+<span class="n">w</span><span class="p">,</span><span class="n">h</span> <span class="o">=</span> <span class="n">im</span><span class="o">.</span><span class="n">size</span>
+<span class="n">display</span><span class="p">(</span><span class="n">im</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="mf">0.5</span><span class="o">*</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">im</span><span class="o">.</span><span class="n">size</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../_images/f484b25d5df19730b824705f773e8f7a0695a82fd9100d13d6349a2556c8768c.png" src="../../../../_images/f484b25d5df19730b824705f773e8f7a0695a82fd9100d13d6349a2556c8768c.png" />
+</div>
+</div>
+</section>
+<section id="bounding-box-estimates">
+<h2>Bounding box estimates<a class="headerlink" href="#bounding-box-estimates" title="Permalink to this heading">#</a></h2>
+<p>You can print out the bounding box estimates at the using <code class="docutils literal notranslate"><span class="pre">image_to_boxes</span></code>
+The output looks like the following:</p>
+<div class="highlight-txt notranslate"><div class="highlight"><pre><span></span>D 131 1530 150 1551 0
+o 153 1529 169 1546 0
+c 172 1529 185 1546 0
+u 190 1529 204 1545 0
+m 209 1530 233 1546 0
+e 214 1529 250 1551 0
+n 237 1529 253 1546 0
+t 257 1530 285 1550 0
+</pre></div>
+</div>
+<p>The columns represent:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;symbol&gt;</span><span class="w"> </span><span class="nt">&lt;left&gt;</span><span class="w"> </span><span class="nt">&lt;bottom&gt;</span><span class="w"> </span><span class="nt">&lt;right&gt;</span><span class="w"> </span><span class="nt">&lt;top&gt;</span><span class="w"> </span><span class="nt">&lt;page&gt;</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">im_boxes</span> <span class="o">=</span> <span class="n">im</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">boxes</span> <span class="o">=</span> <span class="n">pytesseract</span><span class="o">.</span><span class="n">image_to_boxes</span><span class="p">(</span><span class="n">im_boxes</span><span class="p">)</span>
+<span class="n">draw</span> <span class="o">=</span> <span class="n">ImageDraw</span><span class="o">.</span><span class="n">Draw</span><span class="p">(</span><span class="n">im_boxes</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">boxes</span><span class="o">.</span><span class="n">splitlines</span><span class="p">():</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+    <span class="n">draw</span><span class="o">.</span><span class="n">rectangle</span><span class="p">((</span><span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="n">h</span><span class="o">-</span><span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="mi">4</span><span class="p">]),</span> <span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="mi">3</span><span class="p">]),</span> <span class="n">h</span><span class="o">-</span><span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">])),</span> <span class="n">outline</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">im_boxes</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="mf">0.5</span><span class="o">*</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">im_boxes</span><span class="o">.</span><span class="n">size</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../_images/988b3c67d6b89b31b48734c5bb4d077be592c58d50ed900066c7fabb1e962456.png" src="../../../../_images/988b3c67d6b89b31b48734c5bb4d077be592c58d50ed900066c7fabb1e962456.png" />
+</div>
+</div>
+</section>
+<section id="more-verbose-output">
+<h2>More verbose output<a class="headerlink" href="#more-verbose-output" title="Permalink to this heading">#</a></h2>
+<p>You can get more verbose output, which includes boxes, confidence, line numbers, and block numbers using <code class="docutils literal notranslate"><span class="pre">image_to_data</span></code>.</p>
+<p>The default output looks like the following:</p>
+<div class="highlight-txt notranslate"><div class="highlight"><pre><span></span>level	page_num	block_num	par_num	line_num	word_num	left	top	width	height	conf	text
+1	1	0	0	0	0	0	0	1241	1754	-1	
+2	1	1	0	0	0	117	731	3	365	-1	
+3	1	1	1	0	0	117	731	3	365	-1	
+4	1	1	1	1	0	117	731	3	365	-1	
+5	1	1	1	1	1	117	731	3	365	95	 
+2	1	2	0	0	0	130	203	219	94	-1	
+3	1	2	1	0	0	130	203	219	94	-1	
+4	1	2	1	1	0	131	203	154	22	-1	
+5	1	2	1	1	1	131	203	154	22	96	Document
+4	1	2	1	2	0	131	236	218	28	-1	
+5	1	2	1	2	1	131	236	218	28	96	Understanding
+4	1	2	1	3	0	130	270	141	27	-1	
+5	1	2	1	3	1	130	270	141	27	96	Company
+</pre></div>
+</div>
+<p>As you can see, in Jupyter Notebook, the formatting does not print too nicely. As an alternative, you could also store this output in a <code class="docutils literal notranslate"><span class="pre">dataframe</span></code>, which would be my preferred method.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pytesseract</span><span class="o">.</span><span class="n">image_to_data</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">output_type</span><span class="o">=</span><span class="s1">&#39;data.frame&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>level</th>
+      <th>page_num</th>
+      <th>block_num</th>
+      <th>par_num</th>
+      <th>line_num</th>
+      <th>word_num</th>
+      <th>left</th>
+      <th>top</th>
+      <th>width</th>
+      <th>height</th>
+      <th>conf</th>
+      <th>text</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1241</td>
+      <td>1754</td>
+      <td>-1</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>117</td>
+      <td>731</td>
+      <td>3</td>
+      <td>365</td>
+      <td>-1</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>117</td>
+      <td>731</td>
+      <td>3</td>
+      <td>365</td>
+      <td>-1</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>117</td>
+      <td>731</td>
+      <td>3</td>
+      <td>365</td>
+      <td>-1</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>117</td>
+      <td>731</td>
+      <td>3</td>
+      <td>365</td>
+      <td>95</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2</td>
+      <td>1</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>130</td>
+      <td>203</td>
+      <td>219</td>
+      <td>94</td>
+      <td>-1</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>3</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>130</td>
+      <td>203</td>
+      <td>219</td>
+      <td>94</td>
+      <td>-1</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>4</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>131</td>
+      <td>203</td>
+      <td>154</td>
+      <td>22</td>
+      <td>-1</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>5</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>131</td>
+      <td>203</td>
+      <td>154</td>
+      <td>22</td>
+      <td>96</td>
+      <td>Document</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>4</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>2</td>
+      <td>0</td>
+      <td>131</td>
+      <td>236</td>
+      <td>218</td>
+      <td>28</td>
+      <td>-1</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>5</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>131</td>
+      <td>236</td>
+      <td>218</td>
+      <td>28</td>
+      <td>96</td>
+      <td>Understanding</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>4</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>3</td>
+      <td>0</td>
+      <td>130</td>
+      <td>270</td>
+      <td>141</td>
+      <td>27</td>
+      <td>-1</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>5</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>3</td>
+      <td>1</td>
+      <td>130</td>
+      <td>270</td>
+      <td>141</td>
+      <td>27</td>
+      <td>96</td>
+      <td>Company</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>2</td>
+      <td>1</td>
+      <td>3</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>350</td>
+      <td>171</td>
+      <td>154</td>
+      <td>156</td>
+      <td>-1</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>3</td>
+      <td>1</td>
+      <td>3</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>350</td>
+      <td>171</td>
+      <td>154</td>
+      <td>156</td>
+      <td>-1</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="hocr-generation">
+<h2>hOCR Generation<a class="headerlink" href="#hocr-generation" title="Permalink to this heading">#</a></h2>
+<p>You can generate <a class="reference external" href="http://kba.github.io/hocr-spec/1.2/">hOCR</a> by using the <code class="docutils literal notranslate"><span class="pre">image_to_pdf_or_hocr</span></code> method.</p>
+<p>The hOCR format is based on HTML (Hypertext Markup Language) and utilizes a hierarchical structure to represent the OCR output. It includes both the recognized text and the information about the layout and positioning of the text on the page.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hocr</span> <span class="o">=</span> <span class="n">pytesseract</span><span class="o">.</span><span class="n">image_to_pdf_or_hocr</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">extension</span><span class="o">=</span><span class="s1">&#39;hocr&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">hocr</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot;
+    &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
+&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; xml:lang=&quot;en&quot; lang=&quot;en&quot;&gt;
+ &lt;head&gt;
+  &lt;title&gt;&lt;/title&gt;
+  &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html;charset=utf-8&quot;/&gt;
+  &lt;meta name=&#39;ocr-system&#39; content=&#39;tesseract 4.1.1&#39; /&gt;
+  &lt;meta name=&#39;ocr-capabilities&#39; content=&#39;ocr_page ocr_carea ocr_par ocr_line ocrx_word ocrp_wconf&#39;/&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+  &lt;div class=&#39;ocr_page&#39; id=&#39;page_1&#39; title=&#39;image &quot;/tmp/tess_5srhis1e_input.PNG&quot;; bbox 0 0 1241 1754; ppageno 0&#39;&gt;
+   &lt;div class=&#39;ocr_carea&#39; id=&#39;block_1_1&#39; title=&quot;bbox 117 731 120 1096&quot;&gt;
+    &lt;p class=&#39;ocr_par&#39; id=&#39;par_1_1&#39; lang=&#39;eng&#39; title=&quot;bbox 117 731 120 1096&quot;&gt;
+     &lt;span class=&#39;ocr_line&#39; id=&#39;line_1_1&#39; title=&quot;bbox 117 731 120 1096; baseline 0 0; x_size 182.5; x_descenders -91.25; x_ascenders 91.25&quot;&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_1&#39; title=&#39;bbox 117 731 120 1096; x_wconf 95&#39;&gt; &lt;/span&gt;
+     &lt;/span&gt;
+    &lt;/p&gt;
+   &lt;/div&gt;
+   &lt;div class=&#39;ocr_carea&#39; id=&#39;block_1_2&#39; title=&quot;bbox 130 203 349 297&quot;&gt;
+    &lt;p class=&#39;ocr_par&#39; id=&#39;par_1_2&#39; lang=&#39;eng&#39; title=&quot;bbox 130 203 349 297&quot;&gt;
+     &lt;span class=&#39;ocr_textfloat&#39; id=&#39;line_1_2&#39; title=&quot;bbox 131 203 285 225; baseline -0.006 0; x_size 27.558731; x_descenders 5.5587301; x_ascenders 5&quot;&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_2&#39; title=&#39;bbox 131 203 285 225; x_wconf 96&#39;&gt;Document&lt;/span&gt;
+     &lt;/span&gt;
+     &lt;span class=&#39;ocr_textfloat&#39; id=&#39;line_1_3&#39; title=&quot;bbox 131 236 349 264; baseline -0.005 -5; x_size 29; x_descenders 6; x_ascenders 6&quot;&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_3&#39; title=&#39;bbox 131 236 349 264; x_wconf 96&#39;&gt;Understanding&lt;/span&gt;
+     &lt;/span&gt;
+     &lt;span class=&#39;ocr_textfloat&#39; id=&#39;line_1_4&#39; title=&quot;bbox 130 270 271 297; baseline 0 -5; x_size 27; x_descenders 5; x_ascenders 5&quot;&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_4&#39; title=&#39;bbox 130 270 271 297; x_wconf 96&#39;&gt;Company&lt;/span&gt;
+     &lt;/span&gt;
+    &lt;/p&gt;
+   &lt;/div&gt;
+   &lt;div class=&#39;ocr_carea&#39; id=&#39;block_1_3&#39; title=&quot;bbox 350 171 504 327&quot;&gt;
+    &lt;p class=&#39;ocr_par&#39; id=&#39;par_1_3&#39; lang=&#39;eng&#39; title=&quot;bbox 350 171 504 327&quot;&gt;
+     &lt;span class=&#39;ocr_line&#39; id=&#39;line_1_5&#39; title=&quot;bbox 350 171 504 327; baseline 0 1427; x_size 196.25; x_descenders 49.0625; x_ascenders 49.0625&quot;&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_5&#39; title=&#39;bbox 350 171 504 327; x_wconf 95&#39;&gt; &lt;/span&gt;
+     &lt;/span&gt;
+    &lt;/p&gt;
+   &lt;/div&gt;
+   &lt;div class=&#39;ocr_carea&#39; id=&#39;block_1_4&#39; title=&quot;bbox 121 339 370 385&quot;&gt;
+    &lt;p class=&#39;ocr_par&#39; id=&#39;par_1_4&#39; lang=&#39;eng&#39; title=&quot;bbox 121 339 370 385&quot;&gt;
+     &lt;span class=&#39;ocr_header&#39; id=&#39;line_1_6&#39; title=&quot;bbox 121 339 269 354; baseline 0 0; x_size 20.26087; x_descenders 5.2608695; x_ascenders 4&quot;&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_6&#39; title=&#39;bbox 121 339 154 354; x_wconf 96&#39;&gt;123&lt;/span&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_7&#39; title=&#39;bbox 162 339 207 354; x_wconf 96&#39;&gt;Fake&lt;/span&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_8&#39; title=&#39;bbox 214 339 269 354; x_wconf 96&#39;&gt;Street&lt;/span&gt;
+     &lt;/span&gt;
+     &lt;span class=&#39;ocr_header&#39; id=&#39;line_1_7&#39; title=&quot;bbox 121 365 370 385; baseline 0 -5; x_size 18; x_descenders 3; x_ascenders 4&quot;&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_9&#39; title=&#39;bbox 121 365 256 385; x_wconf 92&#39;&gt;ExampleTown,&lt;/span&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_10&#39; title=&#39;bbox 265 365 307 380; x_wconf 96&#39;&gt;USA&lt;/span&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_11&#39; title=&#39;bbox 313 365 370 380; x_wconf 96&#39;&gt;01234&lt;/span&gt;
+     &lt;/span&gt;
+    &lt;/p&gt;
+   &lt;/div&gt;
+   &lt;div class=&#39;ocr_carea&#39; id=&#39;block_1_5&#39; title=&quot;bbox 121 412 592 432&quot;&gt;
+    &lt;p class=&#39;ocr_par&#39; id=&#39;par_1_5&#39; lang=&#39;eng&#39; title=&quot;bbox 121 412 592 432&quot;&gt;
+     &lt;span class=&#39;ocr_header&#39; id=&#39;line_1_8&#39; title=&quot;bbox 121 412 592 432; baseline 0 -5; x_size 20; x_descenders 5; x_ascenders 4&quot;&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_12&#39; title=&#39;bbox 121 412 185 427; x_wconf 96&#39;&gt;Phone:&lt;/span&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_13&#39; title=&#39;bbox 193 412 240 432; x_wconf 96&#39;&gt;(800)&lt;/span&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_14&#39; title=&#39;bbox 248 412 335 427; x_wconf 83&#39;&gt;123-4567&lt;/span&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_15&#39; title=&#39;bbox 353 412 407 427; x_wconf 83&#39;&gt;email:&lt;/span&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_16&#39; title=&#39;bbox 416 412 592 431; x_wconf 40&#39;&gt;info@example.com&lt;/span&gt;
+     &lt;/span&gt;
+    &lt;/p&gt;
+   &lt;/div&gt;
+   &lt;div class=&#39;ocr_carea&#39; id=&#39;block_1_6&#39; title=&quot;bbox 121 475 295 494&quot;&gt;
+    &lt;p class=&#39;ocr_par&#39; id=&#39;par_1_6&#39; lang=&#39;eng&#39; title=&quot;bbox 121 475 295 494&quot;&gt;
+     &lt;span class=&#39;ocr_header&#39; id=&#39;line_1_9&#39; title=&quot;bbox 121 475 295 494; baseline 0 -4; x_size 19; x_descenders 4; x_ascenders 4&quot;&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_17&#39; title=&#39;bbox 121 475 295 494; x_wconf 90&#39;&gt;http://example.com&lt;/span&gt;
+     &lt;/span&gt;
+    &lt;/p&gt;
+   &lt;/div&gt;
+   &lt;div class=&#39;ocr_carea&#39; id=&#39;block_1_7&#39; title=&quot;bbox 175 572 354 587&quot;&gt;
+    &lt;p class=&#39;ocr_par&#39; id=&#39;par_1_7&#39; lang=&#39;eng&#39; title=&quot;bbox 175 572 354 587&quot;&gt;
+     &lt;span class=&#39;ocr_header&#39; id=&#39;line_1_10&#39; title=&quot;bbox 175 572 354 587; baseline 0 0; x_size 20.26087; x_descenders 5.2608695; x_ascenders 4&quot;&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_18&#39; title=&#39;bbox 175 572 205 587; x_wconf 96&#39;&gt;Bill&lt;/span&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_19&#39; title=&#39;bbox 212 572 243 587; x_wconf 96&#39;&gt;To:&lt;/span&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_20&#39; title=&#39;bbox 255 572 354 587; x_wconf 96&#39;&gt;Addressee&lt;/span&gt;
+     &lt;/span&gt;
+    &lt;/p&gt;
+   &lt;/div&gt;
+   &lt;div class=&#39;ocr_carea&#39; id=&#39;block_1_8&#39; title=&quot;bbox 255 600 597 676&quot;&gt;
+    &lt;p class=&#39;ocr_par&#39; id=&#39;par_1_8&#39; lang=&#39;eng&#39; title=&quot;bbox 255 600 597 676&quot;&gt;
+     &lt;span class=&#39;ocr_line&#39; id=&#39;line_1_11&#39; title=&quot;bbox 255 600 393 615; baseline 0 0; x_size 20.26087; x_descenders 5.2608695; x_ascenders 4&quot;&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_21&#39; title=&#39;bbox 255 600 331 615; x_wconf 91&#39;&gt;Address&lt;/span&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_22&#39; title=&#39;bbox 338 600 376 615; x_wconf 96&#39;&gt;Line&lt;/span&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_23&#39; title=&#39;bbox 384 600 393 615; x_wconf 95&#39;&gt;1&lt;/span&gt;
+     &lt;/span&gt;
+     &lt;span class=&#39;ocr_line&#39; id=&#39;line_1_12&#39; title=&quot;bbox 255 628 393 643; baseline 0 0; x_size 20.26087; x_descenders 5.2608695; x_ascenders 4&quot;&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_24&#39; title=&#39;bbox 255 628 331 643; x_wconf 93&#39;&gt;Address&lt;/span&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_25&#39; title=&#39;bbox 338 628 376 643; x_wconf 96&#39;&gt;Line&lt;/span&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_26&#39; title=&#39;bbox 383 628 393 643; x_wconf 96&#39;&gt;2&lt;/span&gt;
+     &lt;/span&gt;
+     &lt;span class=&#39;ocr_line&#39; id=&#39;line_1_13&#39; title=&quot;bbox 255 656 597 676; baseline 0 -5; x_size 18; x_descenders 3; x_ascenders 4&quot;&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_27&#39; title=&#39;bbox 255 656 294 676; x_wconf 96&#39;&gt;City,&lt;/span&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_28&#39; title=&#39;bbox 303 656 355 674; x_wconf 96&#39;&gt;State,&lt;/span&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_29&#39; title=&#39;bbox 363 656 399 674; x_wconf 96&#39;&gt;ZIP,&lt;/span&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_30&#39; title=&#39;bbox 407 656 484 676; x_wconf 96&#39;&gt;Country,&lt;/span&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_31&#39; title=&#39;bbox 493 656 555 674; x_wconf 96&#39;&gt;Planet,&lt;/span&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_32&#39; title=&#39;bbox 564 656 597 671; x_wconf 96&#39;&gt;Etc.&lt;/span&gt;
+     &lt;/span&gt;
+    &lt;/p&gt;
+   &lt;/div&gt;
+   &lt;div class=&#39;ocr_carea&#39; id=&#39;block_1_9&#39; title=&quot;bbox 700 365 910 385&quot;&gt;
+    &lt;p class=&#39;ocr_par&#39; id=&#39;par_1_9&#39; lang=&#39;eng&#39; title=&quot;bbox 700 365 910 385&quot;&gt;
+     &lt;span class=&#39;ocr_textfloat&#39; id=&#39;line_1_14&#39; title=&quot;bbox 700 365 910 385; baseline 0 -5; x_size 18; x_descenders 3; x_ascenders 4&quot;&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_33&#39; title=&#39;bbox 700 365 749 380; x_wconf 95&#39;&gt;Date:&lt;/span&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_34&#39; title=&#39;bbox 761 365 835 385; x_wconf 96&#39;&gt;January&lt;/span&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_35&#39; title=&#39;bbox 842 365 856 383; x_wconf 96&#39;&gt;1,&lt;/span&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_36&#39; title=&#39;bbox 865 365 910 380; x_wconf 96&#39;&gt;2023&lt;/span&gt;
+     &lt;/span&gt;
+    &lt;/p&gt;
+   &lt;/div&gt;
+   &lt;div class=&#39;ocr_carea&#39; id=&#39;block_1_10&#39; title=&quot;bbox 639 402 783 427&quot;&gt;
+    &lt;p class=&#39;ocr_par&#39; id=&#39;par_1_10&#39; lang=&#39;eng&#39; title=&quot;bbox 639 402 783 427&quot;&gt;
+     &lt;span class=&#39;ocr_line&#39; id=&#39;line_1_15&#39; title=&quot;bbox 639 402 783 427; baseline 0 0; x_size 20.26087; x_descenders 5.2608695; x_ascenders 4&quot;&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_37&#39; title=&#39;bbox 639 412 710 427; x_wconf 93&#39;&gt;Invoice&lt;/span&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_38&#39; title=&#39;bbox 717 412 755 427; x_wconf 89&#39;&gt;No.:&lt;/span&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_39&#39; title=&#39;bbox 761 402 783 417; x_wconf 15&#39;&gt;&amp;gt;4&lt;/span&gt;
+     &lt;/span&gt;
+    &lt;/p&gt;
+   &lt;/div&gt;
+   &lt;div class=&#39;ocr_carea&#39; id=&#39;block_1_11&#39; title=&quot;bbox 118 729 1061 734&quot;&gt;
+    &lt;p class=&#39;ocr_par&#39; id=&#39;par_1_11&#39; lang=&#39;eng&#39; title=&quot;bbox 118 729 1061 734&quot;&gt;
+     &lt;span class=&#39;ocr_line&#39; id=&#39;line_1_16&#39; title=&quot;bbox 118 729 1061 734; baseline 0 0; x_size 2.5; x_descenders -1.25; x_ascenders 1.25&quot;&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_40&#39; title=&#39;bbox 118 729 1061 734; x_wconf 95&#39;&gt; &lt;/span&gt;
+     &lt;/span&gt;
+    &lt;/p&gt;
+   &lt;/div&gt;
+   &lt;div class=&#39;ocr_carea&#39; id=&#39;block_1_12&#39; title=&quot;bbox 118 757 1061 762&quot;&gt;
+    &lt;p class=&#39;ocr_par&#39; id=&#39;par_1_12&#39; lang=&#39;eng&#39; title=&quot;bbox 118 757 1061 762&quot;&gt;
+     &lt;span class=&#39;ocr_line&#39; id=&#39;line_1_17&#39; title=&quot;bbox 118 757 1061 762; baseline 0 0; x_size 2.5; x_descenders -1.25; x_ascenders 1.25&quot;&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_41&#39; title=&#39;bbox 118 757 1061 762; x_wconf 95&#39;&gt; &lt;/span&gt;
+     &lt;/span&gt;
+    &lt;/p&gt;
+   &lt;/div&gt;
+   &lt;div class=&#39;ocr_carea&#39; id=&#39;block_1_13&#39; title=&quot;bbox 118 785 1061 790&quot;&gt;
+    &lt;p class=&#39;ocr_par&#39; id=&#39;par_1_13&#39; lang=&#39;eng&#39; title=&quot;bbox 118 785 1061 790&quot;&gt;
+     &lt;span class=&#39;ocr_line&#39; id=&#39;line_1_18&#39; title=&quot;bbox 118 785 1061 790; baseline 0 0; x_size 2.5; x_descenders -1.25; x_ascenders 1.25&quot;&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_42&#39; title=&#39;bbox 118 785 1061 790; x_wconf 95&#39;&gt; &lt;/span&gt;
+     &lt;/span&gt;
+    &lt;/p&gt;
+   &lt;/div&gt;
+   &lt;div class=&#39;ocr_carea&#39; id=&#39;block_1_14&#39; title=&quot;bbox 118 813 1061 818&quot;&gt;
+    &lt;p class=&#39;ocr_par&#39; id=&#39;par_1_14&#39; lang=&#39;eng&#39; title=&quot;bbox 118 813 1061 818&quot;&gt;
+     &lt;span class=&#39;ocr_line&#39; id=&#39;line_1_19&#39; title=&quot;bbox 118 813 1061 818; baseline 0 0; x_size 2.5; x_descenders -1.25; x_ascenders 1.25&quot;&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_43&#39; title=&#39;bbox 118 813 1061 818; x_wconf 95&#39;&gt; &lt;/span&gt;
+     &lt;/span&gt;
+    &lt;/p&gt;
+   &lt;/div&gt;
+   &lt;div class=&#39;ocr_carea&#39; id=&#39;block_1_15&#39; title=&quot;bbox 118 841 1061 846&quot;&gt;
+    &lt;p class=&#39;ocr_par&#39; id=&#39;par_1_15&#39; lang=&#39;eng&#39; title=&quot;bbox 118 841 1061 846&quot;&gt;
+     &lt;span class=&#39;ocr_line&#39; id=&#39;line_1_20&#39; title=&quot;bbox 118 841 1061 846; baseline 0 0; x_size 2.5; x_descenders -1.25; x_ascenders 1.25&quot;&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_44&#39; title=&#39;bbox 118 841 1061 846; x_wconf 95&#39;&gt; &lt;/span&gt;
+     &lt;/span&gt;
+    &lt;/p&gt;
+   &lt;/div&gt;
+   &lt;div class=&#39;ocr_carea&#39; id=&#39;block_1_16&#39; title=&quot;bbox 118 869 1061 874&quot;&gt;
+    &lt;p class=&#39;ocr_par&#39; id=&#39;par_1_16&#39; lang=&#39;eng&#39; title=&quot;bbox 118 869 1061 874&quot;&gt;
+     &lt;span class=&#39;ocr_line&#39; id=&#39;line_1_21&#39; title=&quot;bbox 118 869 1061 874; baseline 0 0; x_size 2.5; x_descenders -1.25; x_ascenders 1.25&quot;&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_45&#39; title=&#39;bbox 118 869 1061 874; x_wconf 95&#39;&gt; &lt;/span&gt;
+     &lt;/span&gt;
+    &lt;/p&gt;
+   &lt;/div&gt;
+   &lt;div class=&#39;ocr_carea&#39; id=&#39;block_1_17&#39; title=&quot;bbox 118 897 1061 902&quot;&gt;
+    &lt;p class=&#39;ocr_par&#39; id=&#39;par_1_17&#39; lang=&#39;eng&#39; title=&quot;bbox 118 897 1061 902&quot;&gt;
+     &lt;span class=&#39;ocr_line&#39; id=&#39;line_1_22&#39; title=&quot;bbox 118 897 1061 902; baseline 0 0; x_size 2.5; x_descenders -1.25; x_ascenders 1.25&quot;&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_46&#39; title=&#39;bbox 118 897 1061 902; x_wconf 95&#39;&gt; &lt;/span&gt;
+     &lt;/span&gt;
+    &lt;/p&gt;
+   &lt;/div&gt;
+   &lt;div class=&#39;ocr_carea&#39; id=&#39;block_1_18&#39; title=&quot;bbox 118 925 1061 930&quot;&gt;
+    &lt;p class=&#39;ocr_par&#39; id=&#39;par_1_18&#39; lang=&#39;eng&#39; title=&quot;bbox 118 925 1061 930&quot;&gt;
+     &lt;span class=&#39;ocr_line&#39; id=&#39;line_1_23&#39; title=&quot;bbox 118 925 1061 930; baseline 0 0; x_size 2.5; x_descenders -1.25; x_ascenders 1.25&quot;&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_47&#39; title=&#39;bbox 118 925 1061 930; x_wconf 95&#39;&gt; &lt;/span&gt;
+     &lt;/span&gt;
+    &lt;/p&gt;
+   &lt;/div&gt;
+   &lt;div class=&#39;ocr_carea&#39; id=&#39;block_1_19&#39; title=&quot;bbox 118 953 1061 958&quot;&gt;
+    &lt;p class=&#39;ocr_par&#39; id=&#39;par_1_19&#39; lang=&#39;eng&#39; title=&quot;bbox 118 953 1061 958&quot;&gt;
+     &lt;span class=&#39;ocr_line&#39; id=&#39;line_1_24&#39; title=&quot;bbox 118 953 1061 958; baseline 0 0; x_size 2.5; x_descenders -1.25; x_ascenders 1.25&quot;&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_48&#39; title=&#39;bbox 118 953 1061 958; x_wconf 95&#39;&gt; &lt;/span&gt;
+     &lt;/span&gt;
+    &lt;/p&gt;
+   &lt;/div&gt;
+   &lt;div class=&#39;ocr_carea&#39; id=&#39;block_1_20&#39; title=&quot;bbox 118 981 1061 986&quot;&gt;
+    &lt;p class=&#39;ocr_par&#39; id=&#39;par_1_20&#39; lang=&#39;eng&#39; title=&quot;bbox 118 981 1061 986&quot;&gt;
+     &lt;span class=&#39;ocr_line&#39; id=&#39;line_1_25&#39; title=&quot;bbox 118 981 1061 986; baseline 0 0; x_size 2.5; x_descenders -1.25; x_ascenders 1.25&quot;&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_49&#39; title=&#39;bbox 118 981 1061 986; x_wconf 95&#39;&gt; &lt;/span&gt;
+     &lt;/span&gt;
+    &lt;/p&gt;
+   &lt;/div&gt;
+   &lt;div class=&#39;ocr_carea&#39; id=&#39;block_1_21&#39; title=&quot;bbox 118 1009 1061 1014&quot;&gt;
+    &lt;p class=&#39;ocr_par&#39; id=&#39;par_1_21&#39; lang=&#39;eng&#39; title=&quot;bbox 118 1009 1061 1014&quot;&gt;
+     &lt;span class=&#39;ocr_line&#39; id=&#39;line_1_26&#39; title=&quot;bbox 118 1009 1061 1014; baseline 0 0; x_size 2.5; x_descenders -1.25; x_ascenders 1.25&quot;&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_50&#39; title=&#39;bbox 118 1009 1061 1014; x_wconf 95&#39;&gt; &lt;/span&gt;
+     &lt;/span&gt;
+    &lt;/p&gt;
+   &lt;/div&gt;
+   &lt;div class=&#39;ocr_carea&#39; id=&#39;block_1_22&#39; title=&quot;bbox 118 1037 1061 1042&quot;&gt;
+    &lt;p class=&#39;ocr_par&#39; id=&#39;par_1_22&#39; lang=&#39;eng&#39; title=&quot;bbox 118 1037 1061 1042&quot;&gt;
+     &lt;span class=&#39;ocr_line&#39; id=&#39;line_1_27&#39; title=&quot;bbox 118 1037 1061 1042; baseline 0 0; x_size 2.5; x_descenders -1.25; x_ascenders 1.25&quot;&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_51&#39; title=&#39;bbox 118 1037 1061 1042; x_wconf 95&#39;&gt; &lt;/span&gt;
+     &lt;/span&gt;
+    &lt;/p&gt;
+   &lt;/div&gt;
+   &lt;div class=&#39;ocr_carea&#39; id=&#39;block_1_23&#39; title=&quot;bbox 118 1065 1061 1070&quot;&gt;
+    &lt;p class=&#39;ocr_par&#39; id=&#39;par_1_23&#39; lang=&#39;eng&#39; title=&quot;bbox 118 1065 1061 1070&quot;&gt;
+     &lt;span class=&#39;ocr_line&#39; id=&#39;line_1_28&#39; title=&quot;bbox 118 1065 1061 1070; baseline 0 0; x_size 2.5; x_descenders -1.25; x_ascenders 1.25&quot;&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_52&#39; title=&#39;bbox 118 1065 1061 1070; x_wconf 95&#39;&gt; &lt;/span&gt;
+     &lt;/span&gt;
+    &lt;/p&gt;
+   &lt;/div&gt;
+   &lt;div class=&#39;ocr_carea&#39; id=&#39;block_1_24&#39; title=&quot;bbox 251 731 254 1096&quot;&gt;
+    &lt;p class=&#39;ocr_par&#39; id=&#39;par_1_24&#39; lang=&#39;eng&#39; title=&quot;bbox 251 731 254 1096&quot;&gt;
+     &lt;span class=&#39;ocr_line&#39; id=&#39;line_1_29&#39; title=&quot;bbox 251 731 254 1096; baseline 0 0; x_size 182.5; x_descenders -91.25; x_ascenders 91.25&quot;&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_53&#39; title=&#39;bbox 251 731 254 1096; x_wconf 95&#39;&gt; &lt;/span&gt;
+     &lt;/span&gt;
+    &lt;/p&gt;
+   &lt;/div&gt;
+   &lt;div class=&#39;ocr_carea&#39; id=&#39;block_1_25&#39; title=&quot;bbox 616 731 619 1096&quot;&gt;
+    &lt;p class=&#39;ocr_par&#39; id=&#39;par_1_25&#39; lang=&#39;eng&#39; title=&quot;bbox 616 731 619 1096&quot;&gt;
+     &lt;span class=&#39;ocr_line&#39; id=&#39;line_1_30&#39; title=&quot;bbox 616 731 619 1096; baseline 0 0; x_size 182.5; x_descenders -91.25; x_ascenders 91.25&quot;&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_54&#39; title=&#39;bbox 616 731 619 1096; x_wconf 95&#39;&gt; &lt;/span&gt;
+     &lt;/span&gt;
+    &lt;/p&gt;
+   &lt;/div&gt;
+   &lt;div class=&#39;ocr_carea&#39; id=&#39;block_1_26&#39; title=&quot;bbox 757 731 760 1096&quot;&gt;
+    &lt;p class=&#39;ocr_par&#39; id=&#39;par_1_26&#39; lang=&#39;eng&#39; title=&quot;bbox 757 731 760 1096&quot;&gt;
+     &lt;span class=&#39;ocr_line&#39; id=&#39;line_1_31&#39; title=&quot;bbox 757 731 760 1096; baseline 0 0; x_size 182.5; x_descenders -91.25; x_ascenders 91.25&quot;&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_55&#39; title=&#39;bbox 757 731 760 1096; x_wconf 95&#39;&gt; &lt;/span&gt;
+     &lt;/span&gt;
+    &lt;/p&gt;
+   &lt;/div&gt;
+   &lt;div class=&#39;ocr_carea&#39; id=&#39;block_1_27&#39; title=&quot;bbox 118 1093 1061 1098&quot;&gt;
+    &lt;p class=&#39;ocr_par&#39; id=&#39;par_1_27&#39; lang=&#39;eng&#39; title=&quot;bbox 118 1093 1061 1098&quot;&gt;
+     &lt;span class=&#39;ocr_line&#39; id=&#39;line_1_32&#39; title=&quot;bbox 118 1093 1061 1098; baseline 0 0; x_size 2.5; x_descenders -1.25; x_ascenders 1.25&quot;&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_56&#39; title=&#39;bbox 118 1093 1061 1098; x_wconf 95&#39;&gt; &lt;/span&gt;
+     &lt;/span&gt;
+    &lt;/p&gt;
+   &lt;/div&gt;
+   &lt;div class=&#39;ocr_carea&#39; id=&#39;block_1_28&#39; title=&quot;bbox 112 732 1057 1125&quot;&gt;
+    &lt;p class=&#39;ocr_par&#39; id=&#39;par_1_28&#39; lang=&#39;eng&#39; title=&quot;bbox 121 732 1057 1116&quot;&gt;
+     &lt;span class=&#39;ocr_line&#39; id=&#39;line_1_33&#39; title=&quot;bbox 155 732 1025 761; baseline -0.001 -8.99; x_size 20; x_descenders 5; x_ascenders 4&quot;&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_57&#39; title=&#39;bbox 155 732 206 761; x_wconf 96&#39;&gt;Date&lt;/span&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_58&#39; title=&#39;bbox 356 737 404 752; x_wconf 96&#39;&gt;Work&lt;/span&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_59&#39; title=&#39;bbox 411 737 513 757; x_wconf 96&#39;&gt;Description&lt;/span&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_60&#39; title=&#39;bbox 639 736 675 756; x_wconf 95&#39;&gt;Qty.&lt;/span&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_61&#39; title=&#39;bbox 684 736 737 751; x_wconf 87&#39;&gt;Hours&lt;/span&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_62&#39; title=&#39;bbox 743 732 768 761; x_wconf 56&#39;&gt;|&lt;/span&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_63&#39; title=&#39;bbox 776 736 835 756; x_wconf 88&#39;&gt;Hourly&lt;/span&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_64&#39; title=&#39;bbox 842 736 884 751; x_wconf 96&#39;&gt;Rate&lt;/span&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_65&#39; title=&#39;bbox 936 736 973 751; x_wconf 97&#39;&gt;Line&lt;/span&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_66&#39; title=&#39;bbox 980 736 1025 751; x_wconf 96&#39;&gt;Total&lt;/span&gt;
+     &lt;/span&gt;
+     &lt;span class=&#39;ocr_line&#39; id=&#39;line_1_34&#39; title=&quot;bbox 112 760 1057 789; baseline -0.001 -8.99; x_size 19.852942; x_descenders 4.852941; x_ascenders 4.8529415&quot;&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_67&#39; title=&#39;bbox 112 760 201 789; x_wconf 92&#39;&gt;12/30/22&lt;/span&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_68&#39; title=&#39;bbox 256 765 293 780; x_wconf 96&#39;&gt;Line&lt;/span&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_69&#39; title=&#39;bbox 301 765 339 780; x_wconf 90&#39;&gt;Item&lt;/span&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_70&#39; title=&#39;bbox 348 765 357 780; x_wconf 91&#39;&gt;1&lt;/span&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_71&#39; title=&#39;bbox 707 760 756 789; x_wconf 93&#39;&gt;2.00&lt;/span&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_72&#39; title=&#39;bbox 835 764 898 779; x_wconf 96&#39;&gt;200.00&lt;/span&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_73&#39; title=&#39;bbox 994 764 1057 779; x_wconf 96&#39;&gt;400.00&lt;/span&gt;
+     &lt;/span&gt;
+     &lt;span class=&#39;ocr_line&#39; id=&#39;line_1_35&#39; title=&quot;bbox 256 792 1057 808; baseline -0.001 0; x_size 20.26087; x_descenders 5.2608695; x_ascenders 4&quot;&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_74&#39; title=&#39;bbox 256 793 293 808; x_wconf 96&#39;&gt;Line&lt;/span&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_75&#39; title=&#39;bbox 301 793 339 808; x_wconf 91&#39;&gt;Item&lt;/span&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_76&#39; title=&#39;bbox 347 793 357 808; x_wconf 96&#39;&gt;2&lt;/span&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_77&#39; title=&#39;bbox 995 792 1057 807; x_wconf 93&#39;&gt;125.00:&lt;/span&gt;
+     &lt;/span&gt;
+     &lt;span class=&#39;ocr_line&#39; id=&#39;line_1_36&#39; title=&quot;bbox 827 1097 1057 1125; baseline -0.005 -8.959; x_size 19.852942; x_descenders 4.852941; x_ascenders 4.8529415&quot;&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_78&#39; title=&#39;bbox 827 1097 891 1125; x_wconf 96&#39;&gt;Total:&lt;/span&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_79&#39; title=&#39;bbox 994 1100 1057 1115; x_wconf 96&#39;&gt;525.00&lt;/span&gt;
+     &lt;/span&gt;
+    &lt;/p&gt;
+   &lt;/div&gt;
+   &lt;div class=&#39;ocr_carea&#39; id=&#39;block_1_29&#39; title=&quot;bbox 900 731 903 1124&quot;&gt;
+    &lt;p class=&#39;ocr_par&#39; id=&#39;par_1_29&#39; lang=&#39;eng&#39; title=&quot;bbox 900 731 903 1124&quot;&gt;
+     &lt;span class=&#39;ocr_line&#39; id=&#39;line_1_37&#39; title=&quot;bbox 900 731 903 1124; baseline 0 0; x_size 196.5; x_descenders -98.25; x_ascenders 98.25&quot;&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_80&#39; title=&#39;bbox 900 731 903 1124; x_wconf 95&#39;&gt; &lt;/span&gt;
+     &lt;/span&gt;
+    &lt;/p&gt;
+   &lt;/div&gt;
+   &lt;div class=&#39;ocr_carea&#39; id=&#39;block_1_30&#39; title=&quot;bbox 1059 731 1062 1123&quot;&gt;
+    &lt;p class=&#39;ocr_par&#39; id=&#39;par_1_30&#39; lang=&#39;eng&#39; title=&quot;bbox 1059 731 1062 1123&quot;&gt;
+     &lt;span class=&#39;ocr_line&#39; id=&#39;line_1_38&#39; title=&quot;bbox 1059 731 1062 1123; baseline 0 0; x_size 196; x_descenders -98; x_ascenders 98&quot;&gt;
+      &lt;span class=&#39;ocrx_word&#39; id=&#39;word_1_81&#39; title=&#39;bbox 1059 731 1062 1123; x_wconf 95&#39;&gt; &lt;/span&gt;
+     &lt;/span&gt;
+    &lt;/p&gt;
+   &lt;/div&gt;
+  &lt;/div&gt;
+ &lt;/body&gt;
+&lt;/html&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can also display HTML in Jupyter Notebook; however, there are <a class="reference external" href="https://github.com/kba/hocrjs">much better hOCR viewers for browsers</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="n">hocr</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ <head>
+  <title></title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+  <meta name='ocr-system' content='tesseract 4.1.1' />
+  <meta name='ocr-capabilities' content='ocr_page ocr_carea ocr_par ocr_line ocrx_word ocrp_wconf'/>
+ </head>
+ <body>
+  <div class='ocr_page' id='page_1' title='image "/tmp/tess_5srhis1e_input.PNG"; bbox 0 0 1241 1754; ppageno 0'>
+   <div class='ocr_carea' id='block_1_1' title="bbox 117 731 120 1096">
+    <p class='ocr_par' id='par_1_1' lang='eng' title="bbox 117 731 120 1096">
+     <span class='ocr_line' id='line_1_1' title="bbox 117 731 120 1096; baseline 0 0; x_size 182.5; x_descenders -91.25; x_ascenders 91.25">
+      <span class='ocrx_word' id='word_1_1' title='bbox 117 731 120 1096; x_wconf 95'> </span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_2' title="bbox 130 203 349 297">
+    <p class='ocr_par' id='par_1_2' lang='eng' title="bbox 130 203 349 297">
+     <span class='ocr_textfloat' id='line_1_2' title="bbox 131 203 285 225; baseline -0.006 0; x_size 27.558731; x_descenders 5.5587301; x_ascenders 5">
+      <span class='ocrx_word' id='word_1_2' title='bbox 131 203 285 225; x_wconf 96'>Document</span>
+     </span>
+     <span class='ocr_textfloat' id='line_1_3' title="bbox 131 236 349 264; baseline -0.005 -5; x_size 29; x_descenders 6; x_ascenders 6">
+      <span class='ocrx_word' id='word_1_3' title='bbox 131 236 349 264; x_wconf 96'>Understanding</span>
+     </span>
+     <span class='ocr_textfloat' id='line_1_4' title="bbox 130 270 271 297; baseline 0 -5; x_size 27; x_descenders 5; x_ascenders 5">
+      <span class='ocrx_word' id='word_1_4' title='bbox 130 270 271 297; x_wconf 96'>Company</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_3' title="bbox 350 171 504 327">
+    <p class='ocr_par' id='par_1_3' lang='eng' title="bbox 350 171 504 327">
+     <span class='ocr_line' id='line_1_5' title="bbox 350 171 504 327; baseline 0 1427; x_size 196.25; x_descenders 49.0625; x_ascenders 49.0625">
+      <span class='ocrx_word' id='word_1_5' title='bbox 350 171 504 327; x_wconf 95'> </span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_4' title="bbox 121 339 370 385">
+    <p class='ocr_par' id='par_1_4' lang='eng' title="bbox 121 339 370 385">
+     <span class='ocr_header' id='line_1_6' title="bbox 121 339 269 354; baseline 0 0; x_size 20.26087; x_descenders 5.2608695; x_ascenders 4">
+      <span class='ocrx_word' id='word_1_6' title='bbox 121 339 154 354; x_wconf 96'>123</span>
+      <span class='ocrx_word' id='word_1_7' title='bbox 162 339 207 354; x_wconf 96'>Fake</span>
+      <span class='ocrx_word' id='word_1_8' title='bbox 214 339 269 354; x_wconf 96'>Street</span>
+     </span>
+     <span class='ocr_header' id='line_1_7' title="bbox 121 365 370 385; baseline 0 -5; x_size 18; x_descenders 3; x_ascenders 4">
+      <span class='ocrx_word' id='word_1_9' title='bbox 121 365 256 385; x_wconf 92'>ExampleTown,</span>
+      <span class='ocrx_word' id='word_1_10' title='bbox 265 365 307 380; x_wconf 96'>USA</span>
+      <span class='ocrx_word' id='word_1_11' title='bbox 313 365 370 380; x_wconf 96'>01234</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_5' title="bbox 121 412 592 432">
+    <p class='ocr_par' id='par_1_5' lang='eng' title="bbox 121 412 592 432">
+     <span class='ocr_header' id='line_1_8' title="bbox 121 412 592 432; baseline 0 -5; x_size 20; x_descenders 5; x_ascenders 4">
+      <span class='ocrx_word' id='word_1_12' title='bbox 121 412 185 427; x_wconf 96'>Phone:</span>
+      <span class='ocrx_word' id='word_1_13' title='bbox 193 412 240 432; x_wconf 96'>(800)</span>
+      <span class='ocrx_word' id='word_1_14' title='bbox 248 412 335 427; x_wconf 83'>123-4567</span>
+      <span class='ocrx_word' id='word_1_15' title='bbox 353 412 407 427; x_wconf 83'>email:</span>
+      <span class='ocrx_word' id='word_1_16' title='bbox 416 412 592 431; x_wconf 40'>info@example.com</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_6' title="bbox 121 475 295 494">
+    <p class='ocr_par' id='par_1_6' lang='eng' title="bbox 121 475 295 494">
+     <span class='ocr_header' id='line_1_9' title="bbox 121 475 295 494; baseline 0 -4; x_size 19; x_descenders 4; x_ascenders 4">
+      <span class='ocrx_word' id='word_1_17' title='bbox 121 475 295 494; x_wconf 90'>http://example.com</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_7' title="bbox 175 572 354 587">
+    <p class='ocr_par' id='par_1_7' lang='eng' title="bbox 175 572 354 587">
+     <span class='ocr_header' id='line_1_10' title="bbox 175 572 354 587; baseline 0 0; x_size 20.26087; x_descenders 5.2608695; x_ascenders 4">
+      <span class='ocrx_word' id='word_1_18' title='bbox 175 572 205 587; x_wconf 96'>Bill</span>
+      <span class='ocrx_word' id='word_1_19' title='bbox 212 572 243 587; x_wconf 96'>To:</span>
+      <span class='ocrx_word' id='word_1_20' title='bbox 255 572 354 587; x_wconf 96'>Addressee</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_8' title="bbox 255 600 597 676">
+    <p class='ocr_par' id='par_1_8' lang='eng' title="bbox 255 600 597 676">
+     <span class='ocr_line' id='line_1_11' title="bbox 255 600 393 615; baseline 0 0; x_size 20.26087; x_descenders 5.2608695; x_ascenders 4">
+      <span class='ocrx_word' id='word_1_21' title='bbox 255 600 331 615; x_wconf 91'>Address</span>
+      <span class='ocrx_word' id='word_1_22' title='bbox 338 600 376 615; x_wconf 96'>Line</span>
+      <span class='ocrx_word' id='word_1_23' title='bbox 384 600 393 615; x_wconf 95'>1</span>
+     </span>
+     <span class='ocr_line' id='line_1_12' title="bbox 255 628 393 643; baseline 0 0; x_size 20.26087; x_descenders 5.2608695; x_ascenders 4">
+      <span class='ocrx_word' id='word_1_24' title='bbox 255 628 331 643; x_wconf 93'>Address</span>
+      <span class='ocrx_word' id='word_1_25' title='bbox 338 628 376 643; x_wconf 96'>Line</span>
+      <span class='ocrx_word' id='word_1_26' title='bbox 383 628 393 643; x_wconf 96'>2</span>
+     </span>
+     <span class='ocr_line' id='line_1_13' title="bbox 255 656 597 676; baseline 0 -5; x_size 18; x_descenders 3; x_ascenders 4">
+      <span class='ocrx_word' id='word_1_27' title='bbox 255 656 294 676; x_wconf 96'>City,</span>
+      <span class='ocrx_word' id='word_1_28' title='bbox 303 656 355 674; x_wconf 96'>State,</span>
+      <span class='ocrx_word' id='word_1_29' title='bbox 363 656 399 674; x_wconf 96'>ZIP,</span>
+      <span class='ocrx_word' id='word_1_30' title='bbox 407 656 484 676; x_wconf 96'>Country,</span>
+      <span class='ocrx_word' id='word_1_31' title='bbox 493 656 555 674; x_wconf 96'>Planet,</span>
+      <span class='ocrx_word' id='word_1_32' title='bbox 564 656 597 671; x_wconf 96'>Etc.</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_9' title="bbox 700 365 910 385">
+    <p class='ocr_par' id='par_1_9' lang='eng' title="bbox 700 365 910 385">
+     <span class='ocr_textfloat' id='line_1_14' title="bbox 700 365 910 385; baseline 0 -5; x_size 18; x_descenders 3; x_ascenders 4">
+      <span class='ocrx_word' id='word_1_33' title='bbox 700 365 749 380; x_wconf 95'>Date:</span>
+      <span class='ocrx_word' id='word_1_34' title='bbox 761 365 835 385; x_wconf 96'>January</span>
+      <span class='ocrx_word' id='word_1_35' title='bbox 842 365 856 383; x_wconf 96'>1,</span>
+      <span class='ocrx_word' id='word_1_36' title='bbox 865 365 910 380; x_wconf 96'>2023</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_10' title="bbox 639 402 783 427">
+    <p class='ocr_par' id='par_1_10' lang='eng' title="bbox 639 402 783 427">
+     <span class='ocr_line' id='line_1_15' title="bbox 639 402 783 427; baseline 0 0; x_size 20.26087; x_descenders 5.2608695; x_ascenders 4">
+      <span class='ocrx_word' id='word_1_37' title='bbox 639 412 710 427; x_wconf 93'>Invoice</span>
+      <span class='ocrx_word' id='word_1_38' title='bbox 717 412 755 427; x_wconf 89'>No.:</span>
+      <span class='ocrx_word' id='word_1_39' title='bbox 761 402 783 417; x_wconf 15'>&gt;4</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_11' title="bbox 118 729 1061 734">
+    <p class='ocr_par' id='par_1_11' lang='eng' title="bbox 118 729 1061 734">
+     <span class='ocr_line' id='line_1_16' title="bbox 118 729 1061 734; baseline 0 0; x_size 2.5; x_descenders -1.25; x_ascenders 1.25">
+      <span class='ocrx_word' id='word_1_40' title='bbox 118 729 1061 734; x_wconf 95'> </span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_12' title="bbox 118 757 1061 762">
+    <p class='ocr_par' id='par_1_12' lang='eng' title="bbox 118 757 1061 762">
+     <span class='ocr_line' id='line_1_17' title="bbox 118 757 1061 762; baseline 0 0; x_size 2.5; x_descenders -1.25; x_ascenders 1.25">
+      <span class='ocrx_word' id='word_1_41' title='bbox 118 757 1061 762; x_wconf 95'> </span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_13' title="bbox 118 785 1061 790">
+    <p class='ocr_par' id='par_1_13' lang='eng' title="bbox 118 785 1061 790">
+     <span class='ocr_line' id='line_1_18' title="bbox 118 785 1061 790; baseline 0 0; x_size 2.5; x_descenders -1.25; x_ascenders 1.25">
+      <span class='ocrx_word' id='word_1_42' title='bbox 118 785 1061 790; x_wconf 95'> </span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_14' title="bbox 118 813 1061 818">
+    <p class='ocr_par' id='par_1_14' lang='eng' title="bbox 118 813 1061 818">
+     <span class='ocr_line' id='line_1_19' title="bbox 118 813 1061 818; baseline 0 0; x_size 2.5; x_descenders -1.25; x_ascenders 1.25">
+      <span class='ocrx_word' id='word_1_43' title='bbox 118 813 1061 818; x_wconf 95'> </span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_15' title="bbox 118 841 1061 846">
+    <p class='ocr_par' id='par_1_15' lang='eng' title="bbox 118 841 1061 846">
+     <span class='ocr_line' id='line_1_20' title="bbox 118 841 1061 846; baseline 0 0; x_size 2.5; x_descenders -1.25; x_ascenders 1.25">
+      <span class='ocrx_word' id='word_1_44' title='bbox 118 841 1061 846; x_wconf 95'> </span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_16' title="bbox 118 869 1061 874">
+    <p class='ocr_par' id='par_1_16' lang='eng' title="bbox 118 869 1061 874">
+     <span class='ocr_line' id='line_1_21' title="bbox 118 869 1061 874; baseline 0 0; x_size 2.5; x_descenders -1.25; x_ascenders 1.25">
+      <span class='ocrx_word' id='word_1_45' title='bbox 118 869 1061 874; x_wconf 95'> </span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_17' title="bbox 118 897 1061 902">
+    <p class='ocr_par' id='par_1_17' lang='eng' title="bbox 118 897 1061 902">
+     <span class='ocr_line' id='line_1_22' title="bbox 118 897 1061 902; baseline 0 0; x_size 2.5; x_descenders -1.25; x_ascenders 1.25">
+      <span class='ocrx_word' id='word_1_46' title='bbox 118 897 1061 902; x_wconf 95'> </span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_18' title="bbox 118 925 1061 930">
+    <p class='ocr_par' id='par_1_18' lang='eng' title="bbox 118 925 1061 930">
+     <span class='ocr_line' id='line_1_23' title="bbox 118 925 1061 930; baseline 0 0; x_size 2.5; x_descenders -1.25; x_ascenders 1.25">
+      <span class='ocrx_word' id='word_1_47' title='bbox 118 925 1061 930; x_wconf 95'> </span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_19' title="bbox 118 953 1061 958">
+    <p class='ocr_par' id='par_1_19' lang='eng' title="bbox 118 953 1061 958">
+     <span class='ocr_line' id='line_1_24' title="bbox 118 953 1061 958; baseline 0 0; x_size 2.5; x_descenders -1.25; x_ascenders 1.25">
+      <span class='ocrx_word' id='word_1_48' title='bbox 118 953 1061 958; x_wconf 95'> </span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_20' title="bbox 118 981 1061 986">
+    <p class='ocr_par' id='par_1_20' lang='eng' title="bbox 118 981 1061 986">
+     <span class='ocr_line' id='line_1_25' title="bbox 118 981 1061 986; baseline 0 0; x_size 2.5; x_descenders -1.25; x_ascenders 1.25">
+      <span class='ocrx_word' id='word_1_49' title='bbox 118 981 1061 986; x_wconf 95'> </span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_21' title="bbox 118 1009 1061 1014">
+    <p class='ocr_par' id='par_1_21' lang='eng' title="bbox 118 1009 1061 1014">
+     <span class='ocr_line' id='line_1_26' title="bbox 118 1009 1061 1014; baseline 0 0; x_size 2.5; x_descenders -1.25; x_ascenders 1.25">
+      <span class='ocrx_word' id='word_1_50' title='bbox 118 1009 1061 1014; x_wconf 95'> </span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_22' title="bbox 118 1037 1061 1042">
+    <p class='ocr_par' id='par_1_22' lang='eng' title="bbox 118 1037 1061 1042">
+     <span class='ocr_line' id='line_1_27' title="bbox 118 1037 1061 1042; baseline 0 0; x_size 2.5; x_descenders -1.25; x_ascenders 1.25">
+      <span class='ocrx_word' id='word_1_51' title='bbox 118 1037 1061 1042; x_wconf 95'> </span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_23' title="bbox 118 1065 1061 1070">
+    <p class='ocr_par' id='par_1_23' lang='eng' title="bbox 118 1065 1061 1070">
+     <span class='ocr_line' id='line_1_28' title="bbox 118 1065 1061 1070; baseline 0 0; x_size 2.5; x_descenders -1.25; x_ascenders 1.25">
+      <span class='ocrx_word' id='word_1_52' title='bbox 118 1065 1061 1070; x_wconf 95'> </span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_24' title="bbox 251 731 254 1096">
+    <p class='ocr_par' id='par_1_24' lang='eng' title="bbox 251 731 254 1096">
+     <span class='ocr_line' id='line_1_29' title="bbox 251 731 254 1096; baseline 0 0; x_size 182.5; x_descenders -91.25; x_ascenders 91.25">
+      <span class='ocrx_word' id='word_1_53' title='bbox 251 731 254 1096; x_wconf 95'> </span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_25' title="bbox 616 731 619 1096">
+    <p class='ocr_par' id='par_1_25' lang='eng' title="bbox 616 731 619 1096">
+     <span class='ocr_line' id='line_1_30' title="bbox 616 731 619 1096; baseline 0 0; x_size 182.5; x_descenders -91.25; x_ascenders 91.25">
+      <span class='ocrx_word' id='word_1_54' title='bbox 616 731 619 1096; x_wconf 95'> </span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_26' title="bbox 757 731 760 1096">
+    <p class='ocr_par' id='par_1_26' lang='eng' title="bbox 757 731 760 1096">
+     <span class='ocr_line' id='line_1_31' title="bbox 757 731 760 1096; baseline 0 0; x_size 182.5; x_descenders -91.25; x_ascenders 91.25">
+      <span class='ocrx_word' id='word_1_55' title='bbox 757 731 760 1096; x_wconf 95'> </span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_27' title="bbox 118 1093 1061 1098">
+    <p class='ocr_par' id='par_1_27' lang='eng' title="bbox 118 1093 1061 1098">
+     <span class='ocr_line' id='line_1_32' title="bbox 118 1093 1061 1098; baseline 0 0; x_size 2.5; x_descenders -1.25; x_ascenders 1.25">
+      <span class='ocrx_word' id='word_1_56' title='bbox 118 1093 1061 1098; x_wconf 95'> </span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_28' title="bbox 112 732 1057 1125">
+    <p class='ocr_par' id='par_1_28' lang='eng' title="bbox 121 732 1057 1116">
+     <span class='ocr_line' id='line_1_33' title="bbox 155 732 1025 761; baseline -0.001 -8.99; x_size 20; x_descenders 5; x_ascenders 4">
+      <span class='ocrx_word' id='word_1_57' title='bbox 155 732 206 761; x_wconf 96'>Date</span>
+      <span class='ocrx_word' id='word_1_58' title='bbox 356 737 404 752; x_wconf 96'>Work</span>
+      <span class='ocrx_word' id='word_1_59' title='bbox 411 737 513 757; x_wconf 96'>Description</span>
+      <span class='ocrx_word' id='word_1_60' title='bbox 639 736 675 756; x_wconf 95'>Qty.</span>
+      <span class='ocrx_word' id='word_1_61' title='bbox 684 736 737 751; x_wconf 87'>Hours</span>
+      <span class='ocrx_word' id='word_1_62' title='bbox 743 732 768 761; x_wconf 56'>|</span>
+      <span class='ocrx_word' id='word_1_63' title='bbox 776 736 835 756; x_wconf 88'>Hourly</span>
+      <span class='ocrx_word' id='word_1_64' title='bbox 842 736 884 751; x_wconf 96'>Rate</span>
+      <span class='ocrx_word' id='word_1_65' title='bbox 936 736 973 751; x_wconf 97'>Line</span>
+      <span class='ocrx_word' id='word_1_66' title='bbox 980 736 1025 751; x_wconf 96'>Total</span>
+     </span>
+     <span class='ocr_line' id='line_1_34' title="bbox 112 760 1057 789; baseline -0.001 -8.99; x_size 19.852942; x_descenders 4.852941; x_ascenders 4.8529415">
+      <span class='ocrx_word' id='word_1_67' title='bbox 112 760 201 789; x_wconf 92'>12/30/22</span>
+      <span class='ocrx_word' id='word_1_68' title='bbox 256 765 293 780; x_wconf 96'>Line</span>
+      <span class='ocrx_word' id='word_1_69' title='bbox 301 765 339 780; x_wconf 90'>Item</span>
+      <span class='ocrx_word' id='word_1_70' title='bbox 348 765 357 780; x_wconf 91'>1</span>
+      <span class='ocrx_word' id='word_1_71' title='bbox 707 760 756 789; x_wconf 93'>2.00</span>
+      <span class='ocrx_word' id='word_1_72' title='bbox 835 764 898 779; x_wconf 96'>200.00</span>
+      <span class='ocrx_word' id='word_1_73' title='bbox 994 764 1057 779; x_wconf 96'>400.00</span>
+     </span>
+     <span class='ocr_line' id='line_1_35' title="bbox 256 792 1057 808; baseline -0.001 0; x_size 20.26087; x_descenders 5.2608695; x_ascenders 4">
+      <span class='ocrx_word' id='word_1_74' title='bbox 256 793 293 808; x_wconf 96'>Line</span>
+      <span class='ocrx_word' id='word_1_75' title='bbox 301 793 339 808; x_wconf 91'>Item</span>
+      <span class='ocrx_word' id='word_1_76' title='bbox 347 793 357 808; x_wconf 96'>2</span>
+      <span class='ocrx_word' id='word_1_77' title='bbox 995 792 1057 807; x_wconf 93'>125.00:</span>
+     </span>
+     <span class='ocr_line' id='line_1_36' title="bbox 827 1097 1057 1125; baseline -0.005 -8.959; x_size 19.852942; x_descenders 4.852941; x_ascenders 4.8529415">
+      <span class='ocrx_word' id='word_1_78' title='bbox 827 1097 891 1125; x_wconf 96'>Total:</span>
+      <span class='ocrx_word' id='word_1_79' title='bbox 994 1100 1057 1115; x_wconf 96'>525.00</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_29' title="bbox 900 731 903 1124">
+    <p class='ocr_par' id='par_1_29' lang='eng' title="bbox 900 731 903 1124">
+     <span class='ocr_line' id='line_1_37' title="bbox 900 731 903 1124; baseline 0 0; x_size 196.5; x_descenders -98.25; x_ascenders 98.25">
+      <span class='ocrx_word' id='word_1_80' title='bbox 900 731 903 1124; x_wconf 95'> </span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_30' title="bbox 1059 731 1062 1123">
+    <p class='ocr_par' id='par_1_30' lang='eng' title="bbox 1059 731 1062 1123">
+     <span class='ocr_line' id='line_1_38' title="bbox 1059 731 1062 1123; baseline 0 0; x_size 196; x_descenders -98; x_ascenders 98">
+      <span class='ocrx_word' id='word_1_81' title='bbox 1059 731 1062 1123; x_wconf 95'> </span>
+     </span>
+    </p>
+   </div>
+  </div>
+ </body>
+</html>
+</div></div>
+</div>
+</section>
+<section id="alto-xml">
+<h2>ALTO XML<a class="headerlink" href="#alto-xml" title="Permalink to this heading">#</a></h2>
+<p>You can generate ALTO XML using the <code class="docutils literal notranslate"><span class="pre">image_to_alto_xml</span></code>.</p>
+<p>From <a class="reference external" href="https://en.wikipedia.org/wiki/ALTO_(XML)">Wikipedia</a>:</p>
+<blockquote>
+<div><p>ALTO (Analyzed Layout and Text Object) is an open XML Schema developed by the EU-funded project called METAe.</p>
+</div></blockquote>
+<blockquote>
+<div><p>The standard was initially developed for the description of text OCR and layout information of pages for digitized material. The goal was to describe the layout and text in a form to be able to reconstruct the original appearance based on the digitized information - similar to the approach of a lossless image saving operation.</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xml</span> <span class="o">=</span> <span class="n">pytesseract</span><span class="o">.</span><span class="n">image_to_alto_xml</span><span class="p">(</span><span class="n">im</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">xml</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;alto xmlns=&quot;http://www.loc.gov/standards/alto/ns-v3#&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;http://www.loc.gov/standards/alto/ns-v3# http://www.loc.gov/alto/v3/alto-3-0.xsd&quot;&gt;
+	&lt;Description&gt;
+		&lt;MeasurementUnit&gt;pixel&lt;/MeasurementUnit&gt;
+		&lt;sourceImageInformation&gt;
+			&lt;fileName&gt;&lt;/fileName&gt;
+		&lt;/sourceImageInformation&gt;
+		&lt;OCRProcessing ID=&quot;OCR_0&quot;&gt;
+			&lt;ocrProcessingStep&gt;
+				&lt;processingSoftware&gt;
+					&lt;softwareName&gt;tesseract 4.1.1&lt;/softwareName&gt;
+				&lt;/processingSoftware&gt;
+			&lt;/ocrProcessingStep&gt;
+		&lt;/OCRProcessing&gt;
+	&lt;/Description&gt;
+	&lt;Layout&gt;
+		&lt;Page WIDTH=&quot;1241&quot; HEIGHT=&quot;1754&quot; PHYSICAL_IMG_NR=&quot;0&quot; ID=&quot;page_0&quot;&gt;
+			&lt;PrintSpace HPOS=&quot;0&quot; VPOS=&quot;0&quot; WIDTH=&quot;1241&quot; HEIGHT=&quot;1754&quot;&gt;
+				&lt;ComposedBlock ID=&quot;cblock_0&quot; HPOS=&quot;117&quot; VPOS=&quot;731&quot; WIDTH=&quot;3&quot; HEIGHT=&quot;365&quot;&gt;
+					&lt;TextBlock ID=&quot;block_0&quot; HPOS=&quot;117&quot; VPOS=&quot;731&quot; WIDTH=&quot;3&quot; HEIGHT=&quot;365&quot;&gt;
+						&lt;TextLine ID=&quot;line_0&quot; HPOS=&quot;117&quot; VPOS=&quot;731&quot; WIDTH=&quot;3&quot; HEIGHT=&quot;365&quot;&gt;
+							&lt;String ID=&quot;string_0&quot; HPOS=&quot;117&quot; VPOS=&quot;731&quot; WIDTH=&quot;3&quot; HEIGHT=&quot;365&quot; WC=&quot;0.95&quot; CONTENT=&quot; &quot;/&gt;
+						&lt;/TextLine&gt;
+					&lt;/TextBlock&gt;
+				&lt;/ComposedBlock&gt;
+				&lt;ComposedBlock ID=&quot;cblock_1&quot; HPOS=&quot;130&quot; VPOS=&quot;203&quot; WIDTH=&quot;219&quot; HEIGHT=&quot;94&quot;&gt;
+					&lt;TextBlock ID=&quot;block_1&quot; HPOS=&quot;130&quot; VPOS=&quot;203&quot; WIDTH=&quot;219&quot; HEIGHT=&quot;94&quot;&gt;
+						&lt;TextLine ID=&quot;line_1&quot; HPOS=&quot;131&quot; VPOS=&quot;203&quot; WIDTH=&quot;154&quot; HEIGHT=&quot;22&quot;&gt;
+							&lt;String ID=&quot;string_1&quot; HPOS=&quot;131&quot; VPOS=&quot;203&quot; WIDTH=&quot;154&quot; HEIGHT=&quot;22&quot; WC=&quot;0.96&quot; CONTENT=&quot;Document&quot;/&gt;
+						&lt;/TextLine&gt;
+						&lt;TextLine ID=&quot;line_2&quot; HPOS=&quot;131&quot; VPOS=&quot;236&quot; WIDTH=&quot;218&quot; HEIGHT=&quot;28&quot;&gt;
+							&lt;String ID=&quot;string_2&quot; HPOS=&quot;131&quot; VPOS=&quot;236&quot; WIDTH=&quot;218&quot; HEIGHT=&quot;28&quot; WC=&quot;0.96&quot; CONTENT=&quot;Understanding&quot;/&gt;
+						&lt;/TextLine&gt;
+						&lt;TextLine ID=&quot;line_3&quot; HPOS=&quot;130&quot; VPOS=&quot;270&quot; WIDTH=&quot;141&quot; HEIGHT=&quot;27&quot;&gt;
+							&lt;String ID=&quot;string_3&quot; HPOS=&quot;130&quot; VPOS=&quot;270&quot; WIDTH=&quot;141&quot; HEIGHT=&quot;27&quot; WC=&quot;0.96&quot; CONTENT=&quot;Company&quot;/&gt;
+						&lt;/TextLine&gt;
+					&lt;/TextBlock&gt;
+				&lt;/ComposedBlock&gt;
+				&lt;ComposedBlock ID=&quot;cblock_2&quot; HPOS=&quot;350&quot; VPOS=&quot;171&quot; WIDTH=&quot;154&quot; HEIGHT=&quot;156&quot;&gt;
+					&lt;TextBlock ID=&quot;block_2&quot; HPOS=&quot;350&quot; VPOS=&quot;171&quot; WIDTH=&quot;154&quot; HEIGHT=&quot;156&quot;&gt;
+						&lt;TextLine ID=&quot;line_4&quot; HPOS=&quot;350&quot; VPOS=&quot;171&quot; WIDTH=&quot;154&quot; HEIGHT=&quot;156&quot;&gt;
+							&lt;String ID=&quot;string_4&quot; HPOS=&quot;350&quot; VPOS=&quot;171&quot; WIDTH=&quot;154&quot; HEIGHT=&quot;156&quot; WC=&quot;0.95&quot; CONTENT=&quot; &quot;/&gt;
+						&lt;/TextLine&gt;
+					&lt;/TextBlock&gt;
+				&lt;/ComposedBlock&gt;
+				&lt;ComposedBlock ID=&quot;cblock_3&quot; HPOS=&quot;121&quot; VPOS=&quot;339&quot; WIDTH=&quot;249&quot; HEIGHT=&quot;46&quot;&gt;
+					&lt;TextBlock ID=&quot;block_3&quot; HPOS=&quot;121&quot; VPOS=&quot;339&quot; WIDTH=&quot;249&quot; HEIGHT=&quot;46&quot;&gt;
+						&lt;TextLine ID=&quot;line_5&quot; HPOS=&quot;121&quot; VPOS=&quot;339&quot; WIDTH=&quot;148&quot; HEIGHT=&quot;15&quot;&gt;
+							&lt;String ID=&quot;string_5&quot; HPOS=&quot;121&quot; VPOS=&quot;339&quot; WIDTH=&quot;33&quot; HEIGHT=&quot;15&quot; WC=&quot;0.96&quot; CONTENT=&quot;123&quot;/&gt;&lt;SP WIDTH=&quot;8&quot; VPOS=&quot;339&quot; HPOS=&quot;154&quot;/&gt;
+							&lt;String ID=&quot;string_6&quot; HPOS=&quot;162&quot; VPOS=&quot;339&quot; WIDTH=&quot;45&quot; HEIGHT=&quot;15&quot; WC=&quot;0.96&quot; CONTENT=&quot;Fake&quot;/&gt;&lt;SP WIDTH=&quot;7&quot; VPOS=&quot;339&quot; HPOS=&quot;207&quot;/&gt;
+							&lt;String ID=&quot;string_7&quot; HPOS=&quot;214&quot; VPOS=&quot;339&quot; WIDTH=&quot;55&quot; HEIGHT=&quot;15&quot; WC=&quot;0.96&quot; CONTENT=&quot;Street&quot;/&gt;
+						&lt;/TextLine&gt;
+						&lt;TextLine ID=&quot;line_6&quot; HPOS=&quot;121&quot; VPOS=&quot;365&quot; WIDTH=&quot;249&quot; HEIGHT=&quot;20&quot;&gt;
+							&lt;String ID=&quot;string_8&quot; HPOS=&quot;121&quot; VPOS=&quot;365&quot; WIDTH=&quot;135&quot; HEIGHT=&quot;20&quot; WC=&quot;0.92&quot; CONTENT=&quot;ExampleTown,&quot;/&gt;&lt;SP WIDTH=&quot;9&quot; VPOS=&quot;365&quot; HPOS=&quot;256&quot;/&gt;
+							&lt;String ID=&quot;string_9&quot; HPOS=&quot;265&quot; VPOS=&quot;365&quot; WIDTH=&quot;42&quot; HEIGHT=&quot;15&quot; WC=&quot;0.96&quot; CONTENT=&quot;USA&quot;/&gt;&lt;SP WIDTH=&quot;6&quot; VPOS=&quot;365&quot; HPOS=&quot;307&quot;/&gt;
+							&lt;String ID=&quot;string_10&quot; HPOS=&quot;313&quot; VPOS=&quot;365&quot; WIDTH=&quot;57&quot; HEIGHT=&quot;15&quot; WC=&quot;0.96&quot; CONTENT=&quot;01234&quot;/&gt;
+						&lt;/TextLine&gt;
+					&lt;/TextBlock&gt;
+				&lt;/ComposedBlock&gt;
+				&lt;ComposedBlock ID=&quot;cblock_4&quot; HPOS=&quot;121&quot; VPOS=&quot;412&quot; WIDTH=&quot;471&quot; HEIGHT=&quot;20&quot;&gt;
+					&lt;TextBlock ID=&quot;block_4&quot; HPOS=&quot;121&quot; VPOS=&quot;412&quot; WIDTH=&quot;471&quot; HEIGHT=&quot;20&quot;&gt;
+						&lt;TextLine ID=&quot;line_7&quot; HPOS=&quot;121&quot; VPOS=&quot;412&quot; WIDTH=&quot;471&quot; HEIGHT=&quot;20&quot;&gt;
+							&lt;String ID=&quot;string_11&quot; HPOS=&quot;121&quot; VPOS=&quot;412&quot; WIDTH=&quot;64&quot; HEIGHT=&quot;15&quot; WC=&quot;0.96&quot; CONTENT=&quot;Phone:&quot;/&gt;&lt;SP WIDTH=&quot;8&quot; VPOS=&quot;412&quot; HPOS=&quot;185&quot;/&gt;
+							&lt;String ID=&quot;string_12&quot; HPOS=&quot;193&quot; VPOS=&quot;412&quot; WIDTH=&quot;47&quot; HEIGHT=&quot;20&quot; WC=&quot;0.96&quot; CONTENT=&quot;(800)&quot;/&gt;&lt;SP WIDTH=&quot;8&quot; VPOS=&quot;412&quot; HPOS=&quot;240&quot;/&gt;
+							&lt;String ID=&quot;string_13&quot; HPOS=&quot;248&quot; VPOS=&quot;412&quot; WIDTH=&quot;87&quot; HEIGHT=&quot;15&quot; WC=&quot;0.83&quot; CONTENT=&quot;123-4567&quot;/&gt;&lt;SP WIDTH=&quot;18&quot; VPOS=&quot;412&quot; HPOS=&quot;335&quot;/&gt;
+							&lt;String ID=&quot;string_14&quot; HPOS=&quot;353&quot; VPOS=&quot;412&quot; WIDTH=&quot;54&quot; HEIGHT=&quot;15&quot; WC=&quot;0.83&quot; CONTENT=&quot;email:&quot;/&gt;&lt;SP WIDTH=&quot;9&quot; VPOS=&quot;412&quot; HPOS=&quot;407&quot;/&gt;
+							&lt;String ID=&quot;string_15&quot; HPOS=&quot;416&quot; VPOS=&quot;412&quot; WIDTH=&quot;176&quot; HEIGHT=&quot;19&quot; WC=&quot;0.40&quot; CONTENT=&quot;info@example.com&quot;/&gt;
+						&lt;/TextLine&gt;
+					&lt;/TextBlock&gt;
+				&lt;/ComposedBlock&gt;
+				&lt;ComposedBlock ID=&quot;cblock_5&quot; HPOS=&quot;121&quot; VPOS=&quot;475&quot; WIDTH=&quot;174&quot; HEIGHT=&quot;19&quot;&gt;
+					&lt;TextBlock ID=&quot;block_5&quot; HPOS=&quot;121&quot; VPOS=&quot;475&quot; WIDTH=&quot;174&quot; HEIGHT=&quot;19&quot;&gt;
+						&lt;TextLine ID=&quot;line_8&quot; HPOS=&quot;121&quot; VPOS=&quot;475&quot; WIDTH=&quot;174&quot; HEIGHT=&quot;19&quot;&gt;
+							&lt;String ID=&quot;string_16&quot; HPOS=&quot;121&quot; VPOS=&quot;475&quot; WIDTH=&quot;174&quot; HEIGHT=&quot;19&quot; WC=&quot;0.90&quot; CONTENT=&quot;http://example.com&quot;/&gt;
+						&lt;/TextLine&gt;
+					&lt;/TextBlock&gt;
+				&lt;/ComposedBlock&gt;
+				&lt;ComposedBlock ID=&quot;cblock_6&quot; HPOS=&quot;175&quot; VPOS=&quot;572&quot; WIDTH=&quot;179&quot; HEIGHT=&quot;15&quot;&gt;
+					&lt;TextBlock ID=&quot;block_6&quot; HPOS=&quot;175&quot; VPOS=&quot;572&quot; WIDTH=&quot;179&quot; HEIGHT=&quot;15&quot;&gt;
+						&lt;TextLine ID=&quot;line_9&quot; HPOS=&quot;175&quot; VPOS=&quot;572&quot; WIDTH=&quot;179&quot; HEIGHT=&quot;15&quot;&gt;
+							&lt;String ID=&quot;string_17&quot; HPOS=&quot;175&quot; VPOS=&quot;572&quot; WIDTH=&quot;30&quot; HEIGHT=&quot;15&quot; WC=&quot;0.96&quot; CONTENT=&quot;Bill&quot;/&gt;&lt;SP WIDTH=&quot;7&quot; VPOS=&quot;572&quot; HPOS=&quot;205&quot;/&gt;
+							&lt;String ID=&quot;string_18&quot; HPOS=&quot;212&quot; VPOS=&quot;572&quot; WIDTH=&quot;31&quot; HEIGHT=&quot;15&quot; WC=&quot;0.96&quot; CONTENT=&quot;To:&quot;/&gt;&lt;SP WIDTH=&quot;12&quot; VPOS=&quot;572&quot; HPOS=&quot;243&quot;/&gt;
+							&lt;String ID=&quot;string_19&quot; HPOS=&quot;255&quot; VPOS=&quot;572&quot; WIDTH=&quot;99&quot; HEIGHT=&quot;15&quot; WC=&quot;0.96&quot; CONTENT=&quot;Addressee&quot;/&gt;
+						&lt;/TextLine&gt;
+					&lt;/TextBlock&gt;
+				&lt;/ComposedBlock&gt;
+				&lt;ComposedBlock ID=&quot;cblock_7&quot; HPOS=&quot;255&quot; VPOS=&quot;600&quot; WIDTH=&quot;342&quot; HEIGHT=&quot;76&quot;&gt;
+					&lt;TextBlock ID=&quot;block_7&quot; HPOS=&quot;255&quot; VPOS=&quot;600&quot; WIDTH=&quot;342&quot; HEIGHT=&quot;76&quot;&gt;
+						&lt;TextLine ID=&quot;line_10&quot; HPOS=&quot;255&quot; VPOS=&quot;600&quot; WIDTH=&quot;138&quot; HEIGHT=&quot;15&quot;&gt;
+							&lt;String ID=&quot;string_20&quot; HPOS=&quot;255&quot; VPOS=&quot;600&quot; WIDTH=&quot;76&quot; HEIGHT=&quot;15&quot; WC=&quot;0.91&quot; CONTENT=&quot;Address&quot;/&gt;&lt;SP WIDTH=&quot;7&quot; VPOS=&quot;600&quot; HPOS=&quot;331&quot;/&gt;
+							&lt;String ID=&quot;string_21&quot; HPOS=&quot;338&quot; VPOS=&quot;600&quot; WIDTH=&quot;38&quot; HEIGHT=&quot;15&quot; WC=&quot;0.96&quot; CONTENT=&quot;Line&quot;/&gt;&lt;SP WIDTH=&quot;8&quot; VPOS=&quot;600&quot; HPOS=&quot;376&quot;/&gt;
+							&lt;String ID=&quot;string_22&quot; HPOS=&quot;384&quot; VPOS=&quot;600&quot; WIDTH=&quot;9&quot; HEIGHT=&quot;15&quot; WC=&quot;0.95&quot; CONTENT=&quot;1&quot;/&gt;
+						&lt;/TextLine&gt;
+						&lt;TextLine ID=&quot;line_11&quot; HPOS=&quot;255&quot; VPOS=&quot;628&quot; WIDTH=&quot;138&quot; HEIGHT=&quot;15&quot;&gt;
+							&lt;String ID=&quot;string_23&quot; HPOS=&quot;255&quot; VPOS=&quot;628&quot; WIDTH=&quot;76&quot; HEIGHT=&quot;15&quot; WC=&quot;0.93&quot; CONTENT=&quot;Address&quot;/&gt;&lt;SP WIDTH=&quot;7&quot; VPOS=&quot;628&quot; HPOS=&quot;331&quot;/&gt;
+							&lt;String ID=&quot;string_24&quot; HPOS=&quot;338&quot; VPOS=&quot;628&quot; WIDTH=&quot;38&quot; HEIGHT=&quot;15&quot; WC=&quot;0.96&quot; CONTENT=&quot;Line&quot;/&gt;&lt;SP WIDTH=&quot;7&quot; VPOS=&quot;628&quot; HPOS=&quot;376&quot;/&gt;
+							&lt;String ID=&quot;string_25&quot; HPOS=&quot;383&quot; VPOS=&quot;628&quot; WIDTH=&quot;10&quot; HEIGHT=&quot;15&quot; WC=&quot;0.96&quot; CONTENT=&quot;2&quot;/&gt;
+						&lt;/TextLine&gt;
+						&lt;TextLine ID=&quot;line_12&quot; HPOS=&quot;255&quot; VPOS=&quot;656&quot; WIDTH=&quot;342&quot; HEIGHT=&quot;20&quot;&gt;
+							&lt;String ID=&quot;string_26&quot; HPOS=&quot;255&quot; VPOS=&quot;656&quot; WIDTH=&quot;39&quot; HEIGHT=&quot;20&quot; WC=&quot;0.96&quot; CONTENT=&quot;City,&quot;/&gt;&lt;SP WIDTH=&quot;9&quot; VPOS=&quot;656&quot; HPOS=&quot;294&quot;/&gt;
+							&lt;String ID=&quot;string_27&quot; HPOS=&quot;303&quot; VPOS=&quot;656&quot; WIDTH=&quot;52&quot; HEIGHT=&quot;18&quot; WC=&quot;0.96&quot; CONTENT=&quot;State,&quot;/&gt;&lt;SP WIDTH=&quot;8&quot; VPOS=&quot;656&quot; HPOS=&quot;355&quot;/&gt;
+							&lt;String ID=&quot;string_28&quot; HPOS=&quot;363&quot; VPOS=&quot;656&quot; WIDTH=&quot;36&quot; HEIGHT=&quot;18&quot; WC=&quot;0.96&quot; CONTENT=&quot;ZIP,&quot;/&gt;&lt;SP WIDTH=&quot;8&quot; VPOS=&quot;656&quot; HPOS=&quot;399&quot;/&gt;
+							&lt;String ID=&quot;string_29&quot; HPOS=&quot;407&quot; VPOS=&quot;656&quot; WIDTH=&quot;77&quot; HEIGHT=&quot;20&quot; WC=&quot;0.96&quot; CONTENT=&quot;Country,&quot;/&gt;&lt;SP WIDTH=&quot;9&quot; VPOS=&quot;656&quot; HPOS=&quot;484&quot;/&gt;
+							&lt;String ID=&quot;string_30&quot; HPOS=&quot;493&quot; VPOS=&quot;656&quot; WIDTH=&quot;62&quot; HEIGHT=&quot;18&quot; WC=&quot;0.96&quot; CONTENT=&quot;Planet,&quot;/&gt;&lt;SP WIDTH=&quot;9&quot; VPOS=&quot;656&quot; HPOS=&quot;555&quot;/&gt;
+							&lt;String ID=&quot;string_31&quot; HPOS=&quot;564&quot; VPOS=&quot;656&quot; WIDTH=&quot;33&quot; HEIGHT=&quot;15&quot; WC=&quot;0.96&quot; CONTENT=&quot;Etc.&quot;/&gt;
+						&lt;/TextLine&gt;
+					&lt;/TextBlock&gt;
+				&lt;/ComposedBlock&gt;
+				&lt;ComposedBlock ID=&quot;cblock_8&quot; HPOS=&quot;700&quot; VPOS=&quot;365&quot; WIDTH=&quot;210&quot; HEIGHT=&quot;20&quot;&gt;
+					&lt;TextBlock ID=&quot;block_8&quot; HPOS=&quot;700&quot; VPOS=&quot;365&quot; WIDTH=&quot;210&quot; HEIGHT=&quot;20&quot;&gt;
+						&lt;TextLine ID=&quot;line_13&quot; HPOS=&quot;700&quot; VPOS=&quot;365&quot; WIDTH=&quot;210&quot; HEIGHT=&quot;20&quot;&gt;
+							&lt;String ID=&quot;string_32&quot; HPOS=&quot;700&quot; VPOS=&quot;365&quot; WIDTH=&quot;49&quot; HEIGHT=&quot;15&quot; WC=&quot;0.95&quot; CONTENT=&quot;Date:&quot;/&gt;&lt;SP WIDTH=&quot;12&quot; VPOS=&quot;365&quot; HPOS=&quot;749&quot;/&gt;
+							&lt;String ID=&quot;string_33&quot; HPOS=&quot;761&quot; VPOS=&quot;365&quot; WIDTH=&quot;74&quot; HEIGHT=&quot;20&quot; WC=&quot;0.96&quot; CONTENT=&quot;January&quot;/&gt;&lt;SP WIDTH=&quot;7&quot; VPOS=&quot;365&quot; HPOS=&quot;835&quot;/&gt;
+							&lt;String ID=&quot;string_34&quot; HPOS=&quot;842&quot; VPOS=&quot;365&quot; WIDTH=&quot;14&quot; HEIGHT=&quot;18&quot; WC=&quot;0.96&quot; CONTENT=&quot;1,&quot;/&gt;&lt;SP WIDTH=&quot;9&quot; VPOS=&quot;365&quot; HPOS=&quot;856&quot;/&gt;
+							&lt;String ID=&quot;string_35&quot; HPOS=&quot;865&quot; VPOS=&quot;365&quot; WIDTH=&quot;45&quot; HEIGHT=&quot;15&quot; WC=&quot;0.96&quot; CONTENT=&quot;2023&quot;/&gt;
+						&lt;/TextLine&gt;
+					&lt;/TextBlock&gt;
+				&lt;/ComposedBlock&gt;
+				&lt;ComposedBlock ID=&quot;cblock_9&quot; HPOS=&quot;639&quot; VPOS=&quot;402&quot; WIDTH=&quot;144&quot; HEIGHT=&quot;25&quot;&gt;
+					&lt;TextBlock ID=&quot;block_9&quot; HPOS=&quot;639&quot; VPOS=&quot;402&quot; WIDTH=&quot;144&quot; HEIGHT=&quot;25&quot;&gt;
+						&lt;TextLine ID=&quot;line_14&quot; HPOS=&quot;639&quot; VPOS=&quot;402&quot; WIDTH=&quot;144&quot; HEIGHT=&quot;25&quot;&gt;
+							&lt;String ID=&quot;string_36&quot; HPOS=&quot;639&quot; VPOS=&quot;412&quot; WIDTH=&quot;71&quot; HEIGHT=&quot;15&quot; WC=&quot;0.93&quot; CONTENT=&quot;Invoice&quot;/&gt;&lt;SP WIDTH=&quot;7&quot; VPOS=&quot;412&quot; HPOS=&quot;710&quot;/&gt;
+							&lt;String ID=&quot;string_37&quot; HPOS=&quot;717&quot; VPOS=&quot;412&quot; WIDTH=&quot;38&quot; HEIGHT=&quot;15&quot; WC=&quot;0.89&quot; CONTENT=&quot;No.:&quot;/&gt;&lt;SP WIDTH=&quot;6&quot; VPOS=&quot;412&quot; HPOS=&quot;755&quot;/&gt;
+							&lt;String ID=&quot;string_38&quot; HPOS=&quot;761&quot; VPOS=&quot;402&quot; WIDTH=&quot;22&quot; HEIGHT=&quot;15&quot; WC=&quot;0.15&quot; CONTENT=&quot;&amp;gt;4&quot;/&gt;
+						&lt;/TextLine&gt;
+					&lt;/TextBlock&gt;
+				&lt;/ComposedBlock&gt;
+				&lt;ComposedBlock ID=&quot;cblock_10&quot; HPOS=&quot;118&quot; VPOS=&quot;729&quot; WIDTH=&quot;943&quot; HEIGHT=&quot;5&quot;&gt;
+					&lt;TextBlock ID=&quot;block_10&quot; HPOS=&quot;118&quot; VPOS=&quot;729&quot; WIDTH=&quot;943&quot; HEIGHT=&quot;5&quot;&gt;
+						&lt;TextLine ID=&quot;line_15&quot; HPOS=&quot;118&quot; VPOS=&quot;729&quot; WIDTH=&quot;943&quot; HEIGHT=&quot;5&quot;&gt;
+							&lt;String ID=&quot;string_39&quot; HPOS=&quot;118&quot; VPOS=&quot;729&quot; WIDTH=&quot;943&quot; HEIGHT=&quot;5&quot; WC=&quot;0.95&quot; CONTENT=&quot; &quot;/&gt;
+						&lt;/TextLine&gt;
+					&lt;/TextBlock&gt;
+				&lt;/ComposedBlock&gt;
+				&lt;ComposedBlock ID=&quot;cblock_11&quot; HPOS=&quot;118&quot; VPOS=&quot;757&quot; WIDTH=&quot;943&quot; HEIGHT=&quot;5&quot;&gt;
+					&lt;TextBlock ID=&quot;block_11&quot; HPOS=&quot;118&quot; VPOS=&quot;757&quot; WIDTH=&quot;943&quot; HEIGHT=&quot;5&quot;&gt;
+						&lt;TextLine ID=&quot;line_16&quot; HPOS=&quot;118&quot; VPOS=&quot;757&quot; WIDTH=&quot;943&quot; HEIGHT=&quot;5&quot;&gt;
+							&lt;String ID=&quot;string_40&quot; HPOS=&quot;118&quot; VPOS=&quot;757&quot; WIDTH=&quot;943&quot; HEIGHT=&quot;5&quot; WC=&quot;0.95&quot; CONTENT=&quot; &quot;/&gt;
+						&lt;/TextLine&gt;
+					&lt;/TextBlock&gt;
+				&lt;/ComposedBlock&gt;
+				&lt;ComposedBlock ID=&quot;cblock_12&quot; HPOS=&quot;118&quot; VPOS=&quot;785&quot; WIDTH=&quot;943&quot; HEIGHT=&quot;5&quot;&gt;
+					&lt;TextBlock ID=&quot;block_12&quot; HPOS=&quot;118&quot; VPOS=&quot;785&quot; WIDTH=&quot;943&quot; HEIGHT=&quot;5&quot;&gt;
+						&lt;TextLine ID=&quot;line_17&quot; HPOS=&quot;118&quot; VPOS=&quot;785&quot; WIDTH=&quot;943&quot; HEIGHT=&quot;5&quot;&gt;
+							&lt;String ID=&quot;string_41&quot; HPOS=&quot;118&quot; VPOS=&quot;785&quot; WIDTH=&quot;943&quot; HEIGHT=&quot;5&quot; WC=&quot;0.95&quot; CONTENT=&quot; &quot;/&gt;
+						&lt;/TextLine&gt;
+					&lt;/TextBlock&gt;
+				&lt;/ComposedBlock&gt;
+				&lt;ComposedBlock ID=&quot;cblock_13&quot; HPOS=&quot;118&quot; VPOS=&quot;813&quot; WIDTH=&quot;943&quot; HEIGHT=&quot;5&quot;&gt;
+					&lt;TextBlock ID=&quot;block_13&quot; HPOS=&quot;118&quot; VPOS=&quot;813&quot; WIDTH=&quot;943&quot; HEIGHT=&quot;5&quot;&gt;
+						&lt;TextLine ID=&quot;line_18&quot; HPOS=&quot;118&quot; VPOS=&quot;813&quot; WIDTH=&quot;943&quot; HEIGHT=&quot;5&quot;&gt;
+							&lt;String ID=&quot;string_42&quot; HPOS=&quot;118&quot; VPOS=&quot;813&quot; WIDTH=&quot;943&quot; HEIGHT=&quot;5&quot; WC=&quot;0.95&quot; CONTENT=&quot; &quot;/&gt;
+						&lt;/TextLine&gt;
+					&lt;/TextBlock&gt;
+				&lt;/ComposedBlock&gt;
+				&lt;ComposedBlock ID=&quot;cblock_14&quot; HPOS=&quot;118&quot; VPOS=&quot;841&quot; WIDTH=&quot;943&quot; HEIGHT=&quot;5&quot;&gt;
+					&lt;TextBlock ID=&quot;block_14&quot; HPOS=&quot;118&quot; VPOS=&quot;841&quot; WIDTH=&quot;943&quot; HEIGHT=&quot;5&quot;&gt;
+						&lt;TextLine ID=&quot;line_19&quot; HPOS=&quot;118&quot; VPOS=&quot;841&quot; WIDTH=&quot;943&quot; HEIGHT=&quot;5&quot;&gt;
+							&lt;String ID=&quot;string_43&quot; HPOS=&quot;118&quot; VPOS=&quot;841&quot; WIDTH=&quot;943&quot; HEIGHT=&quot;5&quot; WC=&quot;0.95&quot; CONTENT=&quot; &quot;/&gt;
+						&lt;/TextLine&gt;
+					&lt;/TextBlock&gt;
+				&lt;/ComposedBlock&gt;
+				&lt;ComposedBlock ID=&quot;cblock_15&quot; HPOS=&quot;118&quot; VPOS=&quot;869&quot; WIDTH=&quot;943&quot; HEIGHT=&quot;5&quot;&gt;
+					&lt;TextBlock ID=&quot;block_15&quot; HPOS=&quot;118&quot; VPOS=&quot;869&quot; WIDTH=&quot;943&quot; HEIGHT=&quot;5&quot;&gt;
+						&lt;TextLine ID=&quot;line_20&quot; HPOS=&quot;118&quot; VPOS=&quot;869&quot; WIDTH=&quot;943&quot; HEIGHT=&quot;5&quot;&gt;
+							&lt;String ID=&quot;string_44&quot; HPOS=&quot;118&quot; VPOS=&quot;869&quot; WIDTH=&quot;943&quot; HEIGHT=&quot;5&quot; WC=&quot;0.95&quot; CONTENT=&quot; &quot;/&gt;
+						&lt;/TextLine&gt;
+					&lt;/TextBlock&gt;
+				&lt;/ComposedBlock&gt;
+				&lt;ComposedBlock ID=&quot;cblock_16&quot; HPOS=&quot;118&quot; VPOS=&quot;897&quot; WIDTH=&quot;943&quot; HEIGHT=&quot;5&quot;&gt;
+					&lt;TextBlock ID=&quot;block_16&quot; HPOS=&quot;118&quot; VPOS=&quot;897&quot; WIDTH=&quot;943&quot; HEIGHT=&quot;5&quot;&gt;
+						&lt;TextLine ID=&quot;line_21&quot; HPOS=&quot;118&quot; VPOS=&quot;897&quot; WIDTH=&quot;943&quot; HEIGHT=&quot;5&quot;&gt;
+							&lt;String ID=&quot;string_45&quot; HPOS=&quot;118&quot; VPOS=&quot;897&quot; WIDTH=&quot;943&quot; HEIGHT=&quot;5&quot; WC=&quot;0.95&quot; CONTENT=&quot; &quot;/&gt;
+						&lt;/TextLine&gt;
+					&lt;/TextBlock&gt;
+				&lt;/ComposedBlock&gt;
+				&lt;ComposedBlock ID=&quot;cblock_17&quot; HPOS=&quot;118&quot; VPOS=&quot;925&quot; WIDTH=&quot;943&quot; HEIGHT=&quot;5&quot;&gt;
+					&lt;TextBlock ID=&quot;block_17&quot; HPOS=&quot;118&quot; VPOS=&quot;925&quot; WIDTH=&quot;943&quot; HEIGHT=&quot;5&quot;&gt;
+						&lt;TextLine ID=&quot;line_22&quot; HPOS=&quot;118&quot; VPOS=&quot;925&quot; WIDTH=&quot;943&quot; HEIGHT=&quot;5&quot;&gt;
+							&lt;String ID=&quot;string_46&quot; HPOS=&quot;118&quot; VPOS=&quot;925&quot; WIDTH=&quot;943&quot; HEIGHT=&quot;5&quot; WC=&quot;0.95&quot; CONTENT=&quot; &quot;/&gt;
+						&lt;/TextLine&gt;
+					&lt;/TextBlock&gt;
+				&lt;/ComposedBlock&gt;
+				&lt;ComposedBlock ID=&quot;cblock_18&quot; HPOS=&quot;118&quot; VPOS=&quot;953&quot; WIDTH=&quot;943&quot; HEIGHT=&quot;5&quot;&gt;
+					&lt;TextBlock ID=&quot;block_18&quot; HPOS=&quot;118&quot; VPOS=&quot;953&quot; WIDTH=&quot;943&quot; HEIGHT=&quot;5&quot;&gt;
+						&lt;TextLine ID=&quot;line_23&quot; HPOS=&quot;118&quot; VPOS=&quot;953&quot; WIDTH=&quot;943&quot; HEIGHT=&quot;5&quot;&gt;
+							&lt;String ID=&quot;string_47&quot; HPOS=&quot;118&quot; VPOS=&quot;953&quot; WIDTH=&quot;943&quot; HEIGHT=&quot;5&quot; WC=&quot;0.95&quot; CONTENT=&quot; &quot;/&gt;
+						&lt;/TextLine&gt;
+					&lt;/TextBlock&gt;
+				&lt;/ComposedBlock&gt;
+				&lt;ComposedBlock ID=&quot;cblock_19&quot; HPOS=&quot;118&quot; VPOS=&quot;981&quot; WIDTH=&quot;943&quot; HEIGHT=&quot;5&quot;&gt;
+					&lt;TextBlock ID=&quot;block_19&quot; HPOS=&quot;118&quot; VPOS=&quot;981&quot; WIDTH=&quot;943&quot; HEIGHT=&quot;5&quot;&gt;
+						&lt;TextLine ID=&quot;line_24&quot; HPOS=&quot;118&quot; VPOS=&quot;981&quot; WIDTH=&quot;943&quot; HEIGHT=&quot;5&quot;&gt;
+							&lt;String ID=&quot;string_48&quot; HPOS=&quot;118&quot; VPOS=&quot;981&quot; WIDTH=&quot;943&quot; HEIGHT=&quot;5&quot; WC=&quot;0.95&quot; CONTENT=&quot; &quot;/&gt;
+						&lt;/TextLine&gt;
+					&lt;/TextBlock&gt;
+				&lt;/ComposedBlock&gt;
+				&lt;ComposedBlock ID=&quot;cblock_20&quot; HPOS=&quot;118&quot; VPOS=&quot;1009&quot; WIDTH=&quot;943&quot; HEIGHT=&quot;5&quot;&gt;
+					&lt;TextBlock ID=&quot;block_20&quot; HPOS=&quot;118&quot; VPOS=&quot;1009&quot; WIDTH=&quot;943&quot; HEIGHT=&quot;5&quot;&gt;
+						&lt;TextLine ID=&quot;line_25&quot; HPOS=&quot;118&quot; VPOS=&quot;1009&quot; WIDTH=&quot;943&quot; HEIGHT=&quot;5&quot;&gt;
+							&lt;String ID=&quot;string_49&quot; HPOS=&quot;118&quot; VPOS=&quot;1009&quot; WIDTH=&quot;943&quot; HEIGHT=&quot;5&quot; WC=&quot;0.95&quot; CONTENT=&quot; &quot;/&gt;
+						&lt;/TextLine&gt;
+					&lt;/TextBlock&gt;
+				&lt;/ComposedBlock&gt;
+				&lt;ComposedBlock ID=&quot;cblock_21&quot; HPOS=&quot;118&quot; VPOS=&quot;1037&quot; WIDTH=&quot;943&quot; HEIGHT=&quot;5&quot;&gt;
+					&lt;TextBlock ID=&quot;block_21&quot; HPOS=&quot;118&quot; VPOS=&quot;1037&quot; WIDTH=&quot;943&quot; HEIGHT=&quot;5&quot;&gt;
+						&lt;TextLine ID=&quot;line_26&quot; HPOS=&quot;118&quot; VPOS=&quot;1037&quot; WIDTH=&quot;943&quot; HEIGHT=&quot;5&quot;&gt;
+							&lt;String ID=&quot;string_50&quot; HPOS=&quot;118&quot; VPOS=&quot;1037&quot; WIDTH=&quot;943&quot; HEIGHT=&quot;5&quot; WC=&quot;0.95&quot; CONTENT=&quot; &quot;/&gt;
+						&lt;/TextLine&gt;
+					&lt;/TextBlock&gt;
+				&lt;/ComposedBlock&gt;
+				&lt;ComposedBlock ID=&quot;cblock_22&quot; HPOS=&quot;118&quot; VPOS=&quot;1065&quot; WIDTH=&quot;943&quot; HEIGHT=&quot;5&quot;&gt;
+					&lt;TextBlock ID=&quot;block_22&quot; HPOS=&quot;118&quot; VPOS=&quot;1065&quot; WIDTH=&quot;943&quot; HEIGHT=&quot;5&quot;&gt;
+						&lt;TextLine ID=&quot;line_27&quot; HPOS=&quot;118&quot; VPOS=&quot;1065&quot; WIDTH=&quot;943&quot; HEIGHT=&quot;5&quot;&gt;
+							&lt;String ID=&quot;string_51&quot; HPOS=&quot;118&quot; VPOS=&quot;1065&quot; WIDTH=&quot;943&quot; HEIGHT=&quot;5&quot; WC=&quot;0.95&quot; CONTENT=&quot; &quot;/&gt;
+						&lt;/TextLine&gt;
+					&lt;/TextBlock&gt;
+				&lt;/ComposedBlock&gt;
+				&lt;ComposedBlock ID=&quot;cblock_23&quot; HPOS=&quot;251&quot; VPOS=&quot;731&quot; WIDTH=&quot;3&quot; HEIGHT=&quot;365&quot;&gt;
+					&lt;TextBlock ID=&quot;block_23&quot; HPOS=&quot;251&quot; VPOS=&quot;731&quot; WIDTH=&quot;3&quot; HEIGHT=&quot;365&quot;&gt;
+						&lt;TextLine ID=&quot;line_28&quot; HPOS=&quot;251&quot; VPOS=&quot;731&quot; WIDTH=&quot;3&quot; HEIGHT=&quot;365&quot;&gt;
+							&lt;String ID=&quot;string_52&quot; HPOS=&quot;251&quot; VPOS=&quot;731&quot; WIDTH=&quot;3&quot; HEIGHT=&quot;365&quot; WC=&quot;0.95&quot; CONTENT=&quot; &quot;/&gt;
+						&lt;/TextLine&gt;
+					&lt;/TextBlock&gt;
+				&lt;/ComposedBlock&gt;
+				&lt;ComposedBlock ID=&quot;cblock_24&quot; HPOS=&quot;616&quot; VPOS=&quot;731&quot; WIDTH=&quot;3&quot; HEIGHT=&quot;365&quot;&gt;
+					&lt;TextBlock ID=&quot;block_24&quot; HPOS=&quot;616&quot; VPOS=&quot;731&quot; WIDTH=&quot;3&quot; HEIGHT=&quot;365&quot;&gt;
+						&lt;TextLine ID=&quot;line_29&quot; HPOS=&quot;616&quot; VPOS=&quot;731&quot; WIDTH=&quot;3&quot; HEIGHT=&quot;365&quot;&gt;
+							&lt;String ID=&quot;string_53&quot; HPOS=&quot;616&quot; VPOS=&quot;731&quot; WIDTH=&quot;3&quot; HEIGHT=&quot;365&quot; WC=&quot;0.95&quot; CONTENT=&quot; &quot;/&gt;
+						&lt;/TextLine&gt;
+					&lt;/TextBlock&gt;
+				&lt;/ComposedBlock&gt;
+				&lt;ComposedBlock ID=&quot;cblock_25&quot; HPOS=&quot;757&quot; VPOS=&quot;731&quot; WIDTH=&quot;3&quot; HEIGHT=&quot;365&quot;&gt;
+					&lt;TextBlock ID=&quot;block_25&quot; HPOS=&quot;757&quot; VPOS=&quot;731&quot; WIDTH=&quot;3&quot; HEIGHT=&quot;365&quot;&gt;
+						&lt;TextLine ID=&quot;line_30&quot; HPOS=&quot;757&quot; VPOS=&quot;731&quot; WIDTH=&quot;3&quot; HEIGHT=&quot;365&quot;&gt;
+							&lt;String ID=&quot;string_54&quot; HPOS=&quot;757&quot; VPOS=&quot;731&quot; WIDTH=&quot;3&quot; HEIGHT=&quot;365&quot; WC=&quot;0.95&quot; CONTENT=&quot; &quot;/&gt;
+						&lt;/TextLine&gt;
+					&lt;/TextBlock&gt;
+				&lt;/ComposedBlock&gt;
+				&lt;ComposedBlock ID=&quot;cblock_26&quot; HPOS=&quot;118&quot; VPOS=&quot;1093&quot; WIDTH=&quot;943&quot; HEIGHT=&quot;5&quot;&gt;
+					&lt;TextBlock ID=&quot;block_26&quot; HPOS=&quot;118&quot; VPOS=&quot;1093&quot; WIDTH=&quot;943&quot; HEIGHT=&quot;5&quot;&gt;
+						&lt;TextLine ID=&quot;line_31&quot; HPOS=&quot;118&quot; VPOS=&quot;1093&quot; WIDTH=&quot;943&quot; HEIGHT=&quot;5&quot;&gt;
+							&lt;String ID=&quot;string_55&quot; HPOS=&quot;118&quot; VPOS=&quot;1093&quot; WIDTH=&quot;943&quot; HEIGHT=&quot;5&quot; WC=&quot;0.95&quot; CONTENT=&quot; &quot;/&gt;
+						&lt;/TextLine&gt;
+					&lt;/TextBlock&gt;
+				&lt;/ComposedBlock&gt;
+				&lt;ComposedBlock ID=&quot;cblock_27&quot; HPOS=&quot;112&quot; VPOS=&quot;732&quot; WIDTH=&quot;945&quot; HEIGHT=&quot;393&quot;&gt;
+					&lt;TextBlock ID=&quot;block_27&quot; HPOS=&quot;121&quot; VPOS=&quot;732&quot; WIDTH=&quot;936&quot; HEIGHT=&quot;384&quot;&gt;
+						&lt;TextLine ID=&quot;line_32&quot; HPOS=&quot;155&quot; VPOS=&quot;732&quot; WIDTH=&quot;870&quot; HEIGHT=&quot;29&quot;&gt;
+							&lt;String ID=&quot;string_56&quot; HPOS=&quot;155&quot; VPOS=&quot;732&quot; WIDTH=&quot;51&quot; HEIGHT=&quot;29&quot; WC=&quot;0.96&quot; CONTENT=&quot;Date&quot;/&gt;&lt;SP WIDTH=&quot;150&quot; VPOS=&quot;732&quot; HPOS=&quot;206&quot;/&gt;
+							&lt;String ID=&quot;string_57&quot; HPOS=&quot;356&quot; VPOS=&quot;737&quot; WIDTH=&quot;48&quot; HEIGHT=&quot;15&quot; WC=&quot;0.96&quot; CONTENT=&quot;Work&quot;/&gt;&lt;SP WIDTH=&quot;7&quot; VPOS=&quot;737&quot; HPOS=&quot;404&quot;/&gt;
+							&lt;String ID=&quot;string_58&quot; HPOS=&quot;411&quot; VPOS=&quot;737&quot; WIDTH=&quot;102&quot; HEIGHT=&quot;20&quot; WC=&quot;0.96&quot; CONTENT=&quot;Description&quot;/&gt;&lt;SP WIDTH=&quot;126&quot; VPOS=&quot;737&quot; HPOS=&quot;513&quot;/&gt;
+							&lt;String ID=&quot;string_59&quot; HPOS=&quot;639&quot; VPOS=&quot;736&quot; WIDTH=&quot;36&quot; HEIGHT=&quot;20&quot; WC=&quot;0.95&quot; CONTENT=&quot;Qty.&quot;/&gt;&lt;SP WIDTH=&quot;9&quot; VPOS=&quot;736&quot; HPOS=&quot;675&quot;/&gt;
+							&lt;String ID=&quot;string_60&quot; HPOS=&quot;684&quot; VPOS=&quot;736&quot; WIDTH=&quot;53&quot; HEIGHT=&quot;15&quot; WC=&quot;0.87&quot; CONTENT=&quot;Hours&quot;/&gt;&lt;SP WIDTH=&quot;6&quot; VPOS=&quot;736&quot; HPOS=&quot;737&quot;/&gt;
+							&lt;String ID=&quot;string_61&quot; HPOS=&quot;743&quot; VPOS=&quot;732&quot; WIDTH=&quot;25&quot; HEIGHT=&quot;29&quot; WC=&quot;0.56&quot; CONTENT=&quot;|&quot;/&gt;&lt;SP WIDTH=&quot;8&quot; VPOS=&quot;732&quot; HPOS=&quot;768&quot;/&gt;
+							&lt;String ID=&quot;string_62&quot; HPOS=&quot;776&quot; VPOS=&quot;736&quot; WIDTH=&quot;59&quot; HEIGHT=&quot;20&quot; WC=&quot;0.88&quot; CONTENT=&quot;Hourly&quot;/&gt;&lt;SP WIDTH=&quot;7&quot; VPOS=&quot;736&quot; HPOS=&quot;835&quot;/&gt;
+							&lt;String ID=&quot;string_63&quot; HPOS=&quot;842&quot; VPOS=&quot;736&quot; WIDTH=&quot;42&quot; HEIGHT=&quot;15&quot; WC=&quot;0.96&quot; CONTENT=&quot;Rate&quot;/&gt;&lt;SP WIDTH=&quot;52&quot; VPOS=&quot;736&quot; HPOS=&quot;884&quot;/&gt;
+							&lt;String ID=&quot;string_64&quot; HPOS=&quot;936&quot; VPOS=&quot;736&quot; WIDTH=&quot;37&quot; HEIGHT=&quot;15&quot; WC=&quot;0.97&quot; CONTENT=&quot;Line&quot;/&gt;&lt;SP WIDTH=&quot;7&quot; VPOS=&quot;736&quot; HPOS=&quot;973&quot;/&gt;
+							&lt;String ID=&quot;string_65&quot; HPOS=&quot;980&quot; VPOS=&quot;736&quot; WIDTH=&quot;45&quot; HEIGHT=&quot;15&quot; WC=&quot;0.96&quot; CONTENT=&quot;Total&quot;/&gt;
+						&lt;/TextLine&gt;
+						&lt;TextLine ID=&quot;line_33&quot; HPOS=&quot;112&quot; VPOS=&quot;760&quot; WIDTH=&quot;945&quot; HEIGHT=&quot;29&quot;&gt;
+							&lt;String ID=&quot;string_66&quot; HPOS=&quot;112&quot; VPOS=&quot;760&quot; WIDTH=&quot;89&quot; HEIGHT=&quot;29&quot; WC=&quot;0.92&quot; CONTENT=&quot;12/30/22&quot;/&gt;&lt;SP WIDTH=&quot;55&quot; VPOS=&quot;760&quot; HPOS=&quot;201&quot;/&gt;
+							&lt;String ID=&quot;string_67&quot; HPOS=&quot;256&quot; VPOS=&quot;765&quot; WIDTH=&quot;37&quot; HEIGHT=&quot;15&quot; WC=&quot;0.96&quot; CONTENT=&quot;Line&quot;/&gt;&lt;SP WIDTH=&quot;8&quot; VPOS=&quot;765&quot; HPOS=&quot;293&quot;/&gt;
+							&lt;String ID=&quot;string_68&quot; HPOS=&quot;301&quot; VPOS=&quot;765&quot; WIDTH=&quot;38&quot; HEIGHT=&quot;15&quot; WC=&quot;0.90&quot; CONTENT=&quot;Item&quot;/&gt;&lt;SP WIDTH=&quot;9&quot; VPOS=&quot;765&quot; HPOS=&quot;339&quot;/&gt;
+							&lt;String ID=&quot;string_69&quot; HPOS=&quot;348&quot; VPOS=&quot;765&quot; WIDTH=&quot;9&quot; HEIGHT=&quot;15&quot; WC=&quot;0.91&quot; CONTENT=&quot;1&quot;/&gt;&lt;SP WIDTH=&quot;350&quot; VPOS=&quot;765&quot; HPOS=&quot;357&quot;/&gt;
+							&lt;String ID=&quot;string_70&quot; HPOS=&quot;707&quot; VPOS=&quot;760&quot; WIDTH=&quot;49&quot; HEIGHT=&quot;29&quot; WC=&quot;0.93&quot; CONTENT=&quot;2.00&quot;/&gt;&lt;SP WIDTH=&quot;79&quot; VPOS=&quot;760&quot; HPOS=&quot;756&quot;/&gt;
+							&lt;String ID=&quot;string_71&quot; HPOS=&quot;835&quot; VPOS=&quot;764&quot; WIDTH=&quot;63&quot; HEIGHT=&quot;15&quot; WC=&quot;0.96&quot; CONTENT=&quot;200.00&quot;/&gt;&lt;SP WIDTH=&quot;96&quot; VPOS=&quot;764&quot; HPOS=&quot;898&quot;/&gt;
+							&lt;String ID=&quot;string_72&quot; HPOS=&quot;994&quot; VPOS=&quot;764&quot; WIDTH=&quot;63&quot; HEIGHT=&quot;15&quot; WC=&quot;0.96&quot; CONTENT=&quot;400.00&quot;/&gt;
+						&lt;/TextLine&gt;
+						&lt;TextLine ID=&quot;line_34&quot; HPOS=&quot;256&quot; VPOS=&quot;792&quot; WIDTH=&quot;801&quot; HEIGHT=&quot;16&quot;&gt;
+							&lt;String ID=&quot;string_73&quot; HPOS=&quot;256&quot; VPOS=&quot;793&quot; WIDTH=&quot;37&quot; HEIGHT=&quot;15&quot; WC=&quot;0.96&quot; CONTENT=&quot;Line&quot;/&gt;&lt;SP WIDTH=&quot;8&quot; VPOS=&quot;793&quot; HPOS=&quot;293&quot;/&gt;
+							&lt;String ID=&quot;string_74&quot; HPOS=&quot;301&quot; VPOS=&quot;793&quot; WIDTH=&quot;38&quot; HEIGHT=&quot;15&quot; WC=&quot;0.91&quot; CONTENT=&quot;Item&quot;/&gt;&lt;SP WIDTH=&quot;8&quot; VPOS=&quot;793&quot; HPOS=&quot;339&quot;/&gt;
+							&lt;String ID=&quot;string_75&quot; HPOS=&quot;347&quot; VPOS=&quot;793&quot; WIDTH=&quot;10&quot; HEIGHT=&quot;15&quot; WC=&quot;0.96&quot; CONTENT=&quot;2&quot;/&gt;&lt;SP WIDTH=&quot;638&quot; VPOS=&quot;793&quot; HPOS=&quot;357&quot;/&gt;
+							&lt;String ID=&quot;string_76&quot; HPOS=&quot;995&quot; VPOS=&quot;792&quot; WIDTH=&quot;62&quot; HEIGHT=&quot;15&quot; WC=&quot;0.93&quot; CONTENT=&quot;125.00:&quot;/&gt;
+						&lt;/TextLine&gt;
+						&lt;TextLine ID=&quot;line_35&quot; HPOS=&quot;827&quot; VPOS=&quot;1097&quot; WIDTH=&quot;230&quot; HEIGHT=&quot;28&quot;&gt;
+							&lt;String ID=&quot;string_77&quot; HPOS=&quot;827&quot; VPOS=&quot;1097&quot; WIDTH=&quot;64&quot; HEIGHT=&quot;28&quot; WC=&quot;0.96&quot; CONTENT=&quot;Total:&quot;/&gt;&lt;SP WIDTH=&quot;103&quot; VPOS=&quot;1097&quot; HPOS=&quot;891&quot;/&gt;
+							&lt;String ID=&quot;string_78&quot; HPOS=&quot;994&quot; VPOS=&quot;1100&quot; WIDTH=&quot;63&quot; HEIGHT=&quot;15&quot; WC=&quot;0.96&quot; CONTENT=&quot;525.00&quot;/&gt;
+						&lt;/TextLine&gt;
+					&lt;/TextBlock&gt;
+				&lt;/ComposedBlock&gt;
+				&lt;ComposedBlock ID=&quot;cblock_28&quot; HPOS=&quot;900&quot; VPOS=&quot;731&quot; WIDTH=&quot;3&quot; HEIGHT=&quot;393&quot;&gt;
+					&lt;TextBlock ID=&quot;block_28&quot; HPOS=&quot;900&quot; VPOS=&quot;731&quot; WIDTH=&quot;3&quot; HEIGHT=&quot;393&quot;&gt;
+						&lt;TextLine ID=&quot;line_36&quot; HPOS=&quot;900&quot; VPOS=&quot;731&quot; WIDTH=&quot;3&quot; HEIGHT=&quot;393&quot;&gt;
+							&lt;String ID=&quot;string_79&quot; HPOS=&quot;900&quot; VPOS=&quot;731&quot; WIDTH=&quot;3&quot; HEIGHT=&quot;393&quot; WC=&quot;0.95&quot; CONTENT=&quot; &quot;/&gt;
+						&lt;/TextLine&gt;
+					&lt;/TextBlock&gt;
+				&lt;/ComposedBlock&gt;
+				&lt;ComposedBlock ID=&quot;cblock_29&quot; HPOS=&quot;1059&quot; VPOS=&quot;731&quot; WIDTH=&quot;3&quot; HEIGHT=&quot;392&quot;&gt;
+					&lt;TextBlock ID=&quot;block_29&quot; HPOS=&quot;1059&quot; VPOS=&quot;731&quot; WIDTH=&quot;3&quot; HEIGHT=&quot;392&quot;&gt;
+						&lt;TextLine ID=&quot;line_37&quot; HPOS=&quot;1059&quot; VPOS=&quot;731&quot; WIDTH=&quot;3&quot; HEIGHT=&quot;392&quot;&gt;
+							&lt;String ID=&quot;string_80&quot; HPOS=&quot;1059&quot; VPOS=&quot;731&quot; WIDTH=&quot;3&quot; HEIGHT=&quot;392&quot; WC=&quot;0.95&quot; CONTENT=&quot; &quot;/&gt;
+						&lt;/TextLine&gt;
+					&lt;/TextBlock&gt;
+				&lt;/ComposedBlock&gt;
+			&lt;/PrintSpace&gt;
+		&lt;/Page&gt;
+	&lt;/Layout&gt;
+&lt;/alto&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="searchable-pdf">
+<h2>Searchable PDF<a class="headerlink" href="#searchable-pdf" title="Permalink to this heading">#</a></h2>
+<p>You can generate searchable PDFs using the <code class="docutils literal notranslate"><span class="pre">image_to_pdf_or_hocr</span></code>.</p>
+<p>Searchable PDFs add the extracted text layer to the PDF for search capabilities.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pdf</span> <span class="o">=</span> <span class="n">pytesseract</span><span class="o">.</span><span class="n">image_to_pdf_or_hocr</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">extension</span><span class="o">=</span><span class="s1">&#39;pdf&#39;</span><span class="p">)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;example.pdf&#39;</span><span class="p">,</span> <span class="s1">&#39;w+b&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">pdf</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./binder/document-understanding-ebook/ocr/tesseract"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="pytesseract_batch_processing_example.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Python Tesseract (pytesseract) Batch Processing Example</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../../../ocr/datasets/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">🗄️ Datasets</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-image-using-pillow">Load image using Pillow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bounding-box-estimates">Bounding box estimates</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-verbose-output">More verbose output</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hocr-generation">hOCR Generation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alto-xml">ALTO XML</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#searchable-pdf">Searchable PDF</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Devin Horvay
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  All of the material in this book is publicly available under <a href="https://github.com/dhorvay/document-understanding-ebook/blob/main/LICENSE">open source licenses.</a>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

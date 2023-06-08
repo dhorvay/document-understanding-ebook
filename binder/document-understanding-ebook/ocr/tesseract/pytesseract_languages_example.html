@@ -189,6 +189,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l4"><a class="reference internal" href="pytesseract_basic_example.html">Python Tesseract (pytesseract) Basic Example</a></li>
 <li class="toctree-l4 current active"><a class="current reference internal" href="#">Python Tesseract (pytesseract) Languages Example</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pytesseract_batch_processing_example.html">Python Tesseract (pytesseract) Batch Processing Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytesseract_outputs_example.html">Python Tesseract (pytesseract) Outputs Example</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../ocr/datasets/index.html">🗄️ Datasets</a></li>
@@ -487,12 +488,12 @@ document.write(`
 </ul>
 <p>For my purposes, I will utilize <code class="docutils literal notranslate"><span class="pre">tessdata_fast</span></code> for this notebook.</p>
 <p>Steps to install (local machine):</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/tesseract-ocr/tessdata_fast.git<span class="w"> </span>~/.local/share/tesseract-ocr/4.00/tessdata_fast
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>--recurse-submodules<span class="w"> </span>https://github.com/tesseract-ocr/tessdata_fast.git<span class="w"> </span>~/.local/share/tesseract-ocr/4.00/tessdata_fast
 <span class="nb">export</span><span class="w"> </span><span class="nv">TESSDATA_PREFIX</span><span class="o">=</span>~/.local/share/tesseract-ocr/4.00/tessdata_fast
 </pre></div>
 </div>
 <p>Steps to install (<span class="xref myst">kaggle.com</span>):</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/tesseract-ocr/tessdata_fast.git<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>/dev/null<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">(</span><span class="nb">cd</span><span class="w"> </span>tessdata_fast<span class="p">;</span><span class="w"> </span>git<span class="w"> </span>pull<span class="o">)</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>--recurse-submodules<span class="w"> </span>https://github.com/tesseract-ocr/tessdata_fast.git<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>/dev/null<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">(</span><span class="nb">cd</span><span class="w"> </span>tessdata_fast<span class="p">;</span><span class="w"> </span>git<span class="w"> </span>pull<span class="o">)</span>
 cp<span class="w"> </span>tessdata_fast/*.traineddata<span class="w"> </span>/usr/share/tesseract-ocr/4.00/tessdata/
 </pre></div>
 </div>
