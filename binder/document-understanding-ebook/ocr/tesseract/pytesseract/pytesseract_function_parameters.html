@@ -1,0 +1,1392 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Pytesseract Function Parameters &#8212; Document Understanding eBook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../_static/jquery.js"></script>
+    <script src="../../../../../_static/underscore.js"></script>
+    <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../../../_static/doctools.js"></script>
+    <script src="../../../../../_static/clipboard.min.js"></script>
+    <script src="../../../../../_static/copybutton.js"></script>
+    <script src="../../../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../../../_static/togglebutton.js"></script>
+    <script src="../../../../../_static/mybinder_postfix.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'binder/document-understanding-ebook/ocr/tesseract/pytesseract/pytesseract_function_parameters';</script>
+    <link rel="canonical" href="https://horvay.dev/document-understanding-ebook/binder/document-understanding-ebook/ocr/tesseract/pytesseract/pytesseract_function_parameters.html" />
+    <link rel="shortcut icon" href="../../../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="Pytesseract Orientation and Script Detection (OSD) Example" href="pytesseract_osd_example.html" />
+    <link rel="prev" title="Pytesseract Output Formats Example" href="pytesseract_output_formats_example.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+
+  <div class="bd-header-announcement container-fluid bd-header-announcement">
+    <div class="bd-header-announcement__content">Please note: this book is in alpha - it is consistently being updated with content for a v1.0.0 release! 🤗</div>
+  </div>
+
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../../../../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../../../../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../../../intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Prerequisites</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../../understandingdocuments/index.html">Understanding Documents</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../documentfileformats/index.html">📂 Document File Formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../documentstructures/index.html">🧱 Document Structures</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Topic Guides</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../../../../textextraction/index.html">Text Extraction</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../../../../../ocr/index.html">Optical Character Recognition</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../../../../ocr/overview/history.html">📜 History</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../ocr/overview/howitworks.html">🧠 How it Works</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../../../ocr/software/index.html">💾 Software</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../ocr/software/engines.html">⚙️ Engines</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../ocr/software/packages.html">📦 Packages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../ocr/software/gui.html">💻 Graphical User Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current active has-children"><a class="reference internal" href="../../../../../ocr/notebooks/index.html">📔 Notebooks</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="pytesseract_basic_example.html">Pytesseract Basic Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytesseract_languages_example.html">Pytesseract Languages Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytesseract_batch_processing_example.html">Pytesseract Batch Processing Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytesseract_output_formats_example.html">Pytesseract Output Formats Example</a></li>
+<li class="toctree-l4 current active"><a class="current reference internal" href="#">Pytesseract Function Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytesseract_osd_example.html">Pytesseract Orientation and Script Detection (OSD) Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../ocr/datasets/index.html">🗄️ Datasets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../ocr/papers/index.html">📑 Papers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../ocr/benchmarks/index.html">📊 Benchmarks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../ocr/resources/index.html">🗃️ Resources</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../bibliography/index.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/dhorvay/document-understanding-ebook/master?urlpath=tree/binder/document-understanding-ebook/ocr/tesseract/pytesseract/pytesseract_function_parameters.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../../../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/dhorvay/document-understanding-ebook/blob/master/binder/document-understanding-ebook/ocr/tesseract/pytesseract/pytesseract_function_parameters.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../../../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/dhorvay/document-understanding-ebook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/dhorvay/document-understanding-ebook/issues/new?title=Issue%20on%20page%20%2Fbinder/document-understanding-ebook/ocr/tesseract/pytesseract/pytesseract_function_parameters.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../../../_sources/binder/document-understanding-ebook/ocr/tesseract/pytesseract/pytesseract_function_parameters.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Pytesseract Function Parameters</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#image">image</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#image-format-support">Image format support</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extracting-via-file-path">Extracting via file path:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extracting-via-pillow">Extracting via Pillow:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extracting-via-opencv">Extracting via OpenCV:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lang">lang</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#config">config</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nice">nice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#output-type">output_type</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dict">dict</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-frame">data.frame</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-config">pandas_config</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#timeout">timeout</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="pytesseract-function-parameters">
+<h1>Pytesseract Function Parameters<a class="headerlink" href="#pytesseract-function-parameters" title="Permalink to this heading">#</a></h1>
+<p>This notebook covers some of the function paramters for pytesseract.</p>
+<p>Some of the paramters we will cover - directly from the <a class="reference external" href="https://github.com/madmaze/pytesseract/blob/master/README.rst">documentation</a>:</p>
+<ul class="simple">
+<li><p><strong>image</strong> Object or String - either PIL Image, NumPy array or file path of the image to be processed by Tesseract. If you pass object instead of file path, pytesseract will implicitly convert the image to RGB mode.</p></li>
+<li><p><strong>lang</strong> String - Tesseract language code string. Defaults to eng if not specified! Example for multiple languages: lang=’eng+fra’</p></li>
+<li><p><strong>config</strong> String - Any additional custom configuration flags that are not available via the pytesseract function. For example: config=’–psm 6’</p></li>
+<li><p><strong>nice</strong> Integer - modifies the processor priority for the Tesseract run. Not supported on Windows. Nice adjusts the niceness of unix-like processes.</p></li>
+<li><p><strong>output_type</strong> Class attribute - specifies the type of the output, defaults to string. For the full list of all supported types, please check the definition of pytesseract.Output class.</p></li>
+<li><p><strong>timeout</strong> Integer or Float - duration in seconds for the OCR processing, after which, pytesseract will terminate and raise RuntimeError.</p></li>
+<li><p><strong>pandas_config</strong> Dict - only for the Output.DATAFRAME type. Dictionary with custom arguments for pandas.read_csv. Allows you to customize the output of image_to_data.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="kn">import</span> <span class="nn">cv2</span>
+<span class="kn">import</span> <span class="nn">pytesseract</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="image">
+<h2>image<a class="headerlink" href="#image" title="Permalink to this heading">#</a></h2>
+<p>The <strong>image</strong> parameter can be passed as a PIL (Pillow) Image, NumPy array, or a string representation of the file path to the image.</p>
+<p>The NumPy array feature is particularly useful if you are working with <a class="reference external" href="https://opencv.org/">OpenCV</a>, as the output type of OpenCV’s <code class="docutils literal notranslate"><span class="pre">imread()</span></code> is a NumPy array. Another thing to note about OpenCV is that, by default, the image will be read as BRG, while pytesseract processes RBG. From the documentation, pytesseract does try to implicitly convert the image to RGB mode, but you can avoid any doubts by reading in the OpenCV image, then converting it:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">im</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>                     <span class="c1"># reads an image in the BGR format</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2RGB</span><span class="p">)</span>  <span class="c1"># BGR -&gt; RGB</span>
+</pre></div>
+</div>
+<p>If you’re wondering which method to use to read images - it really depends on your use case.</p>
+<p>OpenCV is primarily focused on computer vision and provides a wide range of algorithms and tools for complex vision tasks, while Pillow is more focused on basic image processing and manipulation. So pick the one that best suits your needs at the time.</p>
+<section id="image-format-support">
+<h3>Image format support<a class="headerlink" href="#image-format-support" title="Permalink to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">SUPPORTED_FORMATS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;JPEG&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;JPEG2000&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;PNG&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;PBM&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;PGM&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;PPM&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;TIFF&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;BMP&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;GIF&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;WEBP&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="s1">&#39;../../../../binder-datasets/ocr/helloworld/hello_world_english.png&#39;</span>
+<span class="n">im_pil</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+<span class="c1"># display the Pillow compatible image (all are the same).</span>
+<span class="n">display</span><span class="p">(</span><span class="n">im_pil</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../../_images/82bd207cd3205465fbe5bd289a948cd734d2bc0df3746d90653132002fb42795.png" src="../../../../../_images/82bd207cd3205465fbe5bd289a948cd734d2bc0df3746d90653132002fb42795.png" />
+</div>
+</div>
+</section>
+<section id="extracting-via-file-path">
+<h3>Extracting via file path:<a class="headerlink" href="#extracting-via-file-path" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">pytesseract</span><span class="o">.</span><span class="n">image_to_string</span><span class="p">(</span><span class="n">path</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello World!
+
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="extracting-via-pillow">
+<h3>Extracting via Pillow:<a class="headerlink" href="#extracting-via-pillow" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">im_pil</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pytesseract</span><span class="o">.</span><span class="n">image_to_string</span><span class="p">(</span><span class="n">im_pil</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello World!
+
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="extracting-via-opencv">
+<h3>Extracting via OpenCV:<a class="headerlink" href="#extracting-via-opencv" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">im_cv</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pytesseract</span><span class="o">.</span><span class="n">image_to_string</span><span class="p">(</span><span class="n">im_cv</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello World!
+
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="lang">
+<h2>lang<a class="headerlink" href="#lang" title="Permalink to this heading">#</a></h2>
+<p>The <strong>lang</strong> parameter refers to the Tesseract language code and by default, it assumes english (<code class="docutils literal notranslate"><span class="pre">lang='eng'</span></code>). Here is the <a class="reference external" href="https://tesseract-ocr.github.io/tessdoc/Data-Files-in-different-versions.html">complete list of languages supported in different versions of Tesseract</a></p>
+<p>The lang parameter can accept multiple languages too using the <code class="docutils literal notranslate"><span class="pre">+</span></code> delimiter. For example, if your image has both English and French you can pass <code class="docutils literal notranslate"><span class="pre">lang='eng+fra'</span></code></p>
+<p>If you are unsure of which languages your machine supports, you can print out the supported languages using pytesseract’s <code class="docutils literal notranslate"><span class="pre">get_languages</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">pytesseract</span><span class="o">.</span><span class="n">get_languages</span><span class="p">(</span><span class="n">config</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;afr&#39;, &#39;amh&#39;, &#39;ara&#39;, &#39;asm&#39;, &#39;aze&#39;, &#39;aze_cyrl&#39;, &#39;bel&#39;, &#39;ben&#39;, &#39;bod&#39;, &#39;bos&#39;, &#39;bre&#39;, &#39;bul&#39;, &#39;cat&#39;, &#39;ceb&#39;, &#39;ces&#39;, &#39;chi_sim&#39;, &#39;chi_sim_vert&#39;, &#39;chi_tra&#39;, &#39;chi_tra_vert&#39;, &#39;chr&#39;, &#39;cos&#39;, &#39;cym&#39;, &#39;dan&#39;, &#39;deu&#39;, &#39;div&#39;, &#39;dzo&#39;, &#39;ell&#39;, &#39;eng&#39;, &#39;enm&#39;, &#39;epo&#39;, &#39;equ&#39;, &#39;est&#39;, &#39;eus&#39;, &#39;fao&#39;, &#39;fas&#39;, &#39;fil&#39;, &#39;fin&#39;, &#39;fra&#39;, &#39;frk&#39;, &#39;frm&#39;, &#39;fry&#39;, &#39;gla&#39;, &#39;gle&#39;, &#39;glg&#39;, &#39;grc&#39;, &#39;guj&#39;, &#39;hat&#39;, &#39;heb&#39;, &#39;hin&#39;, &#39;hrv&#39;, &#39;hun&#39;, &#39;hye&#39;, &#39;iku&#39;, &#39;ind&#39;, &#39;isl&#39;, &#39;ita&#39;, &#39;ita_old&#39;, &#39;jav&#39;, &#39;jpn&#39;, &#39;jpn_vert&#39;, &#39;kan&#39;, &#39;kat&#39;, &#39;kat_old&#39;, &#39;kaz&#39;, &#39;khm&#39;, &#39;kir&#39;, &#39;kmr&#39;, &#39;kor&#39;, &#39;kor_vert&#39;, &#39;lao&#39;, &#39;lat&#39;, &#39;lav&#39;, &#39;lit&#39;, &#39;ltz&#39;, &#39;mal&#39;, &#39;mar&#39;, &#39;mkd&#39;, &#39;mlt&#39;, &#39;mon&#39;, &#39;mri&#39;, &#39;msa&#39;, &#39;mya&#39;, &#39;nep&#39;, &#39;nld&#39;, &#39;nor&#39;, &#39;oci&#39;, &#39;ori&#39;, &#39;osd&#39;, &#39;pan&#39;, &#39;pol&#39;, &#39;por&#39;, &#39;pus&#39;, &#39;que&#39;, &#39;ron&#39;, &#39;rus&#39;, &#39;san&#39;, &#39;sin&#39;, &#39;slk&#39;, &#39;slv&#39;, &#39;snd&#39;, &#39;spa&#39;, &#39;spa_old&#39;, &#39;sqi&#39;, &#39;srp&#39;, &#39;srp_latn&#39;, &#39;sun&#39;, &#39;swa&#39;, &#39;swe&#39;, &#39;syr&#39;, &#39;tam&#39;, &#39;tat&#39;, &#39;tel&#39;, &#39;tgk&#39;, &#39;tha&#39;, &#39;tir&#39;, &#39;ton&#39;, &#39;tur&#39;, &#39;uig&#39;, &#39;ukr&#39;, &#39;urd&#39;, &#39;uzb&#39;, &#39;uzb_cyrl&#39;, &#39;vie&#39;, &#39;yid&#39;, &#39;yor&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s try extracting text from an image with two languages.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="s1">&#39;../../../../binder-datasets/ocr/helloworld/hello_world_english_french.png&#39;</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">im</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../../_images/fc0a6c1d6e71bc43d592fa1515d7b760180a7bbd178df55dce2af7bcbf1bea7f.png" src="../../../../../_images/fc0a6c1d6e71bc43d592fa1515d7b760180a7bbd178df55dce2af7bcbf1bea7f.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">pytesseract</span><span class="o">.</span><span class="n">image_to_string</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="s1">&#39;eng+fra&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello World!
+Bonjour le monde!
+
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="config">
+<h2>config<a class="headerlink" href="#config" title="Permalink to this heading">#</a></h2>
+<p>The <strong>config</strong> parameter refers to any additional custom configuration flags not supported directly in pytesseract functions.</p>
+<p>These flags can refer to page segmentation modes (PSMs), OCR engine modes (OEMs), and configuration variables.</p>
+<p>Page segmentation mode in Tesseract refers to the process of dividing an image containing text into individual text segments or regions. By specifying the desired page segmentation mode, you can instruct Tesseract on how to analyze the image and extract the text accurately. Experimentation with different modes may be necessary to achieve the best results for your specific use case.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>tesseract<span class="w"> </span>--help-psm
+<span class="w">  </span><span class="m">0</span><span class="w">    </span>Orientation<span class="w"> </span>and<span class="w"> </span>script<span class="w"> </span>detection<span class="w"> </span><span class="o">(</span>OSD<span class="o">)</span><span class="w"> </span>only.
+<span class="w">  </span><span class="m">1</span><span class="w">    </span>Automatic<span class="w"> </span>page<span class="w"> </span>segmentation<span class="w"> </span>with<span class="w"> </span>OSD.
+<span class="w">  </span><span class="m">2</span><span class="w">    </span>Automatic<span class="w"> </span>page<span class="w"> </span>segmentation,<span class="w"> </span>but<span class="w"> </span>no<span class="w"> </span>OSD,<span class="w"> </span>or<span class="w"> </span>OCR.<span class="w"> </span><span class="o">(</span>not<span class="w"> </span>implemented<span class="o">)</span>
+<span class="w">  </span><span class="m">3</span><span class="w">    </span>Fully<span class="w"> </span>automatic<span class="w"> </span>page<span class="w"> </span>segmentation,<span class="w"> </span>but<span class="w"> </span>no<span class="w"> </span>OSD.<span class="w"> </span><span class="o">(</span>Default<span class="o">)</span>
+<span class="w">  </span><span class="m">4</span><span class="w">    </span>Assume<span class="w"> </span>a<span class="w"> </span>single<span class="w"> </span>column<span class="w"> </span>of<span class="w"> </span>text<span class="w"> </span>of<span class="w"> </span>variable<span class="w"> </span>sizes.
+<span class="w">  </span><span class="m">5</span><span class="w">    </span>Assume<span class="w"> </span>a<span class="w"> </span>single<span class="w"> </span>uniform<span class="w"> </span>block<span class="w"> </span>of<span class="w"> </span>vertically<span class="w"> </span>aligned<span class="w"> </span>text.
+<span class="w">  </span><span class="m">6</span><span class="w">    </span>Assume<span class="w"> </span>a<span class="w"> </span>single<span class="w"> </span>uniform<span class="w"> </span>block<span class="w"> </span>of<span class="w"> </span>text.
+<span class="w">  </span><span class="m">7</span><span class="w">    </span>Treat<span class="w"> </span>the<span class="w"> </span>image<span class="w"> </span>as<span class="w"> </span>a<span class="w"> </span>single<span class="w"> </span>text<span class="w"> </span>line.
+<span class="w">  </span><span class="m">8</span><span class="w">    </span>Treat<span class="w"> </span>the<span class="w"> </span>image<span class="w"> </span>as<span class="w"> </span>a<span class="w"> </span>single<span class="w"> </span>word.
+<span class="w">  </span><span class="m">9</span><span class="w">    </span>Treat<span class="w"> </span>the<span class="w"> </span>image<span class="w"> </span>as<span class="w"> </span>a<span class="w"> </span>single<span class="w"> </span>word<span class="w"> </span><span class="k">in</span><span class="w"> </span>a<span class="w"> </span>circle.
+<span class="w"> </span><span class="m">10</span><span class="w">    </span>Treat<span class="w"> </span>the<span class="w"> </span>image<span class="w"> </span>as<span class="w"> </span>a<span class="w"> </span>single<span class="w"> </span>character.
+<span class="w"> </span><span class="m">11</span><span class="w">    </span>Sparse<span class="w"> </span>text.<span class="w"> </span>Find<span class="w"> </span>as<span class="w"> </span>much<span class="w"> </span>text<span class="w"> </span>as<span class="w"> </span>possible<span class="w"> </span><span class="k">in</span><span class="w"> </span>no<span class="w"> </span>particular<span class="w"> </span>order.
+<span class="w"> </span><span class="m">12</span><span class="w">    </span>Sparse<span class="w"> </span>text<span class="w"> </span>with<span class="w"> </span>OSD.
+<span class="w"> </span><span class="m">13</span><span class="w">    </span>Raw<span class="w"> </span>line.<span class="w"> </span>Treat<span class="w"> </span>the<span class="w"> </span>image<span class="w"> </span>as<span class="w"> </span>a<span class="w"> </span>single<span class="w"> </span>text<span class="w"> </span>line,
+<span class="w">       </span>bypassing<span class="w"> </span>hacks<span class="w"> </span>that<span class="w"> </span>are<span class="w"> </span>Tesseract-specific.
+</pre></div>
+</div>
+<p>The OCR engine mode in Tesseract determines the underlying recognition algorithms and models used for text extraction. It’s important to choose the appropriate mode based on the specific requirements of your OCR application, such as the language, document type, and desired accuracy.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>tesseract<span class="w"> </span>--help-oem
+<span class="w">  </span><span class="m">0</span><span class="w">    </span>Legacy<span class="w"> </span>engine<span class="w"> </span>only.
+<span class="w">  </span><span class="m">1</span><span class="w">    </span>Neural<span class="w"> </span>nets<span class="w"> </span>LSTM<span class="w"> </span>engine<span class="w"> </span>only.
+<span class="w">  </span><span class="m">2</span><span class="w">    </span>Legacy<span class="w"> </span>+<span class="w"> </span>LSTM<span class="w"> </span>engines.
+<span class="w">  </span><span class="m">3</span><span class="w">    </span>Default,<span class="w"> </span>based<span class="w"> </span>on<span class="w"> </span>what<span class="w"> </span>is<span class="w"> </span>available.
+</pre></div>
+</div>
+<p>There are over 600+ configuration variables (<code class="docutils literal notranslate"><span class="pre">-c</span></code> flag). You can find them via:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>tesseract<span class="w"> </span>--print-parameters
+</pre></div>
+</div>
+<p>Here is a list in a handy table:
+<a class="reference external" href="https://gist.github.com/dhorvay/bf2708f45bf5a433933fbac7585a2f84">List of all Tesseract configuration variables</a></p>
+<p>Let’s try a configuration where we deny any special characters using the <code class="docutils literal notranslate"><span class="pre">-c</span> <span class="pre">tessedit_char_whitelist</span></code> configuration variable.
+Tesseract does not support regex for this unfortunately, so we need pass it all lower and upper case english characters:</p>
+<div class="highlight-txt notranslate"><div class="highlight"><pre><span></span>abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
+</pre></div>
+</div>
+<p>We also need to ensure it can read spaces, so put a space at the front as an argument (putting at the end will not work).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="s1">&#39;../../../../binder-datasets/ocr/helloworld/hello_world_english.png&#39;</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">im</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../../_images/82bd207cd3205465fbe5bd289a948cd734d2bc0df3746d90653132002fb42795.png" src="../../../../../_images/82bd207cd3205465fbe5bd289a948cd734d2bc0df3746d90653132002fb42795.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">allowlist</span> <span class="o">=</span> <span class="s1">&#39; abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pytesseract</span><span class="o">.</span><span class="n">image_to_string</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="s1">&#39;-c tessedit_char_whitelist=&#39;</span> <span class="o">+</span> <span class="n">allowlist</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello World!
+
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="nice">
+<h2>nice<a class="headerlink" href="#nice" title="Permalink to this heading">#</a></h2>
+<p>The <strong>nice</strong> command refers to Unix systems niceness. Niceness means that processes have a number to determine their priority for the CPU. A high number means the process is nice and has a lower priority for the CPU and a low or negative number means the process is not very nice and it wants to get as much of the CPU as possible. The nice value range is -20 to +19 where -20 is highest, 0 default and +19 is lowest.</p>
+<p>I usually keep this at the default (0). There may be very specific use cases where you need this value, but I have not come across them.</p>
+</section>
+<section id="output-type">
+<h2>output_type<a class="headerlink" href="#output-type" title="Permalink to this heading">#</a></h2>
+<p>The output_type comes in a few flavors, with the default being <code class="docutils literal notranslate"><span class="pre">string</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">BYTES</span> <span class="o">=</span> <span class="s1">&#39;bytes&#39;</span>
+    <span class="n">DATAFRAME</span> <span class="o">=</span> <span class="s1">&#39;data.frame&#39;</span>
+    <span class="n">DICT</span> <span class="o">=</span> <span class="s1">&#39;dict&#39;</span>
+    <span class="n">STRING</span> <span class="o">=</span> <span class="s1">&#39;string&#39;</span>
+</pre></div>
+</div>
+<section id="dict">
+<h3>dict<a class="headerlink" href="#dict" title="Permalink to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">dict</span></code> type returns in key-value pairs. It is particularly useful when determining things such as orientation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="s1">&#39;../../../../binder-datasets/ocr/images/invoice_rotated.png&#39;</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">im</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="mf">0.3</span><span class="o">*</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">im</span><span class="o">.</span><span class="n">size</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../../_images/9159c270f86fce072af20103539e5653bb77042d700b0be31cc4af34e86ff253.png" src="../../../../../_images/9159c270f86fce072af20103539e5653bb77042d700b0be31cc4af34e86ff253.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">osd</span> <span class="o">=</span> <span class="n">pytesseract</span><span class="o">.</span><span class="n">image_to_osd</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">output_type</span><span class="o">=</span><span class="s1">&#39;dict&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">osd</span><span class="p">)</span>
+<span class="n">orientation</span> <span class="o">=</span> <span class="n">osd</span><span class="p">[</span><span class="s1">&#39;orientation&#39;</span><span class="p">]</span>
+<span class="n">rotate</span> <span class="o">=</span> <span class="n">osd</span><span class="p">[</span><span class="s1">&#39;rotate&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The image orientation is: </span><span class="si">{</span><span class="n">orientation</span><span class="si">}</span><span class="s1"> degrees. To fix - rotate by </span><span class="si">{</span><span class="n">rotate</span><span class="si">}</span><span class="s1"> degrees&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;page_num&#39;: 0, &#39;orientation&#39;: 180, &#39;rotate&#39;: 180, &#39;orientation_conf&#39;: 12.51, &#39;script&#39;: &#39;Latin&#39;, &#39;script_conf&#39;: 5.09}
+The image orientation is: 180 degrees. To fix - rotate by 180 degrees
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="data-frame">
+<h2>data.frame<a class="headerlink" href="#data-frame" title="Permalink to this heading">#</a></h2>
+<p>The dataframe output is compatiable with the <a class="reference external" href="https://pandas.pydata.org/">pandas library</a>, and can print tables nicely. For example, the tables produced by <code class="docutils literal notranslate"><span class="pre">image_to_data</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">im_fixed</span> <span class="o">=</span> <span class="n">im</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">im_fixed</span> <span class="o">=</span> <span class="n">im_fixed</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">rotate</span><span class="p">)</span> <span class="c1"># since we know orientation is off</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pytesseract</span><span class="o">.</span><span class="n">image_to_data</span><span class="p">(</span><span class="n">im_fixed</span><span class="p">,</span> <span class="n">output_type</span><span class="o">=</span><span class="s1">&#39;data.frame&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>level</th>
+      <th>page_num</th>
+      <th>block_num</th>
+      <th>par_num</th>
+      <th>line_num</th>
+      <th>word_num</th>
+      <th>left</th>
+      <th>top</th>
+      <th>width</th>
+      <th>height</th>
+      <th>conf</th>
+      <th>text</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1241</td>
+      <td>1754</td>
+      <td>-1</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>117</td>
+      <td>731</td>
+      <td>3</td>
+      <td>365</td>
+      <td>-1</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>117</td>
+      <td>731</td>
+      <td>3</td>
+      <td>365</td>
+      <td>-1</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>117</td>
+      <td>731</td>
+      <td>3</td>
+      <td>365</td>
+      <td>-1</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>117</td>
+      <td>731</td>
+      <td>3</td>
+      <td>365</td>
+      <td>95</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2</td>
+      <td>1</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>130</td>
+      <td>203</td>
+      <td>219</td>
+      <td>94</td>
+      <td>-1</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>3</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>130</td>
+      <td>203</td>
+      <td>219</td>
+      <td>94</td>
+      <td>-1</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>4</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>131</td>
+      <td>203</td>
+      <td>154</td>
+      <td>22</td>
+      <td>-1</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>5</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>131</td>
+      <td>203</td>
+      <td>154</td>
+      <td>22</td>
+      <td>96</td>
+      <td>Document</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>4</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>2</td>
+      <td>0</td>
+      <td>131</td>
+      <td>236</td>
+      <td>218</td>
+      <td>28</td>
+      <td>-1</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>5</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>131</td>
+      <td>236</td>
+      <td>218</td>
+      <td>28</td>
+      <td>96</td>
+      <td>Understanding</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>4</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>3</td>
+      <td>0</td>
+      <td>130</td>
+      <td>270</td>
+      <td>141</td>
+      <td>27</td>
+      <td>-1</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>5</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>3</td>
+      <td>1</td>
+      <td>130</td>
+      <td>270</td>
+      <td>141</td>
+      <td>27</td>
+      <td>96</td>
+      <td>Company</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>2</td>
+      <td>1</td>
+      <td>3</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>350</td>
+      <td>171</td>
+      <td>154</td>
+      <td>156</td>
+      <td>-1</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>3</td>
+      <td>1</td>
+      <td>3</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>350</td>
+      <td>171</td>
+      <td>154</td>
+      <td>156</td>
+      <td>-1</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="pandas-config">
+<h2>pandas_config<a class="headerlink" href="#pandas-config" title="Permalink to this heading">#</a></h2>
+<p>On the topic of dataframes, we can customize the output to meet our needs. It follows <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html#pandas-read-csv">pandas.read_csv</a> and is passed as a <code class="docutils literal notranslate"><span class="pre">dict</span></code></p>
+<p>The below example is a use case of just generating a dataframe with filled text and the page number the text is found on.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pandas_config</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;usecols&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;page_num&#39;</span><span class="p">,</span> <span class="s1">&#39;text&#39;</span><span class="p">],</span> <span class="s1">&#39;na_values&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39; &#39;</span><span class="p">]}</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pytesseract</span><span class="o">.</span><span class="n">image_to_data</span><span class="p">(</span><span class="n">im_fixed</span><span class="p">,</span> <span class="n">output_type</span><span class="o">=</span><span class="s1">&#39;data.frame&#39;</span><span class="p">,</span> <span class="n">pandas_config</span><span class="o">=</span><span class="n">pandas_config</span><span class="p">)</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>page_num</th>
+      <th>text</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>8</th>
+      <td>1</td>
+      <td>Document</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>1</td>
+      <td>Understanding</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>1</td>
+      <td>Company</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>1</td>
+      <td>123</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>1</td>
+      <td>Fake</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>1</td>
+      <td>Street</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>1</td>
+      <td>ExampleTown,</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>1</td>
+      <td>USA</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>1</td>
+      <td>01234</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>1</td>
+      <td>Phone:</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>1</td>
+      <td>(800)</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>1</td>
+      <td>123-4567</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>1</td>
+      <td>email:</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>1</td>
+      <td>info@example.com</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>1</td>
+      <td>http://example.com</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="timeout">
+<h2>timeout<a class="headerlink" href="#timeout" title="Permalink to this heading">#</a></h2>
+<p>While this is not required for batch processing, it may be a good idea to add handling to terminate Tesseract if processing is taking too long. Let’s try two scenarios, one where we timeout after 1 second and one where we wait 30 seconds to timeout. In this case, 1 second is not enough time to process both images.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">timeout</span><span class="o">=</span><span class="mi">1</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">pytesseract</span><span class="o">.</span><span class="n">image_to_string</span><span class="p">(</span><span class="n">im_fixed</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">))</span>
+<span class="k">except</span> <span class="ne">RuntimeError</span> <span class="k">as</span> <span class="n">timeout_error</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Not enough time to extract text!&#39;</span><span class="p">)</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Not enough time to extract text!
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">timeout</span><span class="o">=</span><span class="mi">10</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">pytesseract</span><span class="o">.</span><span class="n">image_to_string</span><span class="p">(</span><span class="n">im_fixed</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">))</span>
+<span class="k">except</span> <span class="ne">RuntimeError</span> <span class="k">as</span> <span class="n">timeout_error</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Not enough time to extract text!&#39;</span><span class="p">)</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 
+
+Document
+Understanding
+Company
+
+ 
+
+123 Fake Street
+ExampleTown, USA 01234
+
+Phone: (800) 123-4567 email: info@example.com
+
+http://example.com
+
+Bill To: Addressee
+
+Address Line 1
+Address Line 2
+City, State, ZIP, Country, Planet, Etc.
+
+Date: January 1, 2023
+
+Invoice No.: 4
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Date Work Description Qty. Hours | Hourly Rate Line Total
+12/30/22 Line Item 1 2.00 200.00 400.00
+Line Item 2 125.00)
+Total: 525.00
+
+ 
+
+ 
+
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./binder/document-understanding-ebook/ocr/tesseract/pytesseract"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="pytesseract_output_formats_example.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Pytesseract Output Formats Example</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="pytesseract_osd_example.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Pytesseract Orientation and Script Detection (OSD) Example</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#image">image</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#image-format-support">Image format support</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extracting-via-file-path">Extracting via file path:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extracting-via-pillow">Extracting via Pillow:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extracting-via-opencv">Extracting via OpenCV:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lang">lang</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#config">config</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nice">nice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#output-type">output_type</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dict">dict</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-frame">data.frame</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-config">pandas_config</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#timeout">timeout</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Devin Horvay
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  All of the material in this book is publicly available under <a href="https://github.com/dhorvay/document-understanding-ebook/blob/main/LICENSE">open source licenses.</a>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

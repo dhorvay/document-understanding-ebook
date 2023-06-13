@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Python Tesseract (pytesseract) Languages Example &#8212; Document Understanding eBook</title>
+    <title>Pytesseract Languages Example &#8212; Document Understanding eBook</title>
   
   
   
@@ -19,56 +19,56 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../../../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="../../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../../../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-    <script src="../../../../_static/jquery.js"></script>
-    <script src="../../../../_static/underscore.js"></script>
-    <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../../../_static/doctools.js"></script>
-    <script src="../../../../_static/clipboard.min.js"></script>
-    <script src="../../../../_static/copybutton.js"></script>
-    <script src="../../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../_static/jquery.js"></script>
+    <script src="../../../../../_static/underscore.js"></script>
+    <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../../../_static/doctools.js"></script>
+    <script src="../../../../../_static/clipboard.min.js"></script>
+    <script src="../../../../../_static/copybutton.js"></script>
+    <script src="../../../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../../../_static/togglebutton.js"></script>
-    <script src="../../../../_static/mybinder_postfix.js"></script>
+    <script src="../../../../../_static/togglebutton.js"></script>
+    <script src="../../../../../_static/mybinder_postfix.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../../../_static/design-tabs.js"></script>
+    <script src="../../../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="../../../../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'binder/document-understanding-ebook/ocr/tesseract/pytesseract_languages_example';</script>
-    <link rel="canonical" href="https://horvay.dev/document-understanding-ebook/binder/document-understanding-ebook/ocr/tesseract/pytesseract_languages_example.html" />
-    <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../../../../genindex.html" />
-    <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="Python Tesseract (pytesseract) Batch Processing Example" href="pytesseract_batch_processing_example.html" />
-    <link rel="prev" title="Python Tesseract (pytesseract) Basic Example" href="pytesseract_basic_example.html" />
+    <script async="async" src="../../../../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'binder/document-understanding-ebook/ocr/tesseract/pytesseract/pytesseract_languages_example';</script>
+    <link rel="canonical" href="https://horvay.dev/document-understanding-ebook/binder/document-understanding-ebook/ocr/tesseract/pytesseract/pytesseract_languages_example.html" />
+    <link rel="shortcut icon" href="../../../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="Pytesseract Batch Processing Example" href="pytesseract_batch_processing_example.html" />
+    <link rel="prev" title="Pytesseract Basic Example" href="pytesseract_basic_example.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -96,7 +96,7 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="search-button__overlay"></div>
     <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
-      action="../../../../search.html"
+      action="../../../../../search.html"
       method="get">
   <i class="fa-solid fa-magnifying-glass"></i>
   <input type="search"
@@ -140,7 +140,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
   
 
-<a class="navbar-brand logo" href="../../../../intro.html">
+<a class="navbar-brand logo" href="../../../../../intro.html">
   
   
   
@@ -150,8 +150,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../../../../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../../../../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../../../../../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../../../../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
   
   
 </a></div>
@@ -160,47 +160,49 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="../../../../intro.html">
+                <a class="reference internal" href="../../../../../intro.html">
                     Introduction
                 </a>
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Prerequisites</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../understandingdocuments/index.html">Understanding Documents</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../../documentfileformats/index.html">📂 Document File Formats</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../documentstructures/index.html">🧱 Document Structures</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../../understandingdocuments/index.html">Understanding Documents</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../documentfileformats/index.html">📂 Document File Formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../documentstructures/index.html">🧱 Document Structures</a></li>
 </ul>
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Topic Guides</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../../../textextraction/index.html">Text Extraction</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active has-children"><a class="reference internal" href="../../../../ocr/index.html">Optical Character Recognition</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="../../../../ocr/overview/history.html">📜 History</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../ocr/overview/howitworks.html">🧠 How it Works</a></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../../../ocr/software/index.html">💾 Software</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../../ocr/software/engines.html">⚙️ Engines</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../ocr/software/packages.html">📦 Packages</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../ocr/software/gui.html">💻 Graphical User Interfaces</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../../../../textextraction/index.html">Text Extraction</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../../../../../ocr/index.html">Optical Character Recognition</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../../../../ocr/overview/history.html">📜 History</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../ocr/overview/howitworks.html">🧠 How it Works</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../../../ocr/software/index.html">💾 Software</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../ocr/software/engines.html">⚙️ Engines</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../ocr/software/packages.html">📦 Packages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../ocr/software/gui.html">💻 Graphical User Interfaces</a></li>
 </ul>
 </li>
-<li class="toctree-l3 current active has-children"><a class="reference internal" href="../../../../ocr/notebooks/index.html">📔 Notebooks</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="pytesseract_basic_example.html">Python Tesseract (pytesseract) Basic Example</a></li>
-<li class="toctree-l4 current active"><a class="current reference internal" href="#">Python Tesseract (pytesseract) Languages Example</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pytesseract_batch_processing_example.html">Python Tesseract (pytesseract) Batch Processing Example</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pytesseract_outputs_example.html">Python Tesseract (pytesseract) Outputs Example</a></li>
+<li class="toctree-l3 current active has-children"><a class="reference internal" href="../../../../../ocr/notebooks/index.html">📔 Notebooks</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="pytesseract_basic_example.html">Pytesseract Basic Example</a></li>
+<li class="toctree-l4 current active"><a class="current reference internal" href="#">Pytesseract Languages Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytesseract_batch_processing_example.html">Pytesseract Batch Processing Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytesseract_output_formats_example.html">Pytesseract Output Formats Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytesseract_function_parameters.html">Pytesseract Function Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytesseract_osd_example.html">Pytesseract Orientation and Script Detection (OSD) Example</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../ocr/datasets/index.html">🗄️ Datasets</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../ocr/papers/index.html">📑 Papers</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../ocr/benchmarks/index.html">📊 Benchmarks</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../ocr/resources/index.html">🗃️ Resources</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../ocr/datasets/index.html">🗄️ Datasets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../ocr/papers/index.html">📑 Papers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../ocr/benchmarks/index.html">📊 Benchmarks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../ocr/resources/index.html">🗃️ Resources</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../bibliography/index.html">Bibliography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../bibliography/index.html">Bibliography</a></li>
 </ul>
 
     </div>
@@ -255,7 +257,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/dhorvay/document-understanding-ebook/master?urlpath=tree/binder/document-understanding-ebook/ocr/tesseract/pytesseract_languages_example.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/dhorvay/document-understanding-ebook/master?urlpath=tree/binder/document-understanding-ebook/ocr/tesseract/pytesseract/pytesseract_languages_example.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onBinder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -264,7 +266,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 <span class="btn__icon-container">
   
-    <img src="../../../../_static/images/logo_binder.svg">
+    <img src="../../../../../_static/images/logo_binder.svg">
   </span>
 <span class="btn__text-container">Binder</span>
 </a>
@@ -273,7 +275,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/dhorvay/document-understanding-ebook/blob/master/binder/document-understanding-ebook/ocr/tesseract/pytesseract_languages_example.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/dhorvay/document-understanding-ebook/blob/master/binder/document-understanding-ebook/ocr/tesseract/pytesseract/pytesseract_languages_example.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -282,7 +284,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 <span class="btn__icon-container">
   
-    <img src="../../../../_static/images/logo_colab.png">
+    <img src="../../../../../_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -321,7 +323,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/dhorvay/document-understanding-ebook/issues/new?title=Issue%20on%20page%20%2Fbinder/document-understanding-ebook/ocr/tesseract/pytesseract_languages_example.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/dhorvay/document-understanding-ebook/issues/new?title=Issue%20on%20page%20%2Fbinder/document-understanding-ebook/ocr/tesseract/pytesseract/pytesseract_languages_example.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -351,7 +353,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../../../_sources/binder/document-understanding-ebook/ocr/tesseract/pytesseract_languages_example.ipynb" target="_blank"
+      <li><a href="../../../../../_sources/binder/document-understanding-ebook/ocr/tesseract/pytesseract/pytesseract_languages_example.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -433,7 +435,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Python Tesseract (pytesseract) Languages Example</h1>
+    <h1>Pytesseract Languages Example</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -466,8 +468,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="python-tesseract-pytesseract-languages-example">
-<h1>Python Tesseract (pytesseract) Languages Example<a class="headerlink" href="#python-tesseract-pytesseract-languages-example" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="pytesseract-languages-example">
+<h1>Pytesseract Languages Example<a class="headerlink" href="#pytesseract-languages-example" title="Permalink to this heading">#</a></h1>
 <p>This notebook covers using multiple language models with pytesseract.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -537,14 +539,14 @@ cp<span class="w"> </span>tessdata_fast/*.traineddata<span class="w"> </span>/us
 <h3>English<a class="headerlink" href="#english" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eng_path</span> <span class="o">=</span> <span class="s1">&#39;../../../binder-datasets/ocr/helloworld/hello_world_english.png&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eng_path</span> <span class="o">=</span> <span class="s1">&#39;../../../../binder-datasets/ocr/helloworld/hello_world_english.png&#39;</span>
 <span class="n">eng_im</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">eng_path</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">eng_im</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../../_images/82bd207cd3205465fbe5bd289a948cd734d2bc0df3746d90653132002fb42795.png" src="../../../../_images/82bd207cd3205465fbe5bd289a948cd734d2bc0df3746d90653132002fb42795.png" />
+<img alt="../../../../../_images/82bd207cd3205465fbe5bd289a948cd734d2bc0df3746d90653132002fb42795.png" src="../../../../../_images/82bd207cd3205465fbe5bd289a948cd734d2bc0df3746d90653132002fb42795.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -566,14 +568,14 @@ cp<span class="w"> </span>tessdata_fast/*.traineddata<span class="w"> </span>/us
 <h3>Spanish<a class="headerlink" href="#spanish" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spa_path</span> <span class="o">=</span> <span class="s1">&#39;../../../binder-datasets/ocr/helloworld/hello_world_spanish.png&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spa_path</span> <span class="o">=</span> <span class="s1">&#39;../../../../binder-datasets/ocr/helloworld/hello_world_spanish.png&#39;</span>
 <span class="n">spa_im</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">spa_path</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">spa_im</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../../_images/d1de28dc69ecf2b859a36e5f9dddfd9f9516caeecfc24b9dd5c244a886eda469.png" src="../../../../_images/d1de28dc69ecf2b859a36e5f9dddfd9f9516caeecfc24b9dd5c244a886eda469.png" />
+<img alt="../../../../../_images/d1de28dc69ecf2b859a36e5f9dddfd9f9516caeecfc24b9dd5c244a886eda469.png" src="../../../../../_images/d1de28dc69ecf2b859a36e5f9dddfd9f9516caeecfc24b9dd5c244a886eda469.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -595,14 +597,14 @@ cp<span class="w"> </span>tessdata_fast/*.traineddata<span class="w"> </span>/us
 <h3>Chinese<a class="headerlink" href="#chinese" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chi_sim_path</span> <span class="o">=</span> <span class="s1">&#39;../../../binder-datasets/ocr/helloworld/hello_world_chinese.png&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chi_sim_path</span> <span class="o">=</span> <span class="s1">&#39;../../../../binder-datasets/ocr/helloworld/hello_world_chinese.png&#39;</span>
 <span class="n">chi_sim_im</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">chi_sim_path</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">chi_sim_im</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../../_images/7d14821c0c4df5cc8dfe16f6044506456354c924612c2674b607d6ee1476e0ef.png" src="../../../../_images/7d14821c0c4df5cc8dfe16f6044506456354c924612c2674b607d6ee1476e0ef.png" />
+<img alt="../../../../../_images/7d14821c0c4df5cc8dfe16f6044506456354c924612c2674b607d6ee1476e0ef.png" src="../../../../../_images/7d14821c0c4df5cc8dfe16f6044506456354c924612c2674b607d6ee1476e0ef.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -628,14 +630,14 @@ cp<span class="w"> </span>tessdata_fast/*.traineddata<span class="w"> </span>/us
 <h3>English and French<a class="headerlink" href="#english-and-french" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eng_fra_path</span> <span class="o">=</span> <span class="s1">&#39;../../../binder-datasets/ocr/helloworld/hello_world_english_french.png&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eng_fra_path</span> <span class="o">=</span> <span class="s1">&#39;../../../../binder-datasets/ocr/helloworld/hello_world_english_french.png&#39;</span>
 <span class="n">eng_fra_im</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">eng_fra_path</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">eng_fra_im</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../../_images/fc0a6c1d6e71bc43d592fa1515d7b760180a7bbd178df55dce2af7bcbf1bea7f.png" src="../../../../_images/fc0a6c1d6e71bc43d592fa1515d7b760180a7bbd178df55dce2af7bcbf1bea7f.png" />
+<img alt="../../../../../_images/fc0a6c1d6e71bc43d592fa1515d7b760180a7bbd178df55dce2af7bcbf1bea7f.png" src="../../../../../_images/fc0a6c1d6e71bc43d592fa1515d7b760180a7bbd178df55dce2af7bcbf1bea7f.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -670,7 +672,7 @@ Bonjour le monde!
         },
         kernelOptions: {
             name: "python3",
-            path: "./binder/document-understanding-ebook/ocr/tesseract"
+            path: "./binder/document-understanding-ebook/ocr/tesseract/pytesseract"
         },
         predefinedOutput: true
     }
@@ -694,7 +696,7 @@ Bonjour le monde!
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Python Tesseract (pytesseract) Basic Example</p>
+        <p class="prev-next-title">Pytesseract Basic Example</p>
       </div>
     </a>
     <a class="right-next"
@@ -702,7 +704,7 @@ Bonjour le monde!
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Python Tesseract (pytesseract) Batch Processing Example</p>
+        <p class="prev-next-title">Pytesseract Batch Processing Example</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -787,8 +789,8 @@ By Devin Horvay
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
   </footer>
