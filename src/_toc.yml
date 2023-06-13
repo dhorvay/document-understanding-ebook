@@ -22,10 +22,12 @@ parts:
           - file: ocr/software/gui
       - file: ocr/notebooks/index
         sections:
-          - file: binder/document-understanding-ebook/ocr/tesseract/pytesseract_basic_example.ipynb
-          - file: binder/document-understanding-ebook/ocr/tesseract/pytesseract_languages_example.ipynb
-          - file: binder/document-understanding-ebook/ocr/tesseract/pytesseract_batch_processing_example.ipynb
-          - file: binder/document-understanding-ebook/ocr/tesseract/pytesseract_outputs_example.ipynb
+          - file: binder/document-understanding-ebook/ocr/tesseract/pytesseract/pytesseract_basic_example.ipynb
+          - file: binder/document-understanding-ebook/ocr/tesseract/pytesseract/pytesseract_languages_example.ipynb
+          - file: binder/document-understanding-ebook/ocr/tesseract/pytesseract/pytesseract_batch_processing_example.ipynb
+          - file: binder/document-understanding-ebook/ocr/tesseract/pytesseract/pytesseract_output_formats_example.ipynb
+          - file: binder/document-understanding-ebook/ocr/tesseract/pytesseract/pytesseract_function_parameters.ipynb
+          - file: binder/document-understanding-ebook/ocr/tesseract/pytesseract/pytesseract_osd_example.ipynb
       - file: ocr/datasets/index
       - file: ocr/papers/index
       - file: ocr/benchmarks/index
