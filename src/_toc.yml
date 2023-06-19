@@ -28,6 +28,7 @@ parts:
           - file: binder/document-understanding-ebook/ocr/tesseract/pytesseract/pytesseract_output_formats_example.ipynb
           - file: binder/document-understanding-ebook/ocr/tesseract/pytesseract/pytesseract_function_parameters.ipynb
           - file: binder/document-understanding-ebook/ocr/tesseract/pytesseract/pytesseract_osd_example.ipynb
+          - file: binder/document-understanding-ebook/ocr/tesseract/pytesseract/pytesseract_psm_example.ipynb
       - file: ocr/datasets/index
       - file: ocr/papers/index
       - file: ocr/benchmarks/index
