@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Pytesseract Languages Example &#8212; Document Understanding eBook</title>
+    <title>Pytesseract | Batch Processing &#8212; Document Understanding eBook</title>
   
   
   
@@ -62,13 +62,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../../../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'binder/document-understanding-ebook/ocr/tesseract/pytesseract/pytesseract_languages_example';</script>
-    <link rel="canonical" href="https://horvay.dev/document-understanding-ebook/binder/document-understanding-ebook/ocr/tesseract/pytesseract/pytesseract_languages_example.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'binder/document-understanding-ebook/ocr/tesseract/pytesseract/pytesseract_batch_processing';</script>
+    <link rel="canonical" href="https://horvay.dev/document-understanding-ebook/binder/document-understanding-ebook/ocr/tesseract/pytesseract/pytesseract_batch_processing.html" />
     <link rel="shortcut icon" href="../../../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="Pytesseract Batch Processing Example" href="pytesseract_batch_processing_example.html" />
-    <link rel="prev" title="Pytesseract Basic Example" href="pytesseract_basic_example.html" />
+    <link rel="next" title="Pytesseract | Output Formats" href="pytesseract_output_formats.html" />
+    <link rel="prev" title="Pytesseract | Multiple Languages" href="pytesseract_multiple_languages.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -186,13 +186,13 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l3 current active has-children"><a class="reference internal" href="../../../../../ocr/notebooks/index.html">📔 Notebooks</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="pytesseract_basic_example.html">Pytesseract Basic Example</a></li>
-<li class="toctree-l4 current active"><a class="current reference internal" href="#">Pytesseract Languages Example</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pytesseract_batch_processing_example.html">Pytesseract Batch Processing Example</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pytesseract_output_formats_example.html">Pytesseract Output Formats Example</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pytesseract_function_parameters.html">Pytesseract Function Parameters</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pytesseract_osd_example.html">Pytesseract Orientation and Script Detection (OSD) Example</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pytesseract_psm_example.html">Pytesseract Page Segmentation Modes (PSMs) Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytesseract_basic_functions.html">Pytesseract | Basic Functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytesseract_multiple_languages.html">Pytesseract | Multiple Languages</a></li>
+<li class="toctree-l4 current active"><a class="current reference internal" href="#">Pytesseract | Batch Processing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytesseract_output_formats.html">Pytesseract | Output Formats</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytesseract_function_parameters.html">Pytesseract | Function Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytesseract_osd.html">Pytesseract | Orientation and Script Detection (OSD)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytesseract_psm.html">Pytesseract | Page Segmentation Modes (PSMs)</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../ocr/datasets/index.html">🗄️ Datasets</a></li>
@@ -258,7 +258,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/dhorvay/document-understanding-ebook/master?urlpath=tree/binder/document-understanding-ebook/ocr/tesseract/pytesseract/pytesseract_languages_example.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/dhorvay/document-understanding-ebook/master?urlpath=tree/binder/document-understanding-ebook/ocr/tesseract/pytesseract/pytesseract_batch_processing.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onBinder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -276,7 +276,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/dhorvay/document-understanding-ebook/blob/master/binder/document-understanding-ebook/ocr/tesseract/pytesseract/pytesseract_languages_example.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/dhorvay/document-understanding-ebook/blob/master/binder/document-understanding-ebook/ocr/tesseract/pytesseract/pytesseract_batch_processing.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -324,7 +324,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/dhorvay/document-understanding-ebook/issues/new?title=Issue%20on%20page%20%2Fbinder/document-understanding-ebook/ocr/tesseract/pytesseract/pytesseract_languages_example.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/dhorvay/document-understanding-ebook/issues/new?title=Issue%20on%20page%20%2Fbinder/document-understanding-ebook/ocr/tesseract/pytesseract/pytesseract_batch_processing.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -354,7 +354,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../../../../_sources/binder/document-understanding-ebook/ocr/tesseract/pytesseract/pytesseract_languages_example.ipynb" target="_blank"
+      <li><a href="../../../../../_sources/binder/document-understanding-ebook/ocr/tesseract/pytesseract/pytesseract_batch_processing.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -436,7 +436,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Pytesseract Languages Example</h1>
+    <h1>Pytesseract | Batch Processing</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -446,18 +446,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ensure-tessdata-is-installed">Ensure tessdata is installed</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-supported-languages">List supported languages</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing">Testing</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#english">English</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spanish">Spanish</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chinese">Chinese</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-languages">Multiple Languages</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#english-and-french">English and French</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#batch-file">Batch File</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#timeouts">Timeouts</a></li>
 </ul>
             </nav>
         </div>
@@ -469,194 +459,73 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="pytesseract-languages-example">
-<h1>Pytesseract Languages Example<a class="headerlink" href="#pytesseract-languages-example" title="Permalink to this heading">#</a></h1>
-<p>This notebook covers using multiple language models with pytesseract.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="pytesseract-batch-processing">
+<h1>Pytesseract | Batch Processing<a class="headerlink" href="#pytesseract-batch-processing" title="Permalink to this heading">#</a></h1>
+<p>This notebook covers batch processing with pytesseract.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
-<span class="kn">import</span> <span class="nn">pytesseract</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pytesseract</span>
 </pre></div>
 </div>
 </div>
 </div>
-<section id="ensure-tessdata-is-installed">
-<h2>Ensure tessdata is installed<a class="headerlink" href="#ensure-tessdata-is-installed" title="Permalink to this heading">#</a></h2>
-<p>Tesseract needs the TESSDATA_PREFIX environment variable to be set in order to find trained language data. All languages may not be preinstalled when you first install Tesseract. The best way I have found is to install tessdata directly through git.</p>
-<p>There are a few versions of tessdata you can install:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://github.com/tesseract-ocr/tessdata">tessdata</a> - Trained models with fast variant of the “best” LSTM models + legacy models.</p></li>
-<li><p><a class="reference external" href="https://github.com/tesseract-ocr/tessdata_fast">tessdata_fast</a> - Fast integer versions of trained LSTM models</p></li>
-<li><p><a class="reference external" href="https://github.com/tesseract-ocr/tessdata_best">tessdata_best</a> - Best (most accurate) trained LSTM models.</p></li>
-</ul>
-<p>For my purposes, I will utilize <code class="docutils literal notranslate"><span class="pre">tessdata_fast</span></code> for this notebook.</p>
-<p>Steps to install (local machine):</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>--recurse-submodules<span class="w"> </span>https://github.com/tesseract-ocr/tessdata_fast.git<span class="w"> </span>~/.local/share/tesseract-ocr/4.00/tessdata_fast
-<span class="nb">export</span><span class="w"> </span><span class="nv">TESSDATA_PREFIX</span><span class="o">=</span>~/.local/share/tesseract-ocr/4.00/tessdata_fast
-</pre></div>
-</div>
-<p>Steps to install (<span class="xref myst">kaggle.com</span>):</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>--recurse-submodules<span class="w"> </span>https://github.com/tesseract-ocr/tessdata_fast.git<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>/dev/null<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">(</span><span class="nb">cd</span><span class="w"> </span>tessdata_fast<span class="p">;</span><span class="w"> </span>git<span class="w"> </span>pull<span class="o">)</span>
-cp<span class="w"> </span>tessdata_fast/*.traineddata<span class="w"> </span>/usr/share/tesseract-ocr/4.00/tessdata/
-</pre></div>
-</div>
-<p>For <a class="reference external" href="http://kaggle.com">kaggle.com</a>, the default path can be used - <code class="docutils literal notranslate"><span class="pre">/usr/share/tesseract-ocr/4.00/tessdata/</span></code></p>
-<p>Once this is done, we can try to extract text from multiple languages.</p>
+<section id="batch-file">
+<h2>Batch File<a class="headerlink" href="#batch-file" title="Permalink to this heading">#</a></h2>
+<p>You can process a batch of files by providing a text file with the relative image paths (relative meaning to where the script is running).
+Here, I am providing a text file with two image paths.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># For kaggle.com this will print empty. The package pytesseract will use the default path: /usr/share/tesseract-ocr/4.00/tessdata/</span>
-<span class="o">!</span>printenv<span class="w"> </span>TESSDATA_PREFIX
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">batch_file_path</span> <span class="o">=</span> <span class="s2">&quot;../../../../binder-datasets/ocr/batch/images.txt&quot;</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">batch_file_path</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/devin/.local/share/tesseract-ocr/4.00/tessdata_fast
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>../../../binder-datasets/ocr/images/invoice.png
+../../../binder-datasets/ocr/images/letter.jpg
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="list-supported-languages">
-<h2>List supported languages<a class="headerlink" href="#list-supported-languages" title="Permalink to this heading">#</a></h2>
-<p>Tesseract supports more than 100 languages.</p>
-<p>Also see: <a class="reference external" href="https://tesseract-ocr.github.io/tessdoc/Data-Files-in-different-versions.html">complete list of languages supported in different versions of Tesseract</a></p>
+<section id="timeouts">
+<h2>Timeouts<a class="headerlink" href="#timeouts" title="Permalink to this heading">#</a></h2>
+<p>While this is not required for batch processing, it may be a good idea to add handling to terminate Tesseract if processing is taking too long. Let’s try two scenarios, one where we timeout after 1 second and one where we wait 30 seconds to timeout. In this case, 1 second is not enough time to process both images.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">pytesseract</span><span class="o">.</span><span class="n">get_languages</span><span class="p">(</span><span class="n">config</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">timeout</span> <span class="o">=</span> <span class="mi">1</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;afr&#39;, &#39;amh&#39;, &#39;ara&#39;, &#39;asm&#39;, &#39;aze&#39;, &#39;aze_cyrl&#39;, &#39;bel&#39;, &#39;ben&#39;, &#39;bod&#39;, &#39;bos&#39;, &#39;bre&#39;, &#39;bul&#39;, &#39;cat&#39;, &#39;ceb&#39;, &#39;ces&#39;, &#39;chi_sim&#39;, &#39;chi_sim_vert&#39;, &#39;chi_tra&#39;, &#39;chi_tra_vert&#39;, &#39;chr&#39;, &#39;cos&#39;, &#39;cym&#39;, &#39;dan&#39;, &#39;deu&#39;, &#39;div&#39;, &#39;dzo&#39;, &#39;ell&#39;, &#39;eng&#39;, &#39;enm&#39;, &#39;epo&#39;, &#39;equ&#39;, &#39;est&#39;, &#39;eus&#39;, &#39;fao&#39;, &#39;fas&#39;, &#39;fil&#39;, &#39;fin&#39;, &#39;fra&#39;, &#39;frk&#39;, &#39;frm&#39;, &#39;fry&#39;, &#39;gla&#39;, &#39;gle&#39;, &#39;glg&#39;, &#39;grc&#39;, &#39;guj&#39;, &#39;hat&#39;, &#39;heb&#39;, &#39;hin&#39;, &#39;hrv&#39;, &#39;hun&#39;, &#39;hye&#39;, &#39;iku&#39;, &#39;ind&#39;, &#39;isl&#39;, &#39;ita&#39;, &#39;ita_old&#39;, &#39;jav&#39;, &#39;jpn&#39;, &#39;jpn_vert&#39;, &#39;kan&#39;, &#39;kat&#39;, &#39;kat_old&#39;, &#39;kaz&#39;, &#39;khm&#39;, &#39;kir&#39;, &#39;kmr&#39;, &#39;kor&#39;, &#39;kor_vert&#39;, &#39;lao&#39;, &#39;lat&#39;, &#39;lav&#39;, &#39;lit&#39;, &#39;ltz&#39;, &#39;mal&#39;, &#39;mar&#39;, &#39;mkd&#39;, &#39;mlt&#39;, &#39;mon&#39;, &#39;mri&#39;, &#39;msa&#39;, &#39;mya&#39;, &#39;nep&#39;, &#39;nld&#39;, &#39;nor&#39;, &#39;oci&#39;, &#39;ori&#39;, &#39;osd&#39;, &#39;pan&#39;, &#39;pol&#39;, &#39;por&#39;, &#39;pus&#39;, &#39;que&#39;, &#39;ron&#39;, &#39;rus&#39;, &#39;san&#39;, &#39;sin&#39;, &#39;slk&#39;, &#39;slv&#39;, &#39;snd&#39;, &#39;spa&#39;, &#39;spa_old&#39;, &#39;sqi&#39;, &#39;srp&#39;, &#39;srp_latn&#39;, &#39;sun&#39;, &#39;swa&#39;, &#39;swe&#39;, &#39;syr&#39;, &#39;tam&#39;, &#39;tat&#39;, &#39;tel&#39;, &#39;tgk&#39;, &#39;tha&#39;, &#39;tir&#39;, &#39;ton&#39;, &#39;tur&#39;, &#39;uig&#39;, &#39;ukr&#39;, &#39;urd&#39;, &#39;uzb&#39;, &#39;uzb_cyrl&#39;, &#39;vie&#39;, &#39;yid&#39;, &#39;yor&#39;]
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="testing">
-<h2>Testing<a class="headerlink" href="#testing" title="Permalink to this heading">#</a></h2>
-<p>Let’s try testing with three languages: English, Spanish, and Chinese.</p>
-<section id="english">
-<h3>English<a class="headerlink" href="#english" title="Permalink to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eng_path</span> <span class="o">=</span> <span class="s1">&#39;../../../../binder-datasets/ocr/helloworld/hello_world_english.png&#39;</span>
-<span class="n">eng_im</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">eng_path</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">eng_im</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../../../../_images/82bd207cd3205465fbe5bd289a948cd734d2bc0df3746d90653132002fb42795.png" src="../../../../../_images/82bd207cd3205465fbe5bd289a948cd734d2bc0df3746d90653132002fb42795.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">output</span> <span class="o">=</span> <span class="n">pytesseract</span><span class="o">.</span><span class="n">image_to_string</span><span class="p">(</span><span class="n">eng_im</span><span class="p">,</span><span class="n">lang</span><span class="o">=</span><span class="s1">&#39;eng&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">pytesseract</span><span class="o">.</span><span class="n">image_to_string</span><span class="p">(</span><span class="n">batch_file_path</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">))</span>
+<span class="k">except</span> <span class="ne">RuntimeError</span> <span class="k">as</span> <span class="n">timeout_error</span><span class="p">:</span>
+    <span class="k">pass</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello World!
-
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="spanish">
-<h3>Spanish<a class="headerlink" href="#spanish" title="Permalink to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spa_path</span> <span class="o">=</span> <span class="s1">&#39;../../../../binder-datasets/ocr/helloworld/hello_world_spanish.png&#39;</span>
-<span class="n">spa_im</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">spa_path</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">spa_im</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../../../../_images/d1de28dc69ecf2b859a36e5f9dddfd9f9516caeecfc24b9dd5c244a886eda469.png" src="../../../../../_images/d1de28dc69ecf2b859a36e5f9dddfd9f9516caeecfc24b9dd5c244a886eda469.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">output</span> <span class="o">=</span> <span class="n">pytesseract</span><span class="o">.</span><span class="n">image_to_string</span><span class="p">(</span><span class="n">spa_im</span><span class="p">,</span><span class="n">lang</span><span class="o">=</span><span class="s1">&#39;spa&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">timeout</span> <span class="o">=</span> <span class="mi">30</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>¡Hola Mundo!
-
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="chinese">
-<h3>Chinese<a class="headerlink" href="#chinese" title="Permalink to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chi_sim_path</span> <span class="o">=</span> <span class="s1">&#39;../../../../binder-datasets/ocr/helloworld/hello_world_chinese.png&#39;</span>
-<span class="n">chi_sim_im</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">chi_sim_path</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">chi_sim_im</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../../../../_images/7d14821c0c4df5cc8dfe16f6044506456354c924612c2674b607d6ee1476e0ef.png" src="../../../../../_images/7d14821c0c4df5cc8dfe16f6044506456354c924612c2674b607d6ee1476e0ef.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">output</span> <span class="o">=</span> <span class="n">pytesseract</span><span class="o">.</span><span class="n">image_to_string</span><span class="p">(</span><span class="n">chi_sim_im</span><span class="p">,</span><span class="n">lang</span><span class="o">=</span><span class="s1">&#39;chi_sim&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>你好世界 !
-
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">pytesseract</span><span class="o">.</span><span class="n">image_to_string</span><span class="p">(</span><span class="n">batch_file_path</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">))</span>
+<span class="k">except</span> <span class="ne">RuntimeError</span> <span class="k">as</span> <span class="n">timeout_error</span><span class="p">:</span>
+    <span class="k">pass</span>
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="multiple-languages">
-<h2>Multiple Languages<a class="headerlink" href="#multiple-languages" title="Permalink to this heading">#</a></h2>
-<p>Tesseract also supports multiple languages at once.</p>
-<section id="english-and-french">
-<h3>English and French<a class="headerlink" href="#english-and-french" title="Permalink to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eng_fra_path</span> <span class="o">=</span> <span class="s1">&#39;../../../../binder-datasets/ocr/helloworld/hello_world_english_french.png&#39;</span>
-<span class="n">eng_fra_im</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">eng_fra_path</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">eng_fra_im</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../../../../_images/fc0a6c1d6e71bc43d592fa1515d7b760180a7bbd178df55dce2af7bcbf1bea7f.png" src="../../../../../_images/fc0a6c1d6e71bc43d592fa1515d7b760180a7bbd178df55dce2af7bcbf1bea7f.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">output</span> <span class="o">=</span> <span class="n">pytesseract</span><span class="o">.</span><span class="n">image_to_string</span><span class="p">(</span><span class="n">eng_fra_im</span><span class="p">,</span><span class="n">lang</span><span class="o">=</span><span class="s1">&#39;eng+fra&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello World!
-Bonjour le monde!
-
-</pre></div>
-</div>
-</div>
-</div>
-</section>
 </section>
 </section>
 
@@ -692,20 +561,20 @@ Bonjour le monde!
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="pytesseract_basic_example.html"
+       href="pytesseract_multiple_languages.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Pytesseract Basic Example</p>
+        <p class="prev-next-title">Pytesseract | Multiple Languages</p>
       </div>
     </a>
     <a class="right-next"
-       href="pytesseract_batch_processing_example.html"
+       href="pytesseract_output_formats.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Pytesseract Batch Processing Example</p>
+        <p class="prev-next-title">Pytesseract | Output Formats</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -727,18 +596,8 @@ Bonjour le monde!
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ensure-tessdata-is-installed">Ensure tessdata is installed</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-supported-languages">List supported languages</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing">Testing</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#english">English</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spanish">Spanish</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chinese">Chinese</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-languages">Multiple Languages</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#english-and-french">English and French</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#batch-file">Batch File</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#timeouts">Timeouts</a></li>
 </ul>
   </nav></div>
 
