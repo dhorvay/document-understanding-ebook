@@ -22,13 +22,13 @@ parts:
           - file: ocr/software/gui
       - file: ocr/notebooks/index
         sections:
-          - file: binder/document-understanding-ebook/ocr/tesseract/pytesseract/pytesseract_basic_example.ipynb
-          - file: binder/document-understanding-ebook/ocr/tesseract/pytesseract/pytesseract_languages_example.ipynb
-          - file: binder/document-understanding-ebook/ocr/tesseract/pytesseract/pytesseract_batch_processing_example.ipynb
-          - file: binder/document-understanding-ebook/ocr/tesseract/pytesseract/pytesseract_output_formats_example.ipynb
+          - file: binder/document-understanding-ebook/ocr/tesseract/pytesseract/pytesseract_basic_functions.ipynb
+          - file: binder/document-understanding-ebook/ocr/tesseract/pytesseract/pytesseract_multiple_languages.ipynb
+          - file: binder/document-understanding-ebook/ocr/tesseract/pytesseract/pytesseract_batch_processing.ipynb
+          - file: binder/document-understanding-ebook/ocr/tesseract/pytesseract/pytesseract_output_formats.ipynb
           - file: binder/document-understanding-ebook/ocr/tesseract/pytesseract/pytesseract_function_parameters.ipynb
-          - file: binder/document-understanding-ebook/ocr/tesseract/pytesseract/pytesseract_osd_example.ipynb
-          - file: binder/document-understanding-ebook/ocr/tesseract/pytesseract/pytesseract_psm_example.ipynb
+          - file: binder/document-understanding-ebook/ocr/tesseract/pytesseract/pytesseract_osd.ipynb
+          - file: binder/document-understanding-ebook/ocr/tesseract/pytesseract/pytesseract_psm.ipynb
       - file: ocr/datasets/index
       - file: ocr/papers/index
       - file: ocr/benchmarks/index
